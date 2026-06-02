@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eddiel Martin | Consultor Educativo & Músico</title>
+    <!-- Tailwind CSS para diseño rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display para títulos elegantes y Plus Jakarta Sans para lectura cómoda -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        academic: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#102a43',
+                            800: '#102a43',
+                            900: '#0b1b29',
+                        },
+                        artistic: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos adicionales personalizados */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .music-note-flow {
+            animation: float 6s ease-in-out infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-15px) rotate(5deg); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-artistic-100 selection:text-artistic-700 overflow-x-hidden">
+
+    <!-- CABECERA / NAVEGACIÓN -->
+    <header id="main-header" class="fixed top-0 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md py-3 px-6 rounded-full shadow-sm border border-slate-100">
+            <!-- Monograma / Logo -->
+            <a href="#inicio" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                    EM
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-base tracking-wide text-academic-800 leading-tight">Eddiel Martin</span>
+                    <span class="text-[10px] uppercase tracking-wider text-artistic-600 font-semibold leading-none">Consultor & Músico</span>
+                </div>
+            </a>
+
+            <!-- Menú de Escritorio -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-sm font-semibold text-slate-600 hover:text-academic-800 transition-colors">Inicio</a>
+                <a href="#servicios" class="text-sm font-semibold text-slate-600 hover:text-academic-800 transition-colors">Servicios</a>
+                <a href="#sobre-mi" class="text-sm font-semibold text-slate-600 hover:text-academic-800 transition-colors">Sobre Mí</a>
+                <a href="#testimonios" class="text-sm font-semibold text-slate-600 hover:text-academic-800 transition-colors">Testimonios</a>
+                <a href="#contacto" class="text-sm font-semibold text-slate-600 hover:text-academic-800 transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Acciones -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="openBookingModal()" class="px-5 py-2.5 text-xs uppercase tracking-wider font-bold text-white bg-academic-800 hover:bg-academic-900 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Agendar Clase
+                </button>
+            </div>
+
+            <!-- Botón de Menú Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden flex items-center text-slate-600 hover:text-academic-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden mt-2 mx-auto max-w-sm bg-white rounded-2xl shadow-xl border border-slate-100 p-6 space-y-4 absolute left-6 right-6 transition-all duration-300">
+            <nav class="flex flex-col space-y-3">
+                <a href="#inicio" onclick="toggleMobileMenu()" class="text-slate-600 hover:text-academic-800 font-semibold py-2 border-b border-slate-50">Inicio</a>
+                <a href="#servicios" onclick="toggleMobileMenu()" class="text-slate-600 hover:text-academic-800 font-semibold py-2 border-b border-slate-50">Servicios</a>
+                <a href="#sobre-mi" onclick="toggleMobileMenu()" class="text-slate-600 hover:text-academic-800 font-semibold py-2 border-b border-slate-50">Sobre Mí</a>
+                <a href="#testimonios" onclick="toggleMobileMenu()" class="text-slate-600 hover:text-academic-800 font-semibold py-2 border-b border-slate-50">Testimonios</a>
+                <a href="#contacto" onclick="toggleMobileMenu()" class="text-slate-600 hover:text-academic-800 font-semibold py-2 border-b border-slate-50">Contacto</a>
+            </nav>
+            <div class="pt-2">
+                <button onclick="toggleMobileMenu(); openBookingModal()" class="w-full text-center px-5 py-3 text-sm uppercase tracking-wider font-bold text-white bg-academic-800 hover:bg-academic-900 rounded-full shadow-md">
+                    Agendar Clase
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO (INICIO) -->
+    <section id="inicio" class="relative pt-32 pb-20 md:py-36 px-6 md:px-12 bg-gradient-to-b from-slate-100 via-white to-slate-50 overflow-hidden min-h-screen flex items-center">
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute top-1/4 -left-16 w-64 h-64 bg-academic-100 rounded-full filter blur-3xl opacity-60"></div>
+        <div class="absolute bottom-10 right-0 w-80 h-80 bg-artistic-100 rounded-full filter blur-3xl opacity-40"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+            
+            <!-- Texto Hero -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-white px-4 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-artistic-500 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-artistic-500"></span>
+                    </span>
+                    <span class="text-xs uppercase tracking-wider font-bold text-academic-800">Lima, Perú • Disponible Presencial & Online</span>
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-academic-900 font-extrabold leading-tight">
+                    Transformo la educación en una experiencia <span class="text-transparent bg-clip-text bg-gradient-to-r from-academic-800 to-artistic-600">inspiradora</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                    Con más de una década de experiencia, combino metodología académica rigurosa con creatividad artística para potenciar tu aprendizaje y desarrollo integral.
+                </p>
+
+                <!-- Botones de Acción -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 bg-academic-800 hover:bg-academic-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                        <span>Agendar Clase</span>
+                        <svg class="w-5 h-5 text-artistic-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </button>
+                    <a href="#sobre-mi" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-academic-800 font-bold rounded-xl shadow-md border border-slate-200 transition-all hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                        <span>Conocer Más</span>
+                        <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </a>
+                </div>
+
+                <!-- Detalle Interactivo Musical -->
+                <div class="pt-6 hidden sm:block">
+                    <div class="inline-flex items-center space-x-3 bg-white/60 rounded-xl p-3 border border-slate-100/80">
+                        <span class="text-xs font-semibold text-slate-500">¿Eres amante de la música? Prueba esto:</span>
+                        <button onclick="playPianoChord()" class="px-3 py-1 bg-artistic-100 hover:bg-artistic-200 text-artistic-700 rounded-lg text-xs font-bold transition-all flex items-center space-x-1">
+                            <svg class="w-3.5 h-3.5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" /></svg>
+                            <span>Tocar acorde</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna de Imagen / Representación Gráfica -->
+            <div class="lg:col-span-5 relative flex justify-center items-center">
+                <div class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-3xl bg-gradient-to-tr from-academic-800 to-academic-900 p-1 shadow-2xl overflow-hidden group">
+                    <!-- Overlay Decorativo Gradiente -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+                    
+                    <!-- Elementos artísticos ilustrativos -->
+                    <div class="absolute inset-0 flex flex-col justify-between p-6 z-20">
+                        <div class="flex justify-between items-start">
+                            <span class="text-5xl font-serif text-white/10 select-none">EM</span>
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider uppercase">Metodología Innovadora</span>
+                        </div>
+                        
+                        <!-- Mini Ficha de Información de Eddiel -->
+                        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/20 transform group-hover:scale-[1.02] transition-transform duration-300">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-10 h-10 rounded-xl bg-artistic-100 flex items-center justify-center text-artistic-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 leading-none">Eddiel Martin</h4>
+                                    <span class="text-xs text-slate-500 font-medium">Consultor & Músico Profesional</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-600 line-clamp-2">"Combino la teoría académica de San Marcos con la técnica artística para que el aprendizaje sea dinámico e inolvidable."</p>
+                        </div>
+                    </div>
+
+                    <!-- Representación Gráfica Vectorial de Eddiel (Educador y Músico) -->
+                    <div class="absolute inset-0 flex items-center justify-center scale-95 opacity-90">
+                        <svg class="w-full h-full text-white/5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/http/2000/svg">
+                            <!-- Guitarra Silueta de Fondo -->
+                            <path d="M110 50 C110 30, 90 30, 90 50 C90 70, 70 80, 70 100 C70 130, 130 130, 130 100 C130 80, 110 70, 110 50 Z" fill="#d97706" fill-opacity="0.2"/>
+                            <!-- Notas musicales flotantes -->
+                            <circle cx="50" cy="80" r="4" fill="#d97706" class="music-note-flow" style="animation-delay: 0s;"/>
+                            <path d="M50 80 L50 60 L65 55 L65 75" stroke="#d97706" stroke-width="2" class="music-note-flow" style="animation-delay: 0s;"/>
+                            <circle cx="150" cy="110" r="5" fill="#d97706" class="music-note-flow" style="animation-delay: 2s;"/>
+                            <path d="M150 110 L150 90" stroke="#d97706" stroke-width="2" class="music-note-flow" style="animation-delay: 2s;"/>
+                        </svg>
+                    </div>
+
+                    <!-- Foto de fallback estilizada / Ilustración Modernizada -->
+                    <div class="w-full h-full flex flex-col items-center justify-center text-slate-400 relative z-0">
+                        <!-- Dibujo de un profesor con guitarra usando SVG inline -->
+                        <svg class="w-56 h-56 text-slate-300 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M12 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zM12 16c-4.42 0-8 3.58-8 8h16c0-4.42-3.58-8-8-8z"/>
+                            <!-- Guitarra Minimalista de Línea -->
+                            <path d="M7 16l4 4-2.5 2.5a1.5 1.5 0 01-2.12 0l-1.88-1.88a1.5 1.5 0 010-2.12L7 16zM11 20l7-7M13 18l7-7" stroke="#d97706" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Flotante Izquierda -->
+                <div class="absolute -left-6 bottom-12 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 hidden md:block w-48 text-center">
+                    <span class="text-3xl font-serif font-extrabold text-academic-800">10+</span>
+                    <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mt-1">Años de Experiencia</p>
+                </div>
+
+                <!-- Tarjeta Flotante Derecha -->
+                <div class="absolute -right-6 top-12 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 hidden md:block w-48 text-center">
+                    <span class="text-lg font-serif font-bold text-artistic-600">San Marcos</span>
+                    <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-1">Diplomado UNMSM</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN METODOLOGÍA / PILARES -->
+    <section class="py-16 bg-white border-y border-slate-100 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Pilares 1 -->
+            <div class="flex items-start space-x-4 p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg">Experiencia Comprobada</h3>
+                    <p class="text-slate-500 text-sm mt-1">Más de 10 años enseñando inglés, música y apoyo académico a estudiantes de todas las edades.</p>
+                </div>
+            </div>
+
+            <!-- Pilares 2 -->
+            <div class="flex items-start space-x-4 p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-artistic-100 flex items-center justify-center text-artistic-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg">Metodología a Tu Medida</h3>
+                    <p class="text-slate-500 text-sm mt-1">Enfoque personalizado, dinámico y 100% orientado a resultados reales. Cada estudiante es único.</p>
+                </div>
+            </div>
+
+            <!-- Pilares 3 -->
+            <div class="flex items-start space-x-4 p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg">Pasión por Enseñar</h3>
+                    <p class="text-slate-500 text-sm mt-1">Combinación perfecta de rigor académico riguroso y creatividad artística para un aprendizaje significativo.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section id="servicios" class="py-20 md:py-28 px-6 md:px-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <!-- Cabecera de la Sección -->
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs uppercase tracking-widest font-bold text-artistic-600">Servicios Educativos</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-academic-800 font-bold">Soluciones integrales diseñadas para potenciar tu aprendizaje</h2>
+                <div class="w-16 h-1 bg-artistic-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid de Servicios (6 ítems descritos en el PDF) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1: Clases de Inglés -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 11.37 7.31 16.5 1 17.643" /></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xl">Clases de Inglés</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Aprende inglés con metodología moderna y personalizada. Desde principiantes hasta nivel avanzado con enfoque conversacional y gramatical.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="openBookingModalWithService('Clases de Inglés')" class="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-bold text-artistic-600 hover:text-artistic-700 transition-colors">
+                            <span>Reservar Clase</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Ayuda Académica -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xl">Ayuda Académica</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Asistencia estratégica en tareas, trabajos de investigación, ensayos y preparación intensiva para exámenes en diversas materias escolares y universitarias.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="openBookingModalWithService('Ayuda Académica')" class="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-bold text-artistic-600 hover:text-artistic-700 transition-colors">
+                            <span>Reservar Clase</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Quizzes & Tests -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xl">Quizzes & Tests</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Resolución guiada de cuestionarios, simulacros de pruebas y evaluaciones detalladas con retroalimentación para aplicar técnicas de estudio efectivas.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="openBookingModalWithService('Quizzes & Tests')" class="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-bold text-artistic-600 hover:text-artistic-700 transition-colors">
+                            <span>Reservar Clase</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Clases de Música -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-artistic-100 flex items-center justify-center text-artistic-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" /></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xl">Clases de Música</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Aprende guitarra acústica, canto y armonía musical teórica. Clases enfocadas en la expresión artística y el desarrollo de tu máximo potencial creativo.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="openBookingModalWithService('Clases de Música')" class="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-bold text-artistic-600 hover:text-artistic-700 transition-colors">
+                            <span>Reservar Clase</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Redacción -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xl">Redacción</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Optimiza tu escritura académica, creativa y profesional. Sesiones dedicadas a la ortografía, estructuración coherente de ideas, estilo y corrección de estilo.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="openBookingModalWithService('Redacción')" class="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-bold text-artistic-600 hover:text-artistic-700 transition-colors">
+                            <span>Reservar Clase</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Servicio 6: Reforzamiento -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xl">Reforzamiento</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Clases de apoyo escolar personalizadas diseñadas para consolidar conocimientos previos, aclarar dudas recurrentes y mejorar sustancialmente el rendimiento.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="openBookingModalWithService('Reforzamiento')" class="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-bold text-artistic-600 hover:text-artistic-700 transition-colors">
+                            <span>Reservar Clase</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section id="sobre-mi" class="py-20 md:py-28 px-6 md:px-12 bg-white relative overflow-hidden">
+        <!-- Decorativo de Fondo -->
+        <div class="absolute -right-10 top-1/2 w-72 h-72 bg-slate-100 rounded-full filter blur-2xl opacity-70"></div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <!-- Columna Gráfica / Trayectoria -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="aspect-square bg-slate-50 rounded-3xl border border-slate-100 p-8 flex flex-col justify-between relative shadow-lg overflow-hidden">
+                    
+                    <!-- Símbolo Monograma Decorativo Gigante -->
+                    <div class="absolute right-0 bottom-0 text-[180px] font-serif font-black text-slate-100/60 leading-none select-none pointer-events-none transform translate-y-12 translate-x-4">
+                        EM
+                    </div>
+
+                    <div class="space-y-4 relative z-10">
+                        <span class="text-xs uppercase tracking-widest font-bold text-slate-400 block">Mi Alma Mater & Formación</span>
+                        <h3 class="font-serif text-2xl md:text-3xl font-extrabold text-academic-800">Trayectoria Educativa Rigurosa</h3>
+                    </div>
+
+                    <div class="space-y-6 relative z-10 pt-8">
+                        <!-- Institución 1 -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 flex-shrink-0 font-bold border border-amber-100">
+                                UNMSM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Diplomados San Marcos</h4>
+                                <p class="text-xs text-slate-500">Formación metodológica con rigor académico de nivel nacional.</p>
+                            </div>
+                        </div>
+
+                        <!-- Institución 2 -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0 font-bold border border-blue-100">
+                                ELB
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Formado en el Instituto Británico</h4>
+                                <p class="text-xs text-slate-500">Certificación avanzada para la enseñanza pedagógica de inglés.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Texto descriptivo -->
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-xs uppercase tracking-widest font-bold text-artistic-600 block">Sobre Mí</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-academic-800 font-bold">Soy Eddiel Martin, educador apasionado y músico comprometido con tu éxito</h2>
+                <div class="w-12 h-1 bg-artistic-500 rounded-full"></div>
+                
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed font-light">
+                    Transformar vidas a través de una educación de alta calidad es el motor de mi día a día. Mi enfoque pedagógico busca fusionar el rigor metodológico tradicional con dinámicas y actividades artísticas muy creativas. De esta forma, el aprendizaje se vuelve verdaderamente accesible, emocionante y, sobre todo, altamente efectivo.
+                </p>
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed font-light">
+                    Parto de la convicción de que cada alumno posee talentos y habilidades que lo hacen único. Mi misión fundamental es guiarte para descubrir dicho potencial y motivarte a explotarlo al máximo, ya sea dominando el idioma inglés, sobresaliendo académicamente en tu institución o explorando el hermoso arte de la música.
+                </p>
+
+                <!-- Sellos de Garantía de Clase -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
+                    <div class="p-3 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <span class="block font-bold text-academic-800 text-base">100%</span>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Metodología Práctica</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <span class="block font-bold text-academic-800 text-base">Flexible</span>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Horarios a tu medida</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl text-center border border-slate-100 col-span-2 md:col-span-1">
+                        <span class="block font-bold text-academic-800 text-base">Garantizado</span>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Foco en resultados</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section id="testimonios" class="py-20 md:py-28 px-6 md:px-12 bg-gradient-to-b from-slate-50 to-slate-100">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <!-- Cabecera de Testimonios -->
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs uppercase tracking-widest font-bold text-artistic-600">Lo que Dicen Mis Estudiantes</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-academic-800 font-bold">Testimonios reales de transformación educativa</h2>
+                <div class="w-16 h-1 bg-artistic-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid de 3 Testimonios del PDF -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonio 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm flex flex-col justify-between relative hover:shadow-md transition-shadow">
+                    <!-- Icono comillas dobles decorativo -->
+                    <div class="absolute top-6 right-8 text-6xl font-serif text-slate-100/80 leading-none select-none">“</div>
+                    
+                    <div class="space-y-4 relative z-10">
+                        <!-- Estrellas -->
+                        <div class="flex space-x-1 text-amber-500">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Eddiel me ayudó a mejorar mi inglés de forma increíble. Sus clases son dinámicas, entretenidas y muy efectivas."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs uppercase">
+                            MG
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">María García</h4>
+                            <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Estudiante de Secundaria</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm flex flex-col justify-between relative hover:shadow-md transition-shadow">
+                    <!-- Icono comillas dobles decorativo -->
+                    <div class="absolute top-6 right-8 text-6xl font-serif text-slate-100/80 leading-none select-none">“</div>
+                    
+                    <div class="space-y-4 relative z-10">
+                        <!-- Estrellas -->
+                        <div class="flex space-x-1 text-amber-500">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Excelente profesor. Me ayudó a pasar mis exámenes más difíciles de la universidad con estrategias muy claras y eficaces."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-xs uppercase">
+                            CL
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Carlos López</h4>
+                            <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Estudiante Universitario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200/60 shadow-sm flex flex-col justify-between relative hover:shadow-md transition-shadow">
+                    <!-- Icono comillas dobles decorativo -->
+                    <div class="absolute top-6 right-8 text-6xl font-serif text-slate-100/80 leading-none select-none">“</div>
+                    
+                    <div class="space-y-4 relative z-10">
+                        <!-- Estrellas -->
+                        <div class="flex space-x-1 text-amber-500">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Mi hijo mejoró notablemente sus calificaciones escolares gracias a las clases individuales de reforzamiento. Altamente recomendado."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 font-bold text-xs uppercase">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Ana Martínez</h4>
+                            <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Madre de Familia</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="py-20 md:py-28 px-6 md:px-12 bg-white relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
+            
+            <!-- Columna Datos de Contacto -->
+            <div class="lg:col-span-5 space-y-8">
+                <div class="space-y-4">
+                    <span class="text-xs uppercase tracking-widest font-bold text-artistic-600 block">Ponte en Contacto</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-academic-800 font-bold">¿Listo para transformar tu educación?</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Escríbeme un mensaje directo o agenda de inmediato tu primera clase de cortesía/evaluación inicial. Estaré gustoso de atenderte y diseñar el plan perfecto para ti.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Item de Contacto: Email -->
+                    <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer" onclick="copyContactDetail('eddiel.martin@example.com', 'email-tooltip')">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Correo Electrónico</span>
+                            <span class="text-slate-800 font-semibold text-sm md:text-base">eddiel.martin@example.com</span>
+                            <span id="email-tooltip" class="text-[10px] text-emerald-600 font-bold block opacity-0 transition-opacity">¡Copiado al portapapeles!</span>
+                        </div>
+                    </div>
+
+                    <!-- Item de Contacto: Teléfono -->
+                    <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer" onclick="copyContactDetail('+51 909 122 452', 'phone-tooltip')">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Teléfono / WhatsApp</span>
+                            <span class="text-slate-800 font-semibold text-sm md:text-base">+51 909 122-452</span>
+                            <span id="phone-tooltip" class="text-[10px] text-emerald-600 font-bold block opacity-0 transition-opacity">¡Copiado al portapapeles!</span>
+                        </div>
+                    </div>
+
+                    <!-- Item de Contacto: Ubicación -->
+                    <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors group">
+                        <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
+                            <svg class="w-6 h-6 absolute opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Ubicación</span>
+                            <span class="text-slate-800 font-semibold text-sm md:text-base">Lima, Perú • Servicios Online a Nivel Global</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Formulario de Contacto -->
+            <div class="lg:col-span-7 bg-slate-50 rounded-3xl p-8 border border-slate-200/60 shadow-lg relative">
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="contact-name" class="text-xs font-bold uppercase tracking-wider text-slate-500">Nombre Completo</label>
+                            <input type="text" id="contact-name" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 focus:border-transparent transition-all" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="contact-email" class="text-xs font-bold uppercase tracking-wider text-slate-500">Correo Electrónico</label>
+                            <input type="email" id="contact-email" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 focus:border-transparent transition-all" placeholder="nombre@correo.com">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="contact-service" class="text-xs font-bold uppercase tracking-wider text-slate-500">Servicio de Interés</label>
+                        <select id="contact-service" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 focus:border-transparent transition-all">
+                            <option value="ingles">Clases de Inglés</option>
+                            <option value="ayuda">Ayuda Académica</option>
+                            <option value="quizzes">Quizzes & Tests</option>
+                            <option value="musica">Clases de Música</option>
+                            <option value="redaccion">Redacción / Ensayos</option>
+                            <option value="reforzamiento">Reforzamiento Escolar</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="contact-message" class="text-xs font-bold uppercase tracking-wider text-slate-500">Mensaje o Consulta</label>
+                        <textarea id="contact-message" rows="4" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 focus:border-transparent transition-all" placeholder="Cuéntame brevemente qué necesitas mejorar..."></textarea>
+                    </div>
+
+                    <button type="submit" id="form-submit-btn" class="w-full py-4 bg-academic-800 hover:bg-academic-900 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2">
+                        <span>Enviar Mensaje</span>
+                        <svg class="w-5 h-5 text-artistic-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </button>
+                </form>
+
+                <!-- Toast de Éxito Embebido -->
+                <div id="contact-success-toast" class="hidden absolute inset-0 bg-white/95 rounded-3xl flex flex-col items-center justify-center p-8 text-center space-y-4 transition-all">
+                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-800">¡Mensaje Recibido!</h3>
+                    <p class="text-slate-500 text-sm max-w-sm">
+                        Gracias por ponerte en contacto, <strong id="success-username">Estudiante</strong>. Me comunicaré contigo en un lapso menor de 24 horas para darte más detalles.
+                    </p>
+                    <button onclick="resetContactForm()" class="px-6 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl text-xs transition-colors">
+                        Enviar otro mensaje
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-academic-900 text-slate-400 py-16 px-6 md:px-12 border-t border-academic-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-academic-800">
+            
+            <!-- Columna Bio de Footer -->
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg">
+                        EM
+                    </div>
+                    <span class="font-serif font-bold text-lg text-white">Eddiel Martin</span>
+                </div>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Educando mentes, inspirando almas. Formación rigurosa enriquecida con expresiones creativas para consolidar un aprendizaje verdaderamente único.
+                </p>
+                <div class="flex space-x-4 pt-2">
+                    <!-- Facebook -->
+                    <a href="#" class="hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.01 3.71.054 1.14.052 1.9.233 2.51.469a4.907 4.907 0 011.75 1.14c.54.54.91 1.15 1.14 1.75.234.61.415 1.37.469 2.51.044.926.054 1.28.054 3.71 0 2.43-.01 2.784-.054 3.71-.052 1.14-.233 1.9-.469 2.51a4.904 4.904 0 01-1.14 1.75c-.54.54-1.15.91-1.75 1.14-.61.234-1.37.415-2.51.469-.926.044-1.28.054-3.71.054-2.43 0-2.784-.01-3.71-.054-1.14-.052-1.9-.233-2.51-.469a4.908 4.908 0 01-1.75-1.14 4.904 4.904 0 01-1.14-1.75c-.234-.61-.415-1.37-.469-2.51C2.01 15.284 2 14.93 2 12.485c0-2.43.01-2.784.054-3.71.052-1.14.233-1.9.469-2.51a4.897 4.897 0 011.14-1.75 4.93 4.93 0 011.75-1.14c.61-.236 1.37-.417 2.511-.47C9.622 2.01 9.976 2 12.315 2zm0 2.545c-2.408 0-2.693.01-3.642.053-.88.041-1.356.186-1.674.31a3.012 3.012 0 00-1.107.72 3.013 3.013 0 00-.72 1.107c-.123.318-.268.794-.31 1.674-.043.949-.053 1.234-.053 3.642 0 2.408.01 2.693.053 3.642.041.88.186 1.356.31 1.674a3.013 3.013 0 00.72 1.107 3.011 3.011 0 001.107.72c.318.123.794.268 1.674.31.949.043 1.234.053 3.642.053 2.408 0 2.693-.01 3.642-.053.88-.041 1.356-.186 1.674-.31a3.012 3.012 0 001.107-.72 3.013 3.013 0 00.72-1.107c.123-.318.268-.794.31-1.674.043-.949.053-1.234.053-3.642 0-2.408-.01-2.693-.053-3.642-.041-.88-.186-1.356-.31-1.674a3.003 3.003 0 00-.72-1.107 3.012 3.012 0 00-1.107-.72c-.318-.123-.794-.268-1.674-.31-.949-.043-1.234-.053-3.642-.053zm0 2.535a5.405 5.405 0 100 10.81 5.405 5.405 0 000-10.81zm0 8.265a2.86 2.86 0 110-5.72 2.86 2.86 0 010 5.72zm4.354-8.083a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- Linkedin -->
+                    <a href="#" class="hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Enlaces de Footer -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider">Enlaces</h4>
+                <nav class="flex flex-col space-y-2 text-xs">
+                    <a href="#inicio" class="hover:text-white transition-colors">Inicio / Presentación</a>
+                    <a href="#servicios" class="hover:text-white transition-colors">Servicios Educativos</a>
+                    <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre Eddiel</a>
+                    <a href="#testimonios" class="hover:text-white transition-colors">Testimonios Reales</a>
+                    <a href="#contacto" class="hover:text-white transition-colors">Ponte en Contacto</a>
+                </nav>
+            </div>
+
+            <!-- Columna Servicios Rápidos -->
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider font-serif">Áreas Principales</h4>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <span class="px-2 py-1 bg-academic-800 rounded text-slate-300">Clases de Inglés</span>
+                    <span class="px-2 py-1 bg-academic-800 rounded text-slate-300">Clases de Música</span>
+                    <span class="px-2 py-1 bg-academic-800 rounded text-slate-300">Ayuda Académica</span>
+                    <span class="px-2 py-1 bg-academic-800 rounded text-slate-300">Reforzamiento</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 space-y-4 md:space-y-0">
+            <span>&copy; 2026 Eddiel Martin. Todos los derechos reservados.</span>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-slate-300 transition-colors">Política de Privacidad</a>
+                <a href="#" class="hover:text-slate-300 transition-colors">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE RESERVA INTERACTIVO ("AGENDAR CLASE") -->
+    <div id="booking-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Fondo oscuro traslúcido con blur -->
+            <div onclick="closeBookingModal()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
+
+            <!-- Truco centrado vertical -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Contenedor del Modal -->
+            <div class="relative inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-100">
+                <div class="bg-white px-6 pt-6 pb-4 sm:p-8 space-y-6">
+                    
+                    <!-- Encabezado Modal -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-artistic-100 flex items-center justify-center text-artistic-600">
+                                <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-serif font-bold text-slate-800 leading-tight" id="modal-title">Agendar Clase</h3>
+                                <p class="text-xs text-slate-500 font-medium">Asigna tu fecha y horario preferido</p>
+                            </div>
+                        </div>
+                        <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+
+                    <!-- Formulario de Reserva -->
+                    <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                        <div class="space-y-1">
+                            <label for="book-name" class="text-xs font-bold uppercase tracking-wider text-slate-500">Tu Nombre Completo</label>
+                            <input type="text" id="book-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all" placeholder="Ej. Ana Pérez">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="book-phone" class="text-xs font-bold uppercase tracking-wider text-slate-500">Número de WhatsApp</label>
+                            <input type="tel" id="book-phone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all" placeholder="Ej. +51 999 999 999">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="book-service" class="text-xs font-bold uppercase tracking-wider text-slate-500">Servicio Seleccionado</label>
+                            <select id="book-service" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all">
+                                <option value="Clases de Inglés">Clases de Inglés</option>
+                                <option value="Ayuda Académica">Ayuda Académica</option>
+                                <option value="Quizzes & Tests">Quizzes & Tests</option>
+                                <option value="Clases de Música">Clases de Música</option>
+                                <option value="Redacción">Redacción</option>
+                                <option value="Reforzamiento">Reforzamiento</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label for="book-date" class="text-xs font-bold uppercase tracking-wider text-slate-500">Fecha Tentativa</label>
+                                <input type="date" id="book-date" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all">
+                            </div>
+                            <div class="space-y-1">
+                                <label for="book-time" class="text-xs font-bold uppercase tracking-wider text-slate-500">Hora Sugerida</label>
+                                <select id="book-time" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all">
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                    <option value="07:00 PM">07:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-academic-800 hover:bg-academic-900 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 pt-4">
+                            <span>Agendar Mi Cita</span>
+                            <svg class="w-5 h-5 text-artistic-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        </button>
+                    </form>
+
+                    <!-- Éxito de la Reserva (Dinámico) -->
+                    <div id="booking-success-container" class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center p-8 text-center space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-slate-800">¡Cita Solicitada con Éxito!</h4>
+                        <p class="text-slate-500 text-sm max-w-sm">
+                            Excelente decisión, <strong id="booking-user">alumno</strong>. He registrado tu propuesta de sesión para el <strong id="booking-date-text">--/--</strong> a las <strong id="booking-time-text">--:--</strong>. Nos pondremos en contacto vía WhatsApp de inmediato para confirmarlo.
+                        </p>
+                        <button onclick="closeBookingModal()" class="px-6 py-3 bg-academic-800 hover:bg-academic-900 text-white font-bold rounded-xl text-xs transition-colors">
+                            Entendido, ¡Excelente!
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center space-x-2 group">
+        <!-- Cartel de Tooltip descriptivo -->
+        <span class="max-w-xs bg-white text-slate-800 text-xs font-bold px-4 py-2.5 rounded-full shadow-lg border border-slate-100 opacity-0 transform translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 md:inline hidden whitespace-nowrap">
+            Contáctanos por este medio
+        </span>
+        <!-- Botón de Enlace -->
+        <a href="https://wa.me/51936932398" target="_blank" rel="noopener noreferrer" class="relative w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 focus:outline-none" aria-label="Contacto por WhatsApp">
+            <!-- Efecto radial pulsante de atención -->
+            <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping"></span>
+            <!-- Logotipo SVG Oficial de WhatsApp -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7 fill-current relative z-10"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </a>
+    </div>
+
+    <!-- SCRIPTS DE INTERACTIVIDAD -->
+    <script>
+        // Manejador del Scroll de Cabecera (Cambio de Estilo al hacer scroll)
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.remove('py-4');
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.add('py-4');
+            }
+        });
+
+        // Toggle del Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        // Modales de Reserva de Clase (Agendar)
+        const bookingModal = document.getElementById('booking-modal');
+        const bookingForm = document.getElementById('booking-form');
+        const bookingSuccessContainer = document.getElementById('booking-success-container');
+
+        function openBookingModal() {
+            bookingModal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            
+            // Auto asignar fecha mínima (hoy)
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('book-date').min = today;
+            document.getElementById('book-date').value = today;
+        }
+
+        function openBookingModalWithService(serviceName) {
+            openBookingModal();
+            const serviceSelect = document.getElementById('book-service');
+            for (let option of serviceSelect.options) {
+                if (option.value === serviceName || option.text === serviceName) {
+                    serviceSelect.value = option.value;
+                    break;
+                }
+            }
+        }
+
+        function closeBookingModal() {
+            bookingModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            
+            // Resetear estados internos después de cerrar el modal
+            setTimeout(() => {
+                bookingSuccessContainer.classList.add('hidden');
+                bookingForm.reset();
+            }, 300);
+        }
+
+        // Manejo de envío de Reserva
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('book-name').value;
+            const date = document.getElementById('book-date').value;
+            const time = document.getElementById('book-time').value;
+
+            // Formatear fecha para lectura humana
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const humanDate = new Date(date + 'T00:00:00').toLocaleDateString('es-ES', dateOptions);
+
+            document.getElementById('booking-user').innerText = name;
+            document.getElementById('booking-date-text').innerText = humanDate;
+            document.getElementById('booking-time-text').innerText = time;
+
+            // Reproducir sonido alegre de éxito usando Web Audio API
+            playSuccessChord();
+
+            // Mostrar contenedor de éxito
+            bookingSuccessContainer.classList.remove('hidden');
+        }
+
+        // Manejo de Formulario de Contacto
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccessToast = document.getElementById('contact-success-toast');
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            document.getElementById('success-username').innerText = name;
+
+            // Reproducir sonido alegre de éxito usando Web Audio API
+            playSuccessChord();
+
+            // Mostrar toast
+            contactSuccessToast.classList.remove('hidden');
+        }
+
+        function resetContactForm() {
+            contactSuccessToast.classList.add('hidden');
+            contactForm.reset();
+        }
+
+        // Copiar detalles de contacto interactivos
+        function copyContactDetail(text, tooltipId) {
+            // Se usa el portapapeles clásico indicado en las instrucciones de compatibilidad
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const tooltip = document.getElementById(tooltipId);
+            tooltip.classList.remove('opacity-0');
+            setTimeout(() => {
+                tooltip.classList.add('opacity-0');
+            }, 2000);
+        }
+
+        // WEB AUDIO SYNTHESIZER EASTER EGGS (Sintetizador Web para interactividad musical)
+        let audioCtx;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        // Tocar acorde mayor de guitarra de bienvenida
+        function playPianoChord() {
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+                // Acorde de Do Mayor 9 (Cmaj9) - Frecuencias: C3 (130.81Hz), E3 (164.81Hz), G3 (196.00Hz), B3 (246.94Hz), D4 (293.66Hz)
+                const freqs = [130.81, 164.81, 196.00, 246.94, 293.66];
+                
+                freqs.forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    
+                    // Mezcla de tipo de onda para emular un sonido híbrido
+                    osc.type = idx % 2 === 0 ? 'triangle' : 'sine';
+                    osc.frequency.setValueAtTime(freq, now);
+                    
+                    // Efecto de arpegio ligero
+                    const strumDelay = idx * 0.08;
+                    
+                    gain.gain.setValueAtTime(0, now);
+                    gain.gain.linearRampToValueAtTime(0.15, now + strumDelay + 0.05);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + strumDelay + 2.5);
+                    
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    
+                    osc.start(now + strumDelay);
+                    osc.stop(now + strumDelay + 3);
+                });
+            } catch (error) {
+                // Failsafe silencioso si el navegador bloquea audio
+            }
+        }
+
+        // Acorde alegre rápido de éxito
+        function playSuccessChord() {
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+                // Acorde brillante de Sol Mayor (G Major)
+                const freqs = [196.00, 246.94, 293.66, 392.00];
+                
+                freqs.forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(freq, now);
+                    
+                    gain.gain.setValueAtTime(0, now);
+                    gain.gain.linearRampToValueAtTime(0.12, now + 0.03);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                    
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    
+                    osc.start(now);
+                    osc.stop(now + 1.5);
+                });
+            } catch (error) {
+                // Failsafe silencioso
+            }
+        }
+    </script>
+</body>
+</html>
