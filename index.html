@@ -404,47 +404,45 @@
     </section>
 
     <!-- SECCIÓN SOBRE MÍ -->
-    <section id="sobre-mi" class="py-20 md:py-28 px-6 md:px-12 bg-white relative overflow-hidden">
+     <section id="sobre-mi" class="py-20 md:py-28 px-6 md:px-12 bg-white relative overflow-hidden">
         <!-- Decorativo de Fondo -->
-        <div class="absolute -right-10 top-1/2 w-72 h-72 bg-slate-100 rounded-full filter blur-2xl opacity-70"></div>
-        
+        <div class="absolute -right-10 top-1/2 w-72 h-72 bg-slate-100 rounded-full filter blur-3xl opacity-50"></div>
+        <div class="absolute -left-10 bottom-0 w-72 h-72 bg-artistic-50 rounded-full filter blur-3xl opacity-40"></div>
+
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            
-            <!-- Columna Gráfica / Trayectoria -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="aspect-square bg-slate-50 rounded-3xl border border-slate-100 p-8 flex flex-col justify-between relative shadow-lg overflow-hidden">
-                    
-                    <!-- Símbolo Monograma Decorativo Gigante -->
-                    <div class="absolute right-0 bottom-0 text-[180px] font-serif font-black text-slate-100/60 leading-none select-none pointer-events-none transform translate-y-12 translate-x-4">
-                        EM
-                    </div>
-
-                    <div class="space-y-4 relative z-10">
-                        <span class="text-xs uppercase tracking-widest font-bold text-slate-400 block">Mi Alma Mater & Formación</span>
-                        <h3 class="font-serif text-2xl md:text-3xl font-extrabold text-academic-800">Trayectoria Educativa Rigurosa</h3>
-                    </div>
-
-                    <div class="space-y-6 relative z-10 pt-8">
-                        <!-- Institución 1 -->
+            <!-- Imagen/Ilustración Column -->
+            <div class="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+                <div class="relative max-w-sm w-full">
+                    <!-- Marco estético con gradiente -->
+                    <div class="absolute inset-0 transform translate-x-4 translate-y-4 bg-gradient-to-tr from-academic-800 to-artistic-500 rounded-3xl opacity-20"></div>
+                    <div class="relative bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-xl p-8 space-y-6">
                         <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 flex-shrink-0 font-bold border border-amber-100">
-                                UNMSM
-                            </div>
+                            <!-- Logotipo de Eddiel integrado con resguardo en JS -->
+                            <img src="https://i.ibb.co/yn6krpcv/logo.png" alt="EM" class="w-14 h-14 rounded-full object-cover shadow-md" onerror="this.onerror=null; this.outerHTML='<div class=\'w-14 h-14 rounded-full bg-academic-800 text-white flex items-center justify-center font-serif text-xl font-bold\'>EM</div>';">
+                            
                             <div>
-                                <h4 class="font-bold text-slate-800 text-sm">Diplomados San Marcos</h4>
-                                <p class="text-xs text-slate-500">Formación metodológica con rigor académico de nivel nacional.</p>
+                                <h4 class="font-serif font-bold text-slate-800 text-lg">Eddiel Martin</h4>
+                                <p class="text-xs uppercase tracking-wider text-artistic-600 font-semibold">Educador & Músico profesional</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 border-t border-slate-100 pt-4 text-sm text-slate-600">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-academic-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                                <span>Diplomado por la UNMSM (San Marcos)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-academic-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 11.37 7.31 16.5 1 17.643" /></svg>
+                                <span>Metodología de enseñanza de idiomas avanzada</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-academic-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" /></svg>
+                                <span>Guitarrista, vocalista y compositor profesional</span>
                             </div>
                         </div>
 
-                        <!-- Institución 2 -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0 font-bold border border-blue-100">
-                                ELB
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm">Formado en el Instituto Británico</h4>
-                                <p class="text-xs text-slate-500">Certificación avanzada para la enseñanza pedagógica de inglés.</p>
-                            </div>
+                        <div class="bg-artistic-50 border border-artistic-100 rounded-xl p-4">
+                            <p class="text-xs text-artistic-700 italic">"Mi filosofía es que no existe una mala forma de aprender, solo profesores que aún no encuentran la llave de tu motivación."</p>
                         </div>
                     </div>
                 </div>
