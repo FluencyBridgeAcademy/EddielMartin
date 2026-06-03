@@ -58,13 +58,13 @@
 <body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-artistic-100 selection:text-artistic-700 overflow-x-hidden">
 
     <!-- CABECERA / NAVEGACIÓN -->
-    <header id="main-header" class="fixed top-0 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md py-3 px-6 rounded-full shadow-sm border border-slate-100">
+   <header id="main-header" class="fixed top-0 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/85 backdrop-blur-md py-3 px-6 rounded-full shadow-sm border border-slate-100">
             <!-- Monograma / Logo -->
             <a href="#inicio" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    EM
-                </div>
+                <!-- Logotipo integrado con fallback en JavaScript por si falla el enlace externo -->
+                <img src="https://i.ibb.co/yn6krpcv/logo.png" alt="EM" class="w-10 h-10 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform\'>EM</div>';">
+                
                 <div class="flex flex-col">
                     <span class="font-serif font-bold text-base tracking-wide text-academic-800 leading-tight">Eddiel Martin</span>
                     <span class="text-[10px] uppercase tracking-wider text-artistic-600 font-semibold leading-none">Consultor & Músico</span>
