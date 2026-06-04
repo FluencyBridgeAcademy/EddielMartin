@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddiel Martin | Consultor Educativo & Músico</title>
 
-      <style>
-        /* Oculta la barra de traducción automática del navegador */
+     <style>
+        /* Oculta la barra de traducción automática del navegador y evita el margen superior */
         html {
             margin-top: 0 !important;
         }
 
-        /* Opcional: Si el banner persiste como un frame, lo ocultamos visualmente */
-        .goog-te-banner-frame {
+        .goog-te-banner-frame, .skiptranslate {
             display: none !important;
         }
+
+        body {
+            top: 0 !important;
+        }
     </style>
+
+    <!-- Script para eliminar cualquier rastro del traductor -->
+    <script>
+        window.addEventListener('load', function() {
+            var banner = document.querySelector('.goog-te-banner-frame');
+            if (banner) {
+                banner.style.display = 'none';
+            }
+            var el = document.querySelector('.skiptranslate');
+            if (el) {
+                el.style.display = 'none';
+            }
+            document.documentElement.style.marginTop = '0px';
+        });
+    </script>
     
     <!-- Favicon para navegadores y buscadores -->
     <link rel="icon" type="image/png" href="favicon.png">
