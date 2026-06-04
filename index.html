@@ -158,31 +158,35 @@
                     </a>
                 </div>
 
-                <!-- Detalle Interactivo Musical -->
+<!-- Estilos para la animación automática (Respiración/Zoom) -->
 <style>
   @keyframes floatZoom {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
   }
   .animate-float-zoom {
-    animation: floatZoom 6s ease-in-out infinite;
+    animation: floatZoom 8s ease-in-out infinite;
   }
 </style>
 
-<!-- Columna de Imagen / Representación Gráfica (Ajustada) -->
-<div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center">
-  <!-- Elemento Flotante: Imagen con efecto de acercamiento automático -->
-  <div class="absolute lg:right-[-50px] top-[20%] hidden lg:block w-72 h-72 rounded-3xl p-1 shadow-2xl overflow-hidden animate-float-zoom"
-       style="background-image: url('eddielfoto.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<!-- Columna Derecha: Foto principal con efecto -->
+<div class="lg:col-span-6 relative flex justify-center lg:justify-end items-center mt-12 lg:mt-0">
+  <div class="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-3xl p-1 shadow-2xl overflow-hidden animate-float-zoom"
+       style="background-image: url('eddielfoto.jpg'); background-size: cover; background-position: center;">
     
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+    <!-- Overlay Oscuro para resaltar el texto -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+    
+    <!-- Contenido dentro de la tarjeta -->
+    <div class="absolute inset-0 flex flex-col justify-end p-8 z-20">
+      <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-bold text-slate-800">Eddiel Martin</h3>
+        <p class="text-sm text-slate-600">Consultor & Músico Profesional</p>
+        <p class="text-xs text-slate-500 mt-2">"Combino la teoría académica de San Marcos con la técnica artística..."</p>
+      </div>
+    </div>
   </div>
-
-  <!-- El resto de tus bloques que deben quedar alineados -->
-  <div class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-3xl p-1 shadow-2xl overflow-hidden group">
-    <!-- Overlay Decorativo Gradiente -->
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+</div>
     
     <!-- Contenido -->
     <div class="absolute inset-0 flex flex-col justify-between p-6 z-20">
