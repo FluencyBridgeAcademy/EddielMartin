@@ -159,29 +159,40 @@
                 </div>
 
                 <!-- Detalle Interactivo Musical -->
-<div class="pt-6 hidden sm:block">
-  <div class="inline-flex items-center space-x-3 bg-white/60 rounded-xl p-3 border border-slate-100/80">
-    <span class="text-xs font-semibold text-slate-500">¿Eres amante de la música? Prueba esto:</span>
-    <button onclick="playPianoChord()" class="px-3 py-1 bg-artistic-100 hover:bg-artistic-200 text-artistic-700 rounded-lg text-xs font-bold transition-all flex items-center space-x-1">
-      <span>Tocar acorde</span>
-    </button>
-  </div>
-</div>
+<style>
+  @keyframes floatZoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  .animate-float-zoom {
+    animation: floatZoom 6s ease-in-out infinite;
+  }
+</style>
 
-<!-- Columna de Imagen / Representación Gráfica - Posicionada a la derecha con efecto Zoom -->
-<div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
-  <div class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-3xl p-1 shadow-2xl overflow-hidden transition-all duration-500 ease-in-out hover:scale-105 cursor-pointer"
+<!-- Columna de Imagen / Representación Gráfica (Ajustada) -->
+<div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center">
+  <!-- Elemento Flotante: Imagen con efecto de acercamiento automático -->
+  <div class="absolute lg:right-[-50px] top-[20%] hidden lg:block w-72 h-72 rounded-3xl p-1 shadow-2xl overflow-hidden animate-float-zoom"
        style="background-image: url('eddielfoto.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+  </div>
+
+  <!-- El resto de tus bloques que deben quedar alineados -->
+  <div class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-3xl p-1 shadow-2xl overflow-hidden group">
     <!-- Overlay Decorativo Gradiente -->
     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
     
-    <!-- Elementos artísticos ilustrativos -->
+    <!-- Contenido -->
     <div class="absolute inset-0 flex flex-col justify-between p-6 z-20">
       <div class="flex justify-between items-start">
         <span class="text-5xl font-serif text-white/10 select-none">EM</span>
         <span class="px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider uppercase">Metodologia Innovadora</span>
       </div>
+    </div>
+  </div>
+</div>
                         
                         <!-- Mini Ficha de Información de Eddiel -->
                         <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/20 transform group-hover:scale-[1.02] transition-transform duration-300">
