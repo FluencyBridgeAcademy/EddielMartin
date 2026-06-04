@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddiel Martin | Consultor Educativo & Músico</title>
+    
+    <!-- Favicon Circular por Código (Recorta tu imagen cuadrada a un círculo perfecto automáticamente) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='50'/%3E%3C/clipPath%3E%3C/defs%3E%3Cimage width='100' height='100' href='eddielmartin.jpeg' clip-path='url(%23c)'/%3E%3C/svg%3E">
+    <link rel="alternate icon" type="image/png" href="eddielmartin.jpeg">
+    <link rel="shortcut icon" type="image/x-icon" href="eddielmartin.jpeg">
+    <!-- Icono para dispositivos Apple -->
+    <link rel="apple-touch-icon" href="eddielmartin.jpeg">
+    
     <!-- Tailwind CSS para diseño rápido y responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Playfair Display para títulos elegantes y Plus Jakarta Sans para lectura cómoda -->
@@ -58,13 +66,13 @@
 <body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-artistic-100 selection:text-artistic-700 overflow-x-hidden">
 
     <!-- CABECERA / NAVEGACIÓN -->
-    <header id="main-header" class="fixed top-0 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md py-3 px-6 rounded-full shadow-sm border border-slate-100">
+   <header id="main-header" class="fixed top-0 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/85 backdrop-blur-md py-3 px-6 rounded-full shadow-sm border border-slate-100">
             <!-- Monograma / Logo -->
             <a href="#inicio" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    EM
-                </div>
+                <!-- Logotipo integrado con fallback en JavaScript por si falla el enlace externo -->
+                <img src="eddielmartin.jpeg" alt="EM" class="w-10 h-10 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform\'>EM</div>';">
+                
                 <div class="flex flex-col">
                     <span class="font-serif font-bold text-base tracking-wide text-academic-800 leading-tight">Eddiel Martin</span>
                     <span class="text-[10px] uppercase tracking-wider text-artistic-600 font-semibold leading-none">Consultor & Músico</span>
@@ -114,21 +122,20 @@
     </header>
 
     <!-- SECCIÓN HERO (INICIO) -->
-    <section id="inicio" class="relative pt-32 pb-20 md:py-36 px-6 md:px-12 bg-gradient-to-b from-slate-100 via-white to-slate-50 overflow-hidden min-h-screen flex items-center">
-        <!-- Elementos decorativos de fondo -->
-        <div class="absolute top-1/4 -left-16 w-64 h-64 bg-academic-100 rounded-full filter blur-3xl opacity-60"></div>
-        <div class="absolute bottom-10 right-0 w-80 h-80 bg-artistic-100 rounded-full filter blur-3xl opacity-40"></div>
+    <section id="inicio" class="relative pt-32 pb-20 md:py-36 px-6 md:px-12 overflow-hidden min-h-screen flex items-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1920&q=80');">
+        <!-- Filtro suave para difuminar levemente la imagen de fondo -->
+        <div class="absolute inset-0 backdrop-blur-[2px]"></div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
             
-            <!-- Texto Hero -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center space-x-2 bg-white px-4 py-1.5 rounded-full border border-slate-200 shadow-sm">
+            <!-- Texto Hero dentro de una hermosa tarjeta de cristal translúcido -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left glass-card p-6 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+                <div class="inline-flex items-center space-x-2 bg-white/85 px-4 py-1.5 rounded-full border border-white/40 shadow-sm mx-auto lg:mx-0">
                     <span class="flex h-2 w-2 relative">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-artistic-500 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-artistic-500"></span>
                     </span>
-                    <span class="text-xs uppercase tracking-wider font-bold text-academic-800">Lima, Perú • Disponible Presencial & Online</span>
+                    <span class="text-xs uppercase tracking-wider font-bold text-academic-800">Lima, Perú • Disponible Presencial & Online a nivel Global</span>
                 </div>
                 
                 <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-academic-900 font-extrabold leading-tight">
@@ -150,12 +157,11 @@
                         <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </a>
                 </div>
-
-                <!-- Detalle Interactivo Musical -->
-                <div class="pt-6 hidden sm:block">
-                    <div class="inline-flex items-center space-x-3 bg-white/60 rounded-xl p-3 border border-slate-100/80">
-                        <span class="text-xs font-semibold text-slate-500">¿Eres amante de la música? Prueba esto:</span>
-                        <button onclick="playPianoChord()" class="px-3 py-1 bg-artistic-100 hover:bg-artistic-200 text-artistic-700 rounded-lg text-xs font-bold transition-all flex items-center space-x-1">
+ <!-- Detalle Interactivo Musical -->
+                <div class="pt-4 hidden sm:block">
+                    <div class="inline-flex items-center space-x-3 bg-white/70 rounded-xl p-3 border border-white/50 shadow-sm">
+                        <span class="text-xs font-semibold text-slate-600">¿Eres amante de la música? Prueba esto:</span>
+                        <button onclick="playPianoChord()" class="px-3 py-1.5 bg-artistic-500 hover:bg-artistic-600 text-white rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 shadow-md">
                             <svg class="w-3.5 h-3.5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" /></svg>
                             <span>Tocar acorde</span>
                         </button>
@@ -165,15 +171,20 @@
 
             <!-- Columna de Imagen / Representación Gráfica -->
             <div class="lg:col-span-5 relative flex justify-center items-center">
-                <div class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-3xl bg-gradient-to-tr from-academic-800 to-academic-900 p-1 shadow-2xl overflow-hidden group">
-                    <!-- Overlay Decorativo Gradiente -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+                <div class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-3xl bg-slate-900/40 p-1 shadow-2xl overflow-hidden group border border-white/10 backdrop-blur-md">
                     
-                    <!-- Elementos artísticos ilustrativos -->
+                    <!-- Tu imagen real de fondo en la tarjeta -->
+                    <!-- NOTA: Reemplaza esta URL por el enlace de tu foto en ImgBB -->
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" alt="Eddiel Martin" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0">
+
+                    <!-- Overlay Decorativo Gradiente (Asegura legibilidad y fusiona la foto con el fondo) -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/35 to-transparent z-10"></div>
+                    
+                    <!-- Elementos artísticos ilustrativos flotando sobre tu foto -->
                     <div class="absolute inset-0 flex flex-col justify-between p-6 z-20">
                         <div class="flex justify-between items-start">
-                            <span class="text-5xl font-serif text-white/10 select-none">EM</span>
-                            <span class="px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider uppercase">Metodología Innovadora</span>
+                            <span class="text-5xl font-serif text-white/30 select-none">EM</span>
+                            <span class="px-3 py-1 bg-white/25 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider uppercase border border-white/10">Metodología Innovadora</span>
                         </div>
                         
                         <!-- Mini Ficha de Información de Eddiel -->
@@ -404,47 +415,45 @@
     </section>
 
     <!-- SECCIÓN SOBRE MÍ -->
-    <section id="sobre-mi" class="py-20 md:py-28 px-6 md:px-12 bg-white relative overflow-hidden">
+     <section id="sobre-mi" class="py-20 md:py-28 px-6 md:px-12 bg-white relative overflow-hidden">
         <!-- Decorativo de Fondo -->
-        <div class="absolute -right-10 top-1/2 w-72 h-72 bg-slate-100 rounded-full filter blur-2xl opacity-70"></div>
-        
+        <div class="absolute -right-10 top-1/2 w-72 h-72 bg-slate-100 rounded-full filter blur-3xl opacity-50"></div>
+        <div class="absolute -left-10 bottom-0 w-72 h-72 bg-artistic-50 rounded-full filter blur-3xl opacity-40"></div>
+
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            
-            <!-- Columna Gráfica / Trayectoria -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="aspect-square bg-slate-50 rounded-3xl border border-slate-100 p-8 flex flex-col justify-between relative shadow-lg overflow-hidden">
-                    
-                    <!-- Símbolo Monograma Decorativo Gigante -->
-                    <div class="absolute right-0 bottom-0 text-[180px] font-serif font-black text-slate-100/60 leading-none select-none pointer-events-none transform translate-y-12 translate-x-4">
-                        EM
-                    </div>
-
-                    <div class="space-y-4 relative z-10">
-                        <span class="text-xs uppercase tracking-widest font-bold text-slate-400 block">Mi Alma Mater & Formación</span>
-                        <h3 class="font-serif text-2xl md:text-3xl font-extrabold text-academic-800">Trayectoria Educativa Rigurosa</h3>
-                    </div>
-
-                    <div class="space-y-6 relative z-10 pt-8">
-                        <!-- Institución 1 -->
+            <!-- Imagen/Ilustración Column -->
+            <div class="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+                <div class="relative max-w-sm w-full">
+                    <!-- Marco estético con gradiente -->
+                    <div class="absolute inset-0 transform translate-x-4 translate-y-4 bg-gradient-to-tr from-academic-800 to-artistic-500 rounded-3xl opacity-20"></div>
+                    <div class="relative bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-xl p-8 space-y-6">
                         <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 flex-shrink-0 font-bold border border-amber-100">
-                                UNMSM
-                            </div>
+                            <!-- Logotipo de Eddiel integrado con resguardo en JS -->
+                            <img src="eddielmartin.jpeg" alt="EM" class="w-14 h-14 rounded-full object-cover shadow-md" onerror="this.onerror=null; this.outerHTML='<div class=\'w-14 h-14 rounded-full bg-academic-800 text-white flex items-center justify-center font-serif text-xl font-bold\'>EM</div>';">
+                            
                             <div>
-                                <h4 class="font-bold text-slate-800 text-sm">Diplomados San Marcos</h4>
-                                <p class="text-xs text-slate-500">Formación metodológica con rigor académico de nivel nacional.</p>
+                                <h4 class="font-serif font-bold text-slate-800 text-lg">Eddiel Martin</h4>
+                                <p class="text-xs uppercase tracking-wider text-artistic-600 font-semibold">Educador & Músico profesional</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 border-t border-slate-100 pt-4 text-sm text-slate-600">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-academic-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                                <span>Diplomado por la UNMSM (San Marcos)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-academic-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 11.37 7.31 16.5 1 17.643" /></svg>
+                                <span>Metodología de enseñanza de idiomas avanzada</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-academic-800 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" /></svg>
+                                <span>Guitarrista, vocalista y compositor profesional</span>
                             </div>
                         </div>
 
-                        <!-- Institución 2 -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0 font-bold border border-blue-100">
-                                ELB
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm">Formado en el Instituto Británico</h4>
-                                <p class="text-xs text-slate-500">Certificación avanzada para la enseñanza pedagógica de inglés.</p>
-                            </div>
+                        <div class="bg-artistic-50 border border-artistic-100 rounded-xl p-4">
+                            <p class="text-xs text-artistic-700 italic">"Mi filosofía es que no existe una mala forma de aprender, solo profesores que aún no encuentran la llave de tu motivación."</p>
                         </div>
                     </div>
                 </div>
@@ -598,13 +607,13 @@
                         </div>
                         <div>
                             <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block">Correo Electrónico</span>
-                            <span class="text-slate-800 font-semibold text-sm md:text-base">tallereducativo9.com</span>
+                            <span class="text-slate-800 font-semibold text-sm md:text-base">tallereducativo9@gmail.com</span>
                             <span id="email-tooltip" class="text-[10px] text-emerald-600 font-bold block opacity-0 transition-opacity">¡Copiado al portapapeles!</span>
                         </div>
                     </div>
 
                     <!-- Item de Contacto: Teléfono -->
-                    <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer" onclick="copyContactDetail('+51 909 122 452', 'phone-tooltip')">
+                    <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer" onclick="copyContactDetail('+51 936 392-398', 'phone-tooltip')">
                         <div class="w-12 h-12 rounded-xl bg-academic-100 flex items-center justify-center text-academic-800 flex-shrink-0 group-hover:scale-110 transition-transform">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                         </div>
@@ -689,11 +698,11 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-academic-800">
             
             <!-- Columna Bio de Footer -->
-            <div class="md:col-span-5 space-y-4">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-academic-800 to-artistic-500 flex items-center justify-center text-white font-serif font-bold text-lg">
-                        EM
-                    </div>
+          <div class="md:col-span-5 space-y-4">
+    <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
+            <img src="eddielmartin.jpeg" alt="Logo EM" class="w-full h-full object-cover">
+        </div>
                     <span class="font-serif font-bold text-lg text-white">Eddiel Martin</span>
                 </div>
                 <p class="text-xs leading-relaxed text-slate-400">
