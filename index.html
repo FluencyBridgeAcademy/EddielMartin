@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddiel Martin | Consultor Educativo & Músico</title>
     
-<!-- Favicon para navegadores y buscadores -->
-<link rel="icon" type="image/png" href="favicon.png">
-<!-- Favicon para dispositivos Apple -->
-<link rel="apple-touch-icon" href="favicon.png">
+    <!-- Favicon para navegadores y buscadores -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Favicon para dispositivos Apple -->
+    <link rel="apple-touch-icon" href="favicon.png">
     
     <!-- Tailwind CSS para diseño rápido y responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Playfair Display para títulos elegantes y Plus Jakarta Sans para lectura cómoda -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -58,6 +58,14 @@
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
             100% { transform: translateY(-15px) rotate(5deg); }
+        }
+        /* Ocultar barra de scroll en carrusel de videos */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -404,6 +412,93 @@
                             <span>Reservar Clase</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN VIDEOS PUBLICITARIOS / SHORTS -->
+    <section id="videos" class="py-20 md:py-28 px-6 md:px-12 bg-academic-900 text-white relative overflow-hidden">
+        <!-- Decoración de fondo suave -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-20 pointer-events-none">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-artistic-500 rounded-full filter blur-[120px]"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500 rounded-full filter blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 space-y-12">
+            
+            <!-- Cabecera de la Sección -->
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs uppercase tracking-widest font-bold text-artistic-500">Mi Trabajo en Acción</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Descubre mi metodología en un minuto</h2>
+                <div class="w-16 h-1 bg-artistic-500 mx-auto rounded-full"></div>
+                <p class="text-slate-300 text-sm md:text-base font-light">Explora estos videos cortos donde comparto tips de inglés, música y técnicas de estudio. Un pequeño adelanto de lo que viviremos en clase.</p>
+            </div>
+
+            <!-- Contenedor de Videos (Scroll Horizontal en móviles, Grid en Desktop) -->
+            <div class="flex overflow-x-auto pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-6 snap-x snap-mandatory hide-scrollbar">
+                
+                <!-- Video Card 1 (Placeholder) -->
+                <div class="flex-none w-64 md:w-auto snap-center relative aspect-[9/16] bg-academic-800 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer">
+                    <!-- Degradado oscuro para que el texto sea legible -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none"></div>
+                    
+                    <!-- AQUÍ IRÁ TU IFRAME DE YOUTUBE/VIMEO -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-slate-800 group-hover:scale-105 transition-transform duration-500">
+                        <!-- Icono Play (Solo de muestra) -->
+                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-artistic-500 group-hover:border-artistic-400 transition-all shadow-lg">
+                            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Textos Superpuestos -->
+                    <div class="absolute bottom-0 left-0 p-5 z-20 w-full">
+                        <span class="px-2.5 py-1 bg-artistic-500 text-white text-[10px] font-bold uppercase tracking-wider rounded mb-2.5 inline-block shadow-sm">Música</span>
+                        <h3 class="text-base font-bold text-white leading-snug drop-shadow-md">3 Acordes para sonar como un profesional en guitarra</h3>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 (Placeholder) -->
+                <div class="flex-none w-64 md:w-auto snap-center relative aspect-[9/16] bg-academic-800 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-slate-800 group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-artistic-500 group-hover:border-artistic-400 transition-all shadow-lg">
+                            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-5 z-20 w-full">
+                        <span class="px-2.5 py-1 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider rounded mb-2.5 inline-block shadow-sm">Inglés</span>
+                        <h3 class="text-base font-bold text-white leading-snug drop-shadow-md">Deja de decir "Very Good": Alternativas avanzadas</h3>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 (Placeholder) -->
+                <div class="flex-none w-64 md:w-auto snap-center relative aspect-[9/16] bg-academic-800 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-slate-800 group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-artistic-500 group-hover:border-artistic-400 transition-all shadow-lg">
+                            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-5 z-20 w-full">
+                        <span class="px-2.5 py-1 bg-indigo-500 text-white text-[10px] font-bold uppercase tracking-wider rounded mb-2.5 inline-block shadow-sm">Académico</span>
+                        <h3 class="text-base font-bold text-white leading-snug drop-shadow-md">Técnica Pomodoro: Cómo estudiar sin aburrirte</h3>
+                    </div>
+                </div>
+                
+                <!-- Video Card 4 (Placeholder - visible en pantallas grandes) -->
+                <div class="flex-none w-64 md:w-auto snap-center relative aspect-[9/16] bg-academic-800 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer lg:block md:hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-slate-800 group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-artistic-500 group-hover:border-artistic-400 transition-all shadow-lg">
+                            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-5 z-20 w-full">
+                        <span class="px-2.5 py-1 bg-rose-500 text-white text-[10px] font-bold uppercase tracking-wider rounded mb-2.5 inline-block shadow-sm">Redacción</span>
+                        <h3 class="text-base font-bold text-white leading-snug drop-shadow-md">Estructura infalible para ensayos universitarios</h3>
                     </div>
                 </div>
 
