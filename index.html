@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddiel Martin | Consultor Educativo & Músico</title>
     
+        <!-- Etiquetas Open Graph para que se vea la imagen en WhatsApp -->
+    <meta property="og:title" content="Eddiel Martin | Consultor Educativo & Músico">
+    <meta property="og:description" content="Bienvenido a mi sitio web oficial. Conoce mis servicios y proyectos.">
+    <meta property="og:image" content="https://tu-dominio.com/favicon.png">
+    <meta property="og:url" content="https://tu-dominio.com">
+    <meta property="og:type" content="website">
+
     <style>
         /* Oculta la barra de traducción automática del navegador y evita el margen superior */
         html {
@@ -17,35 +24,25 @@
 
         body {
             top: 0 !important;
+            position: static !important;
         }
     </style>
 
-    <!-- Script configurado para NO traducir automáticamente al cargar -->
+    <!-- Script de inicialización estricto -->
     <script>
-        window.addEventListener('load', function() {
-            var banner = document.querySelector('.goog-te-banner-frame');
-            if (banner) {
-                banner.style.display = 'none';
-            }
-            var el = document.querySelector('.skiptranslate');
-            if (el) {
-                el.style.display = 'none';
-            }
-            document.documentElement.style.marginTop = '0px';
-        });
-
-        // Aseguramos que Google Translate no se inicie solo si existe una configuración global
+        // Forzamos la configuración de Google para que no traduzca solo
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({
                 pageLanguage: 'es',
-                autoDisplay: false, // Esto evita que se muestre o traduzca solo
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                includedLanguages: 'es,en',
+                autoDisplay: false
             }, 'google_translate_element');
         };
     </script>
     
     <!-- Favicon para navegadores y buscadores -->
     <link rel="icon" type="image/png" href="favicon.png">
+    
     <!-- Favicon para dispositivos Apple -->
     <link rel="apple-touch-icon" href="favicon.png">
     
