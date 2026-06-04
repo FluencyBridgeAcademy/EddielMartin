@@ -67,10 +67,19 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        /* Ocultar elementos nativos de Google Translate para mantener el diseño limpio */
+        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
+        body { top: 0px !important; position: static !important; }
+        #google_translate_element { display: none !important; }
+        #goog-gt-tt { display: none !important; } /* Ocultar tooltip al hacer hover sobre texto traducido */  
     </style>
 </head>
 <body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-artistic-100 selection:text-artistic-700 overflow-x-hidden">
 
+       <!-- Contenedor oculto para la API de Google Translate -->
+    <div id="google_translate_element"></div>
+    
     <!-- CABECERA / NAVEGACIÓN -->
    <header id="main-header" class="fixed top-0 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/85 backdrop-blur-md py-3 px-6 rounded-full shadow-sm border border-slate-100">
