@@ -1111,14 +1111,46 @@
             bookingSuccessContainer.classList.remove('hidden');
         }
 
-        // Manejo de Formulario de Contacto
-        const contactForm = document.getElementById('contact-form');
-        const contactSuccessToast = document.getElementById('contact-success-toast');
+       // Manejo de Formulario de Contacto
+const contactForm = document.getElementById('contact-form');
+const contactSuccessToast = document.getElementById('contact-success-toast');
 
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('contact-name').value;
-            document.getElementById('success-username').innerText = name;
+// Esta es la URL que me diste
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwb4_2exuCm-ESgxfMrsLRjk3SJOJkzp1pZdyeqH8wr0kGjhNr5UftpPVIqSuZBpQjD/exec';
+
+async function handleContactSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const btn = document.getElementById('form-submit-btn');
+    const name = document.getElementById('contact-name').value;
+    
+    // Cambiamos el texto del botón para que el usuario sepa que está trabajando
+    const btnText = btn.querySelector('span');
+    btn.disabled = true;
+    btnText.innerText = "Enviando...";
+
+    try {
+        // FormData recoge automáticamente todos los campos que tengan el atributo 'name'
+        const formData = new FormData(form);
+        
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        });
+
+        // Si llega aquí, es porque se envió correctamente
+        document.getElementById('success-username').innerText = name;
+        contactSuccessToast.classList.remove('hidden');
+        form.reset();
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.");
+    } finally {
+        btn.disabled = false;
+        btnText.innerText = "Enviar Mensaje";
+    }
+}
 
             // Reproducir sonido alegre de éxito usando Web Audio API
             playSuccessChord();
