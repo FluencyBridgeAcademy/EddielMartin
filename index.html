@@ -1111,11 +1111,11 @@
             bookingSuccessContainer.classList.remove('hidden');
         }
 
-       // Manejo de Formulario de Contacto
+    // Manejo de Formulario de Contacto
 const contactForm = document.getElementById('contact-form');
 const contactSuccessToast = document.getElementById('contact-success-toast');
 
-// Esta es la URL que me diste
+// URL de tu Script
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwb4_2exuCm-ESgxfMrsLRjk3SJOJkzp1pZdyeqH8wr0kGjhNr5UftpPVIqSuZBpQjD/exec';
 
 async function handleContactSubmit(event) {
@@ -1130,22 +1130,24 @@ async function handleContactSubmit(event) {
     btnText.innerText = "Enviando...";
 
     try {
-        // FormData recoge automáticamente todos los campos que tengan el atributo 'name'
         const formData = new FormData(form);
         
+        // mode: 'no-cors' es lo que evita el bloqueo del navegador
         await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
+            mode: 'no-cors', 
             body: formData
         });
 
-        // Si llega aquí, es porque se envió correctamente
+        // Al usar no-cors, la respuesta siempre parece "exitosa" aunque el servidor no devuelva datos,
+        // por lo cual procederemos a mostrar el mensaje de éxito directamente.
         document.getElementById('success-username').innerText = name;
         contactSuccessToast.classList.remove('hidden');
         form.reset();
         
     } catch (error) {
         console.error('Error:', error);
-        alert("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.");
+        alert("Hubo un error al conectar con el servidor. Por favor, intenta de nuevo.");
     } finally {
         btn.disabled = false;
         btnText.innerText = "Enviar Mensaje";
