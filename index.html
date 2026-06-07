@@ -916,7 +916,7 @@
                                 <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-serif font-bold text-slate-800 leading-tight" id="modal-title">Agendar Clase</h3>
+                                <h3 class="text-lg font-serif font-bold text-slate-800 leading-tight" id="modal-title">Agendar</h3>
                                 <p class="text-xs text-slate-500 font-medium">Asigna tu fecha y horario preferido</p>
                             </div>
                         </div>
@@ -928,12 +928,12 @@
                     <!-- Formulario de Reserva -->
                     <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
                         <div class="space-y-1">
-                            <label for="book-name" class="text-xs font-bold uppercase tracking-wider text-slate-500">Tu Nombre Completo</label>
+                            <label for="book-name" class="text-xs font-bold uppercase tracking-wider text-slate-500">Tu Nombre y apellido</label>
                             <input type="text" id="book-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all" placeholder="Ej. Ana Pérez">
                         </div>
 
                         <div class="space-y-1">
-                            <label for="book-phone" class="text-xs font-bold uppercase tracking-wider text-slate-500">Número de WhatsApp</label>
+                            <label for="book-phone" class="text-xs font-bold uppercase tracking-wider text-slate-500">Número de WhatsApp(+codigo pais)</label>
                             <input type="tel" id="book-phone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all" placeholder="Ej. +51 999 999 999">
                         </div>
 
@@ -941,9 +941,11 @@
                             <label for="book-service" class="text-xs font-bold uppercase tracking-wider text-slate-500">Servicio Seleccionado</label>
                             <select id="book-service" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-academic-800 transition-all">
                                 <option value="Clases de Inglés">Clases de Inglés</option>
+                                <option value="Reforzamiento">Clases de español</option>
+                                <option value="Clases de Inglés">guia amigo local en Lima-Perú</option>
                                 <option value="Ayuda Académica">Ayuda Académica</option>
-                                <option value="Quizzes & Tests">Quizzes & Tests</option>
-                                <option value="Clases de Música">Clases de Música</option>
+                                <option value="Quizzes & Tests">Quizzes & Tests de inglés</option>
+                                <option value="Clases de Música">Clases de guitarra</option>
                                 <option value="Redacción">Redacción</option>
                                 <option value="Reforzamiento">Reforzamiento</option>
                             </select>
