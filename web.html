@@ -1,1361 +1,735 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lima Es Única - Guía Turística Oficial e Interactiva</title>
+    <title>Eddiel Martin | Fishing Tours & Spanish Lessons in Lima, Peru</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Playfair Display -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Premium Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
                     colors: {
-                        limaGold: '#D4AF37',
-                        limaCyan: '#0A8491',
-                        limaNavy: '#0F172A',
-                        limaSand: '#FDFBF7',
-                        limaSunset: '#F97316'
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        sand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
                     }
                 }
             }
         }
     </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        .backdrop-blur-nav {
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .backdrop-blur-md {
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.85));
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #0A8491;
-            border-radius: 3px;
-        }
     </style>
 </head>
-<body class="bg-limaSand text-slate-800 font-sans antialiased overflow-x-hidden">
+<body class="bg-slate-50 text-slate-800 selection:bg-ocean-600 selection:text-white overflow-x-hidden">
 
-    <!-- NAV BAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur-nav border-b border-white/10 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <span class="text-3xl">🇵🇪</span>
-                    <div>
-                        <span class="font-serif text-2xl font-bold text-white tracking-wide block leading-none">LIMA</span>
-                        <span class="text-xs text-limaGold font-semibold uppercase tracking-widest">Es Única</span>
-                    </div>
-                </div>
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-ocean-900 text-ocean-100 text-xs py-2 px-4 text-center font-medium tracking-wide">
+        <i class="fa-solid fa-anchor text-sand-500 mr-2"></i> Experience Lima like a local - Book your artisanal fishing tour & conversational Spanish classes today!
+    </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" class="text-white hover:text-limaGold font-medium transition-colors duration-200">Inicio</a>
-                    <a href="#destinos" class="text-white/90 hover:text-limaGold font-medium transition-colors duration-200">Destinos</a>
-                    <a href="#gastronomia" class="text-white/90 hover:text-limaGold font-medium transition-colors duration-200">Gastronomía</a>
-                    <a href="#planificador" class="text-white/90 hover:text-limaGold font-medium transition-colors duration-200">Planificador</a>
-                    <a href="#galeria" class="text-white/90 hover:text-limaGold font-medium transition-colors duration-200">Galería</a>
-                    <a href="#consejos" class="text-white/90 hover:text-limaGold font-medium transition-colors duration-200">Consejos</a>
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 w-full transition-all duration-300 backdrop-blur-md bg-white/90 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="bg-ocean-800 text-white p-2.5 rounded-xl shadow-lg shadow-ocean-800/20">
+                    <i class="fa-solid fa-compass text-xl text-sand-100"></i>
                 </div>
+                <div>
+                    <span class="block font-extrabold text-lg tracking-tight text-ocean-900 leading-none">EDISON VICENTE</span>
+                    <span class="text-xs font-semibold tracking-wider text-sand-600 uppercase">Lima Local Guide & Tutor</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-ocean-700 transition">About Edison</a>
+                <a href="#tours" class="text-sm font-semibold text-slate-600 hover:text-ocean-700 transition">Fishing Tours</a>
+                <a href="#spanish" class="text-sm font-semibold text-slate-600 hover:text-ocean-700 transition">Spanish Lessons</a>
+                <a href="#credentials" class="text-sm font-semibold text-slate-600 hover:text-ocean-700 transition">Credentials</a>
+            </nav>
 
-                <!-- Call to action desktop -->
-                <div class="hidden md:flex items-center">
-                    <button onclick="openModal('welcomeModal')" class="bg-limaCyan hover:bg-cyan-700 text-white font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-cyan-500/25 flex items-center gap-2 transform hover:-translate-y-0.5">
-                        <i class="fa-solid fa-plane"></i> Planear Ahora
-                    </button>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white hover:text-limaGold focus:outline-none p-2 rounded-lg" aria-label="Abrir menú">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/51936932398" target="_blank" class="bg-emerald-600 text-white font-bold text-sm px-5 py-2.5 rounded-full hover:bg-emerald-700 transition flex items-center shadow-lg shadow-emerald-600/10">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Book Instantly
+                </a>
             </div>
+
+            <!-- Mobile menu button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-600 hover:text-ocean-900 p-2">
+                <i id="menuIcon" class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-white/10 px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
-            <a href="#inicio" class="block text-white hover:bg-slate-800 px-3 py-2.5 rounded-lg font-medium transition-colors" onclick="toggleMenu()">Inicio</a>
-            <a href="#destinos" class="block text-white hover:bg-slate-800 px-3 py-2.5 rounded-lg font-medium transition-colors" onclick="toggleMenu()">Destinos</a>
-            <a href="#gastronomia" class="block text-white hover:bg-slate-800 px-3 py-2.5 rounded-lg font-medium transition-colors" onclick="toggleMenu()">Gastronomía</a>
-            <a href="#planificador" class="block text-white hover:bg-slate-800 px-3 py-2.5 rounded-lg font-medium transition-colors" onclick="toggleMenu()">Planificador</a>
-            <a href="#galeria" class="block text-white hover:bg-slate-800 px-3 py-2.5 rounded-lg font-medium transition-colors" onclick="toggleMenu()">Galería</a>
-            <a href="#consejos" class="block text-white hover:bg-slate-800 px-3 py-2.5 rounded-lg font-medium transition-colors" onclick="toggleMenu()">Consejos</a>
-            <button onclick="toggleMenu(); openModal('welcomeModal')" class="w-full bg-limaCyan text-white font-semibold py-3 rounded-lg mt-2 flex items-center justify-center gap-2">
-                <i class="fa-solid fa-plane"></i> Planear Ahora
-            </button>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden bg-slate-950">
-        <!-- Background Image with zoom animation -->
-        <div class="absolute inset-0 z-0 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1577587230708-187fdbf4a9c5?auto=format&fit=crop&w=1920&q=80" 
-                 alt="Plaza Mayor de Lima de Noche" 
-                 class="w-full h-full object-cover opacity-80 scale-105 animate-[pulse_8s_infinite_alternate]"
-                 onerror="this.src='https://placehold.co/1920x1080/0f172a/d4af37?text=Lima+De+Noche'">
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
-
-        <!-- Floating decorative details -->
-        <div class="absolute top-1/4 left-10 w-24 h-24 bg-limaGold/10 rounded-full blur-2xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-limaCyan/15 rounded-full blur-3xl pointer-events-none"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center mt-12 sm:px-6 lg:px-8">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-limaGold text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 animate-fade-in">
-                <i class="fa-solid fa-star text-limaGold"></i> Capital Gastronómica de América
-            </span>
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-md">
-                Descubre la Magia de <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-limaGold via-amber-200 to-limaCyan">Lima, Ciudad de los Reyes</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                Donde la majestuosidad colonial se fusiona con la modernidad del Pacífico y la gastronomía más aclamada del planeta. ¿Listo para la aventura?
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#destinos" class="w-full sm:w-auto px-8 py-4 bg-limaGold hover:bg-yellow-600 text-slate-950 font-bold rounded-full transition-all duration-300 shadow-lg shadow-limaGold/20 hover:shadow-limaGold/40 flex items-center justify-center gap-2 group transform hover:-translate-y-1">
-                    Explorar Destinos 
-                    <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-                </a>
-                <a href="#planificador" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full border border-white/20 backdrop-blur-sm transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                    <i class="fa-solid fa-calendar-days text-limaCyan"></i> Diseñar Itinerario
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3 transition-all duration-300 shadow-xl">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-50">About Edison</a>
+            <a href="#tours" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-50">Chorrillos Fishing Tours</a>
+            <a href="#spanish" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-50">Spanish Tutoring</a>
+            <a href="#credentials" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-50">My Certificates</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+                <a href="https://wa.me/51936932398" target="_blank" class="w-full text-center bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition flex items-center justify-center">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Chat with Edison
                 </a>
             </div>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 text-center animate-bounce hidden sm:block">
-            <a href="#resumen" class="text-white/60 hover:text-white flex flex-col items-center gap-2">
-                <span class="text-xs tracking-widest uppercase">Desplazar</span>
-                <i class="fa-solid fa-chevron-down text-lg"></i>
-            </a>
         </div>
     </header>
 
-    <!-- QUICK SUMMARY & STATS -->
-    <section id="resumen" class="py-16 bg-white border-b border-slate-100 relative">
+    <!-- HERO SECTION -->
+    <section class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1590418606746-018840f9cd0f?auto=format&fit=crop&w=1920&q=80" alt="Lima Coastline Chorrillos" class="w-full h-full object-cover object-center opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-900/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <!-- Tag -->
+                <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-sand-500/90 text-slate-950 uppercase tracking-widest mb-6">
+                    <i class="fa-solid fa-map-pin mr-1.5"></i> Chorrillos, Lima, Perú
+                </span>
+                
+                <!-- Main Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Experience Lima’s Sea & <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-300">Master Spanish</span> with a Certified Local Guide
+                </h1>
+                
+                <!-- Supporting Paragraph -->
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed font-normal">
+                    Hi! I'm Edison Vicente. Join me for an authentic artisanal fishing tour in historic Chorrillos, or take dynamic, customized Spanish lessons backed by international educational pedagogy. Let's make your journey unforgettable.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#tours" class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold bg-ocean-600 hover:bg-ocean-700 text-white transition-all shadow-lg shadow-ocean-600/30 hover:scale-[1.02]">
+                        <i class="fa-solid fa-ship mr-2.5"></i> Book Fishing Tour
+                    </a>
+                    <a href="#spanish" class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold bg-white hover:bg-slate-100 text-slate-900 transition-all shadow-lg hover:scale-[1.02]">
+                        <i class="fa-solid fa-graduation-cap mr-2.5"></i> Learn Spanish
+                    </a>
+                </div>
+
+                <!-- Fast Info Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-slate-700/50">
+                    <div>
+                        <span class="block text-2xl font-bold text-white">Native</span>
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Spanish Speaker</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">C1 Advanced</span>
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">English Certified</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">Chorrillos Pier</span>
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Base Location</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">Pedagogical</span>
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Teaching Standards</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIO / ABOUT ME SECTION -->
+    <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-limaCyan font-bold tracking-widest uppercase text-xs block">Bienvenido a Lima</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-                        La única capital de Sudamérica con salida al mar
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Photo Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Decorative back card -->
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-ocean-50 to-sand-50 rounded-3xl -z-10 rotate-2"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-xl border border-slate-100 bg-white p-4">
+                        <!-- Simulated Professional Portrait / Placeholder of Edison -->
+                        <div class="aspect-[4/5] bg-slate-100 rounded-xl relative overflow-hidden group">
+                            <img src="e.jpeg" alt="Eddiel Martin - Teacher & Fishing Guide" class="w-full h-full object-cover">
+                            <!-- Visual Badge -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md text-white p-4 rounded-lg">
+                                <p class="text-xs font-bold text-sand-500 uppercase tracking-widest mb-0.5">Meet Your Host</p>
+                                <p class="font-bold text-base">Edison Vicente Martínez</p>
+                                <p class="text-xs text-slate-300">Languages: ES, EN, PT, IT</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mini guitar highlight badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-amber-500 text-slate-950 p-4 rounded-2xl shadow-xl flex items-center space-x-3 border-2 border-white">
+                        <div class="bg-slate-950 text-amber-400 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase tracking-wider text-slate-900/70">Extra Skill</span>
+                            <span class="font-extrabold text-sm">Acoustic Guitarist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Copy -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-sm font-bold text-ocean-700 uppercase tracking-widest block">Who I Am</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Certified language instructor with a true passion for Peruvian culture and the ocean
                     </h2>
-                    <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
-                        Fundada en 1535, Lima cautiva por su contraste. Es un desierto costero acariciado por la neblina del Pacífico, hogar de milenarias huacas pre-incas, balcones de madera barroca, y una brisa marina que te invita al surf y al romanticismo.
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        My name is Edison Vicente Martínez Ayquipa (35 years old). I am a proud limeño, professional educator, and local host living in Lima. I hold certifications from prestigious academies such as **Asociación Cultural Peruano Británica** and **EF SET (C1 Advanced English)**.
                     </p>
-                    <div class="pt-2">
-                        <div class="p-4 bg-limaSand border-l-4 border-limaGold rounded-r-lg">
-                            <p class="italic text-slate-700 font-serif">
-                                "Lima no se revela de inmediato; hay que caminarla, saborearla y escuchar el susurro de las olas en sus acantilados."
-                            </p>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Over the past decade, I have taught hundreds of students online and in-person (Federico Villarreal School, World Tutoring Mexico). Beyond languages, my life revolves around the coastal heritage of Lima. As an expert local host, I offer specialized artisanal fishing experiences right out of the historical bay of Chorrillos, blending sea heritage with relaxed conversational practice.
+                    </p>
+
+                    <!-- Language Pills -->
+                    <div class="pt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-3">Languages I Speak</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 text-xs font-bold flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span> Spanish (Native)
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 text-xs font-bold flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-sky-500 mr-2"></span> English (Advanced C1)
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-800 text-xs font-bold flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></span> Portuguese (Advanced)
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-800 text-xs font-bold flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-purple-500 mr-2"></span> Italian (Intermediate)
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
-                    <!-- Stat 1 -->
-                    <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200/60 text-center hover:shadow-xl transition-all duration-300 group">
-                        <div class="w-12 h-12 bg-limaCyan/10 text-limaCyan rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-utensils text-xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-extrabold text-slate-900 mb-1">Nº 1</h3>
-                        <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Destino Gastronómico de América</p>
-                    </div>
-                    <!-- Stat 2 -->
-                    <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200/60 text-center hover:shadow-xl transition-all duration-300 group">
-                        <div class="w-12 h-12 bg-amber-500/10 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-landmark text-xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-extrabold text-slate-900 mb-1">+480</h3>
-                        <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Años de historia virreinal</p>
-                    </div>
-                    <!-- Stat 3 -->
-                    <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200/60 text-center hover:shadow-xl transition-all duration-300 group col-span-2 sm:col-span-1">
-                        <div class="w-12 h-12 bg-limaGold/10 text-limaGold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-umbrella-beach text-xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-extrabold text-slate-900 mb-1">15 km</h3>
-                        <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">De hermosa Costa Verde</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- EMBLAMATIC DESTINATIONS (CARDS WITH DETAIL VIEW) -->
-    <section id="destinos" class="py-24 bg-limaSand relative">
+    <!-- EXPERIENCES SHOWCASE (THE MAIN DUAL OFFER) -->
+    <section id="tours" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-limaCyan font-bold tracking-widest uppercase text-sm block mb-3">Rutas Imperdibles</span>
-                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-950">
-                    Nuestros Barrios Más Emblemáticos
-                </h2>
-                <div class="w-24 h-1 bg-limaGold mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Cada rincón de Lima tiene una personalidad vibrante y única. Haz clic en "Ver Detalles" para explorar lo que te espera en cada destino.
-                </p>
+                <span class="text-sm font-bold text-ocean-700 uppercase tracking-widest block mb-2">Tailored Experiences</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Two Unique Ways to Experience Lima</h2>
+                <p class="text-slate-600 mt-4">Whether you want to cast a line into the Pacific Ocean or elevate your Spanish conversation skills, I provide highly personalized, one-on-one sessions.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Destino 1: Centro Histórico -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between border border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <!-- OFFER 1: CHORRILLOS FISHING TOURS -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col justify-between group hover:shadow-2xl transition duration-300">
                     <div>
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Centro Histórico de Lima" 
-                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/800x600/0f172a/d4af37?text=Centro+Historico'">
-                            <span class="absolute top-4 left-4 bg-slate-950/80 text-limaGold text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                                <i class="fa-solid fa-monument"></i> Histórico
+                        <!-- Image Container with tag -->
+                        <div class="h-72 w-full overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80" alt="Artisanal Fishing Chorrillos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-ocean-800/95 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
+                                <i class="fa-solid fa-water mr-1.5"></i> Sea Experience
                             </span>
                         </div>
-                        <div class="p-6">
-                            <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Centro Histórico</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Hermosas catedrales, majestuosos palacios de gobierno y balcones coloniales de madera tallada que narran el glorioso pasado imperial.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openDestinationDetail('centro')" class="w-full py-2.5 px-4 bg-slate-100 hover:bg-limaCyan hover:text-white text-slate-700 font-semibold rounded-xl text-sm transition-colors duration-300 flex items-center justify-center gap-2">
-                            Ver Detalles <i class="fa-solid fa-circle-info"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Destino 2: Miraflores -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between border border-slate-100">
-                    <div>
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1531968455001-5c5277a9b132?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Miraflores y Costa Verde" 
-                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/800x600/0f172a/d4af37?text=Miraflores'">
-                            <span class="absolute top-4 left-4 bg-slate-950/80 text-limaCyan text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                                <i class="fa-solid fa-umbrella-beach"></i> Moderno / Costa
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Miraflores</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Un barrio cosmopolita que mira al mar. Hogar del Parque del Amor, centros comerciales al borde del acantilado y hermosos parques para volar en parapente.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openDestinationDetail('miraflores')" class="w-full py-2.5 px-4 bg-slate-100 hover:bg-limaCyan hover:text-white text-slate-700 font-semibold rounded-xl text-sm transition-colors duration-300 flex items-center justify-center gap-2">
-                            Ver Detalles <i class="fa-solid fa-circle-info"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Destino 3: Barranco -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between border border-slate-100">
-                    <div>
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Barranco Puente de los Suspiros" 
-                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/800x600/0f172a/d4af37?text=Barranco'">
-                            <span class="absolute top-4 left-4 bg-slate-950/80 text-pink-400 text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                                <i class="fa-solid fa-palette"></i> Bohemio / Arte
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Barranco</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                El distrito de los artistas. Lleno de casonas republicanas de colores, impactante arte callejero, galerías, cafés con encanto y el célebre Puente de los Suspiros.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openDestinationDetail('barranco')" class="w-full py-2.5 px-4 bg-slate-100 hover:bg-limaCyan hover:text-white text-slate-700 font-semibold rounded-xl text-sm transition-colors duration-300 flex items-center justify-center gap-2">
-                            Ver Detalles <i class="fa-solid fa-circle-info"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Destino 4: Huaca Pucllana -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between border border-slate-100">
-                    <div>
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Huaca Pucllana" 
-                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/800x600/0f172a/d4af37?text=Huaca+Pucllana'">
-                            <span class="absolute top-4 left-4 bg-slate-950/80 text-orange-400 text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                                <i class="fa-solid fa-vihara"></i> Arqueológico
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Huaca Pucllana</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Una imponente pirámide de adobe construida por la cultura Lima hace más de 1,500 años, que brilla en medio de los rascacielos de Miraflores.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openDestinationDetail('pucllana')" class="w-full py-2.5 px-4 bg-slate-100 hover:bg-limaCyan hover:text-white text-slate-700 font-semibold rounded-xl text-sm transition-colors duration-300 flex items-center justify-center gap-2">
-                            Ver Detalles <i class="fa-solid fa-circle-info"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE GASTRONOMY SECTION -->
-    <section id="gastronomia" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(212,175,55,0.08),transparent_50%)] pointer-events-none"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(10,132,145,0.08),transparent_50%)] pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-limaGold font-bold tracking-widest uppercase text-sm block mb-3">La Meca Culinaria</span>
-                <h2 class="font-serif text-4xl sm:text-5xl font-bold">
-                    El Sabor Que Conquistó al Mundo
-                </h2>
-                <div class="w-24 h-1 bg-limaCyan mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-300 mt-4 text-base sm:text-lg">
-                    Lima es la capital gastronómica indiscutible de América del Sur. Selecciona uno de nuestros platos bandera interactivos a continuación para ver su historia y dónde probarlo.
-                </p>
-            </div>
-
-            <!-- Interactive Plate Selector -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-                <!-- Selectors column -->
-                <div class="lg:col-span-5 flex flex-col justify-center space-y-4">
-                    <p class="text-xs font-bold uppercase tracking-widest text-limaGold mb-2">Selecciona un plato insignia:</p>
-                    
-                    <!-- Food Item Button 1 (Active) -->
-                    <button id="foodBtn-ceviche" onclick="selectFood('ceviche')" class="food-selector-btn text-left p-5 rounded-2xl border-2 border-limaCyan bg-slate-800/80 flex items-center gap-4 transition-all duration-300 transform hover:scale-[1.02]">
-                        <span class="text-3xl p-3 bg-cyan-950/50 rounded-xl text-cyan-400">🍋</span>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-lg text-white">El Ceviche Limeño</h4>
-                            <p class="text-xs text-slate-400">Pescado fresco marinado en jugo de limón, ají y cebolla roja.</p>
-                        </div>
-                    </button>
-
-                    <!-- Food Item Button 2 -->
-                    <button id="foodBtn-lomo" onclick="selectFood('lomo')" class="food-selector-btn text-left p-5 rounded-2xl border-2 border-transparent hover:border-white/10 bg-slate-800/40 flex items-center gap-4 transition-all duration-300 transform hover:scale-[1.02]">
-                        <span class="text-3xl p-3 bg-amber-950/50 rounded-xl text-amber-500">🔥</span>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-lg text-white/90">Lomo Saltado</h4>
-                            <p class="text-xs text-slate-400">Carne de res al wok con cebolla, tomate, ají amarillo y papas fritas.</p>
-                        </div>
-                    </button>
-
-                    <!-- Food Item Button 3 -->
-                    <button id="foodBtn-causa" onclick="selectFood('causa')" class="food-selector-btn text-left p-5 rounded-2xl border-2 border-transparent hover:border-white/10 bg-slate-800/40 flex items-center gap-4 transition-all duration-300 transform hover:scale-[1.02]">
-                        <span class="text-3xl p-3 bg-yellow-950/50 rounded-xl text-yellow-500">🥔</span>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-lg text-white/90">Causa Rellena</h4>
-                            <p class="text-xs text-slate-400">Fina masa de papa amarilla sazonada con ají y rellena de pollo o atún.</p>
-                        </div>
-                    </button>
-
-                    <!-- Food Item Button 4 -->
-                    <button id="foodBtn-pisco" onclick="selectFood('pisco')" class="food-selector-btn text-left p-5 rounded-2xl border-2 border-transparent hover:border-white/10 bg-slate-800/40 flex items-center gap-4 transition-all duration-300 transform hover:scale-[1.02]">
-                        <span class="text-3xl p-3 bg-emerald-950/50 rounded-xl text-emerald-500">🍸</span>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-lg text-white/90">Pisco Sour</h4>
-                            <p class="text-xs text-slate-400">El cóctel nacional peruano. Refrescante combinación agridulce.</p>
-                        </div>
-                    </button>
-                </div>
-
-                <!-- Display column (Dynamic content based on selection) -->
-                <div class="lg:col-span-7 bg-slate-800/60 border border-slate-700/60 rounded-3xl p-8 flex flex-col justify-between" id="foodDisplayCard">
-                    <!-- Dynamic details will load here via Javascript -->
-                    <div class="space-y-6" id="foodDynamicContent">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                            <div>
-                                <h3 class="font-serif text-3xl font-bold text-limaGold" id="foodName">El Ceviche Limeño</h3>
-                                <p class="text-xs tracking-wider uppercase text-limaCyan font-bold mt-1">Plato Patrimonio Cultural de la Nación</p>
-                            </div>
-                            <span class="bg-limaCyan text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md shadow-cyan-500/10">Sabor Marino</span>
-                        </div>
-
-                        <!-- Image Placeholder / Realistic illustration fallback -->
-                        <div class="relative h-64 sm:h-80 w-full overflow-hidden rounded-2xl shadow-inner bg-slate-900 border border-slate-700">
-                            <img id="foodImage" src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Ceviche" 
-                                 class="w-full h-full object-cover"
-                                 onerror="this.src='https://placehold.co/800x600/0f172a/0a8491?text=Ceviche'">
-                            <div class="absolute bottom-4 right-4 bg-slate-950/70 text-white text-xs px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                                <i class="fa-regular fa-clock"></i> Prep: ~15 mins
-                            </div>
-                        </div>
-
-                        <div class="space-y-4">
-                            <h4 class="font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-scroll text-limaGold"></i> Historia e Ingredientes:</h4>
-                            <p id="foodDescription" class="text-sm text-slate-300 leading-relaxed">
-                                Originado por las culturas pre-incas de la costa central que cocían el pescado fresco con jugos de frutas ácidas locales, hoy se elabora con limón peruano (altamente ácido), ají limo aromático, cebolla morada crujiente, camote dulce cocido y choclo tierno desgranado. Es una explosión instantánea de frescura.
+                        
+                        <!-- Content -->
+                        <div class="p-8">
+                            <h3 class="text-2xl font-extrabold text-slate-950 mb-3 group-hover:text-ocean-700 transition">Traditional Fishing Tour in Chorrillos</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Embark on an authentic coastal journey starting from the historic **Muelle de Pescadores** (Fishermen’s Pier) in Chorrillos. We will head out on a classic colorful Peruvian wooden boat, learn hand-line fishing techniques, catch local species like *Chita* or *Caballita*, and admire the panoramic cliffs of Lima.
                             </p>
                             
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-700/50">
-                                    <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold mb-1"><i class="fa-solid fa-star text-limaGold"></i> Maridaje Perfecto</span>
-                                    <span id="foodPairing" class="text-sm text-white font-medium">Chicha Morada helada o una cerveza rubia nacional bien fría.</span>
+                            <!-- Key Highlights -->
+                            <div class="space-y-3.5 mb-8">
+                                <div class="flex items-start">
+                                    <div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-sm text-slate-900">Locally Crafted Wooden Boat Ride</p>
+                                        <p class="text-xs text-slate-500">Departing directly from Chorrillos Pier alongside traditional fishermen.</p>
+                                    </div>
                                 </div>
-                                <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-700/50">
-                                    <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold mb-1"><i class="fa-solid fa-location-dot text-limaCyan"></i> ¿Dónde probarlo?</span>
-                                    <span id="foodLocation" class="text-sm text-white font-medium">Cevicherías de Miraflores, Surquillo y el Callao.</span>
+                                <div class="flex items-start">
+                                    <div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-sm text-slate-900">Handline Fishing Instruction</p>
+                                        <p class="text-xs text-slate-500">Learn the traditional, minimalist fishing method used in Peru for centuries.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-sm text-slate-900">Cultural & Historical Commentary</p>
+                                        <p class="text-xs text-slate-500">Discover the history of Chorrillos, its birds, marine life, and gastronomy tips.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Footer Action -->
+                    <div class="p-8 pt-0 border-t border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="block text-xs text-slate-500 font-bold uppercase tracking-widest">Starting from</span>
+                            <span class="text-2xl font-black text-ocean-900">$45 <span class="text-sm font-normal text-slate-500">/ person</span></span>
+                        </div>
+                        <a href="https://wa.me/51936932398?text=Hi%20Edison!%20I%20am%20interested%20in%20booking%20a%20Chorrillos%20Fishing%20Tour." target="_blank" class="w-full sm:w-auto bg-ocean-600 hover:bg-ocean-700 text-white font-bold px-6 py-3.5 rounded-xl transition text-center shadow-md">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Book Tour Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- OFFER 2: SPANISH TUTORING -->
+                <div id="spanish" class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col justify-between group hover:shadow-2xl transition duration-300">
+                    <div>
+                        <!-- Image Container with tag -->
+                        <div class="h-72 w-full overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" alt="Spanish Tutoring Class" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-sand-500 text-slate-950 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
+                                <i class="fa-solid fa-graduation-cap mr-1.5"></i> Academic Excellence
+                            </span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-8">
+                            <h3 class="text-2xl font-extrabold text-slate-950 mb-3 group-hover:text-ocean-700 transition">Personalized Spanish Tutoring</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Accelerate your language skills with a certified native teacher. Leveraging advanced pedagogical training and experience with international programs, I offer structured conversation, grammar practice, and travel-oriented vocabulary sessions.
+                            </p>
+                            
+                            <!-- Key Highlights -->
+                            <div class="space-y-3.5 mb-8">
+                                <div class="flex items-start">
+                                    <div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-sm text-slate-900">Pedagogical Framework Built-in</p>
+                                        <p class="text-xs text-slate-500">Using structures from my "Didactics & Pedagogy" qualification (AulaFacil).</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-sm text-slate-900">Virtual or Beachside Outdoor Classes</p>
+                                        <p class="text-xs text-slate-500">Learn comfortably online or meet at a seaside cafe in Barranco/Chorrillos.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-sm text-slate-900">Customized Coursework</p>
+                                        <p class="text-xs text-slate-500">Adapted for beginners, expats, medical professionals, or enthusiastic travelers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Action -->
+                    <div class="p-8 pt-0 border-t border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="block text-xs text-slate-500 font-bold uppercase tracking-widest">Starting from</span>
+                            <span class="text-2xl font-black text-ocean-900">$15 <span class="text-sm font-normal text-slate-500">/ hour</span></span>
+                        </div>
+                        <a href="https://wa.me/51936932398?text=Hi%20Edison!%20I%20am%20interested%20in%20taking%20Spanish%20tutoring%20lessons%20with%20you." target="_blank" class="w-full sm:w-auto bg-ocean-900 hover:bg-slate-950 text-white font-bold px-6 py-3.5 rounded-xl transition text-center shadow-md">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Book A Lesson
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXTRA SKILLS: ENGLISH & GUITAR LESSONS -->
+    <section class="py-16 bg-white overflow-hidden relative border-b border-slate-100">
+        <div class="absolute -right-24 bottom-0 w-96 h-96 bg-sand-50 rounded-full filter blur-3xl opacity-60"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-r from-ocean-900 to-ocean-800 rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row gap-8 items-center justify-between shadow-xl">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-bold tracking-widest uppercase text-sand-400 block mb-2">Bonus Experience</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold mb-4">English Teaching & Acoustic Guitar Tutoring</h3>
+                    <p class="text-ocean-100 leading-relaxed text-sm sm:text-base">
+                        As an extra hobby and service, I am a passionate guitar player and music producer (FL Studio). I offer **combination packages**: learn acoustic guitar while practicing your conversational English or Spanish with me. Fun, engaging, and dynamic!
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="https://wa.me/51936932398?text=Hi%20Edison!%20Tell%20me%20more%20about%20your%20Guitar%20and%20English%20lessons." target="_blank" class="bg-white hover:bg-sand-500 text-slate-950 hover:text-slate-950 font-extrabold px-8 py-4 rounded-xl transition duration-300 shadow-xl inline-flex items-center">
+                        <i class="fa-solid fa-guitar mr-2 text-lg"></i> Learn Guitar & English
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INTERACTIVE TRIP PLANNER -->
-    <section id="planificador" class="py-24 bg-limaSand relative">
+    <!-- VERIFIED CREDENTIALS SECTION -->
+    <section id="credentials" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-limaCyan font-bold tracking-widest uppercase text-sm block mb-3">Diseña Tu Aventura</span>
-                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-950">
-                    Planificador de Itinerarios
-                </h2>
-                <div class="w-24 h-1 bg-limaGold mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Dinos cuántos días estarás y qué te interesa hacer, y crearemos un recorrido de exploración ideal para ti a continuación.
-                </p>
+                <span class="text-sm font-bold text-ocean-700 uppercase tracking-widest block mb-2">My Background</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Verified Certifications & Experience</h2>
+                <p class="text-slate-600 mt-4">Every lesson and tour is backed by a solid foundation of pedagogy, official language certification, and verified background audits.</p>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 p-8 sm:p-12">
-                <!-- Inputs / Filters Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 border-b border-slate-100 pb-8">
-                    <!-- Select Duration -->
-                    <div>
-                        <label class="block text-sm font-bold uppercase tracking-wider text-slate-700 mb-3">
-                            <i class="fa-regular fa-calendar-days text-limaCyan"></i> Duración del Viaje:
-                        </label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <button onclick="setPlannerDays(1)" id="dayBtn-1" class="planner-day-btn py-3 rounded-2xl font-semibold border-2 border-limaCyan bg-limaCyan text-white transition-all duration-300 shadow-md">
-                                1 Día
-                            </button>
-                            <button onclick="setPlannerDays(3)" id="dayBtn-3" class="planner-day-btn py-3 rounded-2xl font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-700 transition-all duration-300">
-                                3 Días
-                            </button>
-                            <button onclick="setPlannerDays(5)" id="dayBtn-5" class="planner-day-btn py-3 rounded-2xl font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-700 transition-all duration-300">
-                                5 Días
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Select Vibe / Profile -->
-                    <div>
-                        <label class="block text-sm font-bold uppercase tracking-wider text-slate-700 mb-3">
-                            <i class="fa-solid fa-compass text-limaGold"></i> Estilo de Exploración:
-                        </label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <button onclick="setPlannerProfile('cultural')" id="profBtn-cultural" class="planner-prof-btn py-3 px-2 rounded-2xl font-semibold border-2 border-limaCyan bg-limaCyan text-white text-xs sm:text-sm transition-all duration-300 shadow-md">
-                                Cultural
-                            </button>
-                            <button onclick="setPlannerProfile('bohemio')" id="profBtn-bohemio" class="planner-prof-btn py-3 px-2 rounded-2xl font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-700 text-xs sm:text-sm transition-all duration-300">
-                                Bohemia y Arte
-                            </button>
-                            <button onclick="setPlannerProfile('gastronomico')" id="profBtn-gastronomico" class="planner-prof-btn py-3 px-2 rounded-2xl font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-700 text-xs sm:text-sm transition-all duration-300">
-                                Gastronomía
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Displayed Timeline -->
-                <div class="relative pl-6 border-l-2 border-slate-200/80 ml-4 md:ml-6 space-y-12" id="plannerTimeline">
-                    <!-- Dynamic timeline contents generated via JS -->
-                </div>
-
-                <!-- Call to action Inside planner -->
-                <div class="mt-12 text-center bg-slate-50 border border-slate-200/50 p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <div class="text-left">
-                        <h4 class="font-bold text-slate-900 text-lg">¿Deseas personalizar aún más tu viaje?</h4>
-                        <p class="text-sm text-slate-500">Nuestros asesores locales certificados pueden armar una ruta exclusiva de forma gratuita.</p>
-                    </div>
-                    <button onclick="openModal('welcomeModal')" class="w-full sm:w-auto px-6 py-3 bg-limaCyan hover:bg-cyan-700 text-white font-bold rounded-xl text-sm shadow-md transition-all duration-300 flex items-center justify-center gap-2">
-                        <i class="fa-regular fa-envelope"></i> Enviar a mi Email
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FILTERABLE PHOTO GALLERY -->
-    <section id="galeria" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-limaCyan font-bold tracking-widest uppercase text-sm block mb-3">Instantáneas De Lima</span>
-                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-950">
-                    Postales de una Ciudad Viva
-                </h2>
-                <div class="w-24 h-1 bg-limaGold mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Filtrar por categoría para deleitarte con las vistas, la historia y la energía limeña.
-                </p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button onclick="filterGallery('all')" id="galleryFilterBtn-all" class="gallery-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border-2 border-limaCyan bg-limaCyan text-white transition-all duration-300 shadow-sm">
-                    Ver Todo
-                </button>
-                <button onclick="filterGallery('historia')" id="galleryFilterBtn-historia" class="gallery-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-600 transition-all duration-300">
-                    Monumentos e Historia
-                </button>
-                <button onclick="filterGallery('costa')" id="galleryFilterBtn-costa" class="gallery-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-600 transition-all duration-300">
-                    Costa y Paisajes
-                </button>
-                <button onclick="filterGallery('gastronomia')" id="galleryFilterBtn-gastronomia" class="gallery-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border-2 border-slate-200 hover:border-slate-300 text-slate-600 transition-all duration-300">
-                    Comida Limeña
-                </button>
-            </div>
-
-            <!-- Grid Items -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryContainer">
+            <!-- Certification Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Img 1 -->
-                <div class="gallery-item group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-100" data-category="historia" onclick="openLightbox('https://images.unsplash.com/photo-1577587230708-187fdbf4a9c5?auto=format&fit=crop&w=1200&q=80', 'Plaza Mayor de Lima', 'La majestuosa plaza de la fundación española rodeada de luces doradas y fuentes centenarias.')">
-                    <img src="https://images.unsplash.com/photo-1577587230708-187fdbf4a9c5?auto=format&fit=crop&w=600&q=80" 
-                         alt="Plaza de Armas" 
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x400/0f172a/d4af37?text=Plaza+Mayor'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div class="text-white">
-                            <span class="text-xs text-limaGold uppercase font-bold tracking-widest block mb-1">Monumentos</span>
-                            <h4 class="font-serif text-xl font-bold">Plaza de Armas</h4>
-                            <p class="text-xs text-slate-300 mt-1">Hogar del Palacio de Gobierno y la imponente Catedral.</p>
+                <!-- CERT 1: EF SET ENGLISH -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">C1 ADVANCED</span>
+                            <i class="fa-solid fa-graduation-cap text-slate-300 text-xl"></i>
                         </div>
+                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">EFSET C1 English Certification</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                            Achieved a score of **69/100** globally, marking C2 Proficient in Writing, Speaking, and Reading. Officially recognized internationally.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
+                        <span>Issued: August 2024</span>
+                        <span>ID: cert.efset.org/wxn6jC</span>
                     </div>
                 </div>
 
-                <!-- Img 2 -->
-                <div class="gallery-item group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-100" data-category="costa" onclick="openLightbox('https://images.unsplash.com/photo-1531968455001-5c5277a9b132?auto=format&fit=crop&w=1200&q=80', 'Acantilados de Miraflores', 'Vista panorámica del moderno distrito al borde de los riscos peruanos.')">
-                    <img src="https://images.unsplash.com/photo-1531968455001-5c5277a9b132?auto=format&fit=crop&w=600&q=80" 
-                         alt="Acantilados de Miraflores" 
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x400/0f172a/0a8491?text=Miraflores'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div class="text-white">
-                            <span class="text-xs text-limaCyan uppercase font-bold tracking-widest block mb-1">Costa</span>
-                            <h4 class="font-serif text-xl font-bold">Costa Verde</h4>
-                            <p class="text-xs text-slate-300 mt-1">El único gran mirador costero de la región.</p>
+                <!-- CERT 2: BRITANICO ELT -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-50 text-blue-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">ELT METHODOLOGY</span>
+                            <i class="fa-solid fa-certificate text-slate-300 text-xl"></i>
                         </div>
+                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Asociación Cultural Peruano Británica</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                            Successfully completed **English Language Teaching Course (135 Hours)**. Focused on pedagogical methodologies and practical classroom application.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
+                        <span>Issued: November 2017</span>
+                        <span>Performance: Grade B</span>
                     </div>
                 </div>
 
-                <!-- Img 3 -->
-                <div class="gallery-item group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-100" data-category="gastronomia" onclick="openLightbox('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1200&q=80', 'Ceviche Fresco Limeño', 'Cortes perfectos de pescado curados con ácidos puros del limón de Chulucanas.')">
-                    <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" 
-                         alt="Ceviche Fresco" 
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x400/0f172a/d4af37?text=Ceviche'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div class="text-white">
-                            <span class="text-xs text-amber-500 uppercase font-bold tracking-widest block mb-1">Gastronomía</span>
-                            <h4 class="font-serif text-xl font-bold">Ceviche Clásico</h4>
-                            <p class="text-xs text-slate-300 mt-1">Elaborado al momento para mantener la textura insuperable.</p>
+                <!-- CERT 3: AULA FACIL DIDACTICA -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-50 text-amber-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">PEDAGOGY SPECIALIST</span>
+                            <i class="fa-solid fa-chalkboard-user text-slate-300 text-xl"></i>
                         </div>
+                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Didáctica & Pedagogía Certifications</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                            Accomplished verified certifications in **Didactics (Teaching Methods)** and **Pedagogy** from AulaFacil S.L (40 hours total teaching structure study).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
+                        <span>Issued: July 2021</span>
+                        <span>Verification: QR Audited</span>
                     </div>
                 </div>
 
-                <!-- Img 4 -->
-                <div class="gallery-item group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-100" data-category="historia" onclick="openLightbox('https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=1200&q=80', 'Catedral de Lima', 'Imponente templo que resguarda la tumba del conquistador Francisco Pizarro.')">
-                    <img src="https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=600&q=80" 
-                         alt="Catedral de Lima" 
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x400/0f172a/d4af37?text=Catedral'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div class="text-white">
-                            <span class="text-xs text-limaGold uppercase font-bold tracking-widest block mb-1">Monumentos</span>
-                            <h4 class="font-serif text-xl font-bold">La Basílica Catedral</h4>
-                            <p class="text-xs text-slate-300 mt-1">Joyas de arte barroco y sillerías corales magníficas.</p>
+                <!-- CERT 4: GOOGLE ACTIVATE -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-red-50 text-red-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">MOBILE APPS</span>
+                            <i class="fa-solid fa-mobile-screen text-slate-300 text-xl"></i>
                         </div>
+                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Google Actívate Certification</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                            Finished the intensive **Mobile Application Development** certification course (40 Hours) in partnership with Universidad Complutense de Madrid.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
+                        <span>Issued: July 2021</span>
+                        <span>Partner: UCM Madrid</span>
                     </div>
                 </div>
 
-                <!-- Img 5 -->
-                <div class="gallery-item group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-100" data-category="costa" onclick="openLightbox('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80', 'Malecón de Barranco', 'El místico acantilado de los enamorados, poetas y melómanos criollos.')">
-                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=600&q=80" 
-                         alt="Bajada de Baños" 
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x400/0f172a/0a8491?text=Barranco'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div class="text-white">
-                            <span class="text-xs text-limaCyan uppercase font-bold tracking-widest block mb-1">Costa</span>
-                            <h4 class="font-serif text-xl font-bold">Bajada de Baños</h4>
-                            <p class="text-xs text-slate-300 mt-1">El pasaje empedrado histórico que desciende al océano.</p>
+                <!-- CERT 5: MOTIVATION -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-teal-50 text-teal-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">VIRTUAL LEARNING</span>
+                            <i class="fa-solid fa-laptop-code text-slate-300 text-xl"></i>
                         </div>
+                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Ministry of Labor & Employment</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                            Passed with an outstanding **18/20** grade in the specialized training program: *Motivación para el Aprendizaje Virtual* (Virtual Learning Motivation).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
+                        <span>Issued: September 2021</span>
+                        <span>State Audited: MTPE Peru</span>
                     </div>
                 </div>
 
-                <!-- Img 6 -->
-                <div class="gallery-item group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-100" data-category="gastronomia" onclick="openLightbox('https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=1200&q=80', 'Pisco Sour Tradicional', 'Preparado con pisco quebranta puro peruano.')">
-                    <!-- Fallback pisco image -->
-                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" 
-                         alt="Pisco Sour" 
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x400/0f172a/d4af37?text=Pisco+Sour'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div class="text-white">
-                            <span class="text-xs text-amber-500 uppercase font-bold tracking-widest block mb-1">Gastronomía</span>
-                            <h4 class="font-serif text-xl font-bold">Pisco Sour Clásico</h4>
-                            <p class="text-xs text-slate-300 mt-1">Aromático, refrescante, con el equilibrio ideal del limón.</p>
+                <!-- CERT 6: FULL CLEAN BACKGROUND -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-slate-50 text-slate-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">SAFETY GUARANTEED</span>
+                            <i class="fa-solid fa-shield-halved text-slate-400 text-xl"></i>
                         </div>
+                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Verified Clean Background Checks</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                            Officially holds the **Certificado Único Laboral (CERTIADULTO)** certified by the Peruvian Ministry of Labor. Evaluated with 100% clean criminal, judicial, and police records.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-emerald-600 flex items-center justify-end">
+                        <i class="fa-solid fa-circle-check mr-1.5 text-xs"></i> Fully Verified
                     </div>
                 </div>
 
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DISCOVER LIMA / GALLERY SECTOR -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-4 space-y-6">
+                    <span class="text-sm font-bold text-ocean-700 uppercase tracking-widest block">The Magic of Chorrillos</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Lima's Historic Seaside Neighborhood</h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Chorrillos is a historic district known for its colorful cliffs, incredible seafood traditions, and traditional fishermen. Walking down its streets and casting a line into its waters provides a visceral connection to the genuine, non-commercial soul of Lima.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3.5">
+                            <span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">1</span>
+                            <span class="font-bold text-slate-800 text-sm">Muelle de Pescadores de Chorrillos</span>
+                        </div>
+                        <div class="flex items-center space-x-3.5">
+                            <span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">2</span>
+                            <span class="font-bold text-slate-800 text-sm">Scenic Cliffs & Pacific Sunset view</span>
+                        </div>
+                        <div class="flex items-center space-x-3.5">
+                            <span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">3</span>
+                            <span class="font-bold text-slate-800 text-sm">Artisanal Seafood and Local Cevicherías</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="h-60 overflow-hidden rounded-2xl shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80" alt="Beautiful Peru Beach Coastline" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Chorrillos Coastal Wave</span>
+                        </div>
+                        <div class="h-80 overflow-hidden rounded-2xl shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1531968455001-5c5277a9b132?auto=format&fit=crop&w=600&q=80" alt="Lima View Clifftops Coast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Stunning Lima Coastline View</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 sm:translate-y-6">
+                        <div class="h-80 overflow-hidden rounded-2xl shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1499782701937-234b6b63d893?auto=format&fit=crop&w=600&q=80" alt="Local Traditional Fisherman Boat" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Artisanal Wooden Boat</span>
+                        </div>
+                        <div class="h-60 overflow-hidden rounded-2xl shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=80" alt="Acoustic Guitar Player" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Edison's Classical Guitar Vibe</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PRACTICAL TRAVEL ADVICE / FAQ -->
-    <section id="consejos" class="py-24 bg-limaSand relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-limaCyan font-bold tracking-widest uppercase text-sm block mb-3">Guía Práctica</span>
-                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-950">
-                    Preguntas Frecuentes y Consejos
-                </h2>
-                <div class="w-24 h-1 bg-limaGold mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Todo lo que necesitas saber antes de empacar tus maletas para disfrutar de tu estancia al máximo.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <!-- Info cards -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md flex gap-4 items-start">
-                        <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-cloud-sun text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-base mb-1">El Clima Limeño</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                Lima nunca llega a extremos de frío o calor. En verano (Dic - Abr) es soleado e ideal para la playa (22°C - 28°C). En invierno (Jun - Oct) la ciudad se tiñe de una mística neblina fresca (13°C - 17°C) con lloviznas finas.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md flex gap-4 items-start">
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-shield-halved text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-base mb-1">Seguridad en tu Estancia</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                Distritos turísticos como Miraflores, San Isidro y Barranco son altamente custodiados por el serenazgo municipal. Se recomienda caminar atento con dispositivos de valor y usar apps de taxi reconocidas como Uber o Cabify.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md flex gap-4 items-start">
-                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-coins text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-base mb-1">Moneda y Pagos</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                La moneda oficial es el Sol (S/). Las tarjetas de crédito y débito están ampliamente aceptadas en restaurantes y comercios, pero es útil llevar efectivo en soles para compras pequeñas, propinas o taxis informales de confianza.
-                            </p>
-                        </div>
-                    </div>
+    <!-- INQUIRY FORM & BOOKING PANEL -->
+    <section id="booking" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                <div class="bg-gradient-to-r from-ocean-900 to-ocean-800 p-8 text-white text-center">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Plan Your Custom Experience</h3>
+                    <p class="text-ocean-100 text-sm sm:text-base">Ready to book or have questions? Fill out the form below, and it will generate a direct WhatsApp draft message so we can chat immediately!</p>
                 </div>
-
-                <!-- Interactive Accordion FAQs -->
-                <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-xl space-y-4">
-                    <h3 class="font-serif text-2xl font-bold text-slate-950 mb-6 flex items-center gap-2">
-                        <i class="fa-regular fa-comments text-limaCyan"></i> Consultas Frecuentes
-                    </h3>
-                    
-                    <!-- Accordion 1 -->
-                    <div class="border-b border-slate-100 pb-4">
-                        <button onclick="toggleAccordion(1)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                            <span class="font-bold text-slate-900 pr-4">¿Cuál es la mejor temporada del año para ir a Lima?</span>
-                            <span class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform" id="accIcon-1"><i class="fa-solid fa-plus text-xs"></i></span>
-                        </button>
-                        <div id="accContent-1" class="hidden mt-3 text-sm text-slate-600 leading-relaxed">
-                            La mejor temporada depende de tus preferencias. De diciembre a abril gozarás de días de sol radiante y cielos despejados, con un ambiente de playa excelente. Si prefieres un clima más melancólico y fresco, con tardes de neblina espectaculares ideales para tomar café en Barranco, de junio a octubre es fascinante.
+                
+                <form id="bookingForm" onsubmit="sendWhatsApp(event)" class="p-8 space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userName">Your Full Name</label>
+                            <input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" type="text" id="userName" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userEmail">Your Email Address</label>
+                            <input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" type="email" id="userEmail" placeholder="john@example.com" required>
                         </div>
                     </div>
 
-                    <!-- Accordion 2 -->
-                    <div class="border-b border-slate-100 pb-4">
-                        <button onclick="toggleAccordion(2)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                            <span class="font-bold text-slate-900 pr-4">¿Se necesita vacuna contra la fiebre amarilla para visitar Lima?</span>
-                            <span class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform" id="accIcon-2"><i class="fa-solid fa-plus text-xs"></i></span>
-                        </button>
-                        <div id="accContent-2" class="hidden mt-3 text-sm text-slate-600 leading-relaxed">
-                            No, la fiebre amarilla no tiene incidencia en la franja costera donde está Lima. Solo se requiere si planeas visitar distritos selváticos de la Amazonía peruana después de tu estancia en la capital.
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="selectedService">Select Experience</label>
+                            <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" id="selectedService" required>
+                                <option value="Chorrillos Fishing Tour">Chorrillos Artisanal Fishing Tour</option>
+                                <option value="Spanish Tutoring (1-on-1)">Spanish Tutoring (1-on-1 Lessons)</option>
+                                <option value="Acoustic Guitar & English">Guitar Player + English Lessons</option>
+                                <option value="Custom Combo Experience">Custom Guide & Language Combo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="preferredDate">Preferred Date</label>
+                            <input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" type="date" id="preferredDate" required>
                         </div>
                     </div>
 
-                    <!-- Accordion 3 -->
-                    <div class="border-b border-slate-100 pb-4">
-                        <button onclick="toggleAccordion(3)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                            <span class="font-bold text-slate-900 pr-4">¿Cómo reservar en Central u otros restaurantes famosos?</span>
-                            <span class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform" id="accIcon-3"><i class="fa-solid fa-plus text-xs"></i></span>
-                        </button>
-                        <div id="accContent-3" class="hidden mt-3 text-sm text-slate-600 leading-relaxed">
-                            Restaurantes de renombre mundial como Central (elegido el mejor del mundo) o Maido abren sus reservas online con una anticipación de 3 a 4 meses en fechas específicas. Te aconsejamos planear tu viaje gastronómico con mucha antelación o explorar otras increíbles opciones de tabernas tradicionales de igual calidad pero sin reservas previas exigentes.
-                        </div>
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userMessage">Additional Details / Questions</label>
+                        <textarea class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" id="userMessage" rows="4" placeholder="Tell me about your group size, language level, or custom itinerary requests..."></textarea>
                     </div>
 
-                    <!-- Accordion 4 -->
-                    <div class="pb-2">
-                        <button onclick="toggleAccordion(4)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                            <span class="font-bold text-slate-900 pr-4">¿Cómo moverse por la ciudad de manera eficiente?</span>
-                            <span class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform" id="accIcon-4"><i class="fa-solid fa-plus text-xs"></i></span>
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-all duration-300 flex items-center justify-center text-base shadow-lg shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send Instant Booking Request via WhatsApp
                         </button>
-                        <div id="accContent-4" class="hidden mt-3 text-sm text-slate-600 leading-relaxed">
-                            Para evitar el tráfico limeño, utiliza el sistema del **Metropolitano** (autobuses con carril exclusivo de norte a sur) que conecta directamente el Centro Histórico con Miraflores y Barranco. Para trayectos particulares de noche, recomendamos usar aplicativos móviles de taxi como Uber, Cabify o DiDi, los cuales brindan tarifas fijas y trazabilidad GPS.
-                        </div>
                     </div>
-
-                </div>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-850 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.02),transparent_40%)] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                
-                <!-- Info Logo -->
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-3xl">🇵🇪</span>
-                        <div>
-                            <span class="font-serif text-2xl font-bold text-white tracking-wide block leading-none">LIMA</span>
-                            <span class="text-xs text-limaGold font-semibold uppercase tracking-widest">Es Única</span>
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center justify-between pb-12 border-b border-slate-900">
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-ocean-800 text-white p-2 rounded-lg">
+                            <i class="fa-solid fa-compass text-base text-sand-100"></i>
                         </div>
+                        <span class="font-extrabold text-base tracking-tight text-white uppercase">EDISON VICENTE</span>
                     </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Inspiramos a los viajeros de todo el mundo a descubrir la joya costera de Sudamérica. Historia, mar y comida extraordinaria.
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
+                        Artisanal Fishing Tour Host, Guitar player & Certified Multilingual Spanish/English Instructor based in Chorrillos, Lima, Perú.
                     </p>
-                    <div class="flex items-center gap-4 text-white text-lg pt-2">
-                        <a href="#" class="hover:text-limaGold transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-limaGold transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-limaGold transition-colors" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" class="hover:text-limaGold transition-colors" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
                 </div>
-
-                <!-- Fast Links -->
                 <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-5">Secciones Clave</h4>
-                    <ul class="space-y-3.5 text-sm">
-                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="#destinos" class="hover:text-white transition-colors">Barrios Turísticos</a></li>
-                        <li><a href="#gastronomia" class="hover:text-white transition-colors">Comida Emblemática</a></li>
-                        <li><a href="#planificador" class="hover:text-white transition-colors">Diseñador Itinerario</a></li>
-                        <li><a href="#galeria" class="hover:text-white transition-colors">Galería Fotográfica</a></li>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Core Services</h5>
+                    <ul class="text-xs space-y-2.5">
+                        <li><a href="#tours" class="hover:text-ocean-400 transition">Traditional Artisanal Fishing</a></li>
+                        <li><a href="#spanish" class="hover:text-ocean-400 transition">Spanish Language Coaching</a></li>
+                        <li><a href="#tours" class="hover:text-ocean-400 transition">Chorrillos Scenic Guide</a></li>
+                        <li><a href="#credentials" class="hover:text-ocean-400 transition">Academic Tutoring</a></li>
                     </ul>
                 </div>
-
-                <!-- Official Support -->
-                <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-5">Soporte al Viajero</h4>
-                    <ul class="space-y-3.5 text-sm">
-                        <li><span class="flex items-center gap-2"><i class="fa-solid fa-phone text-limaCyan"></i> IPERÚ: +51 (1) 574-8000</span></li>
-                        <li><span class="flex items-center gap-2"><i class="fa-solid fa-headset text-limaCyan"></i> Atención las 24/7 de emergencia</span></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Oficinas de Información</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Embajadas locales</a></li>
-                    </ul>
-                </div>
-
-                <!-- Interactive Newsletter Form -->
-                <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-5">Boletín del Explorador</h4>
-                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Únete a nuestra lista para recibir ofertas exclusivas, novedades y secretos gastronómicos directo en tu correo.</p>
-                    <form onsubmit="handleNewsletterSubmit(event)" class="space-y-2.5">
-                        <input type="email" id="newsEmail" placeholder="Tu correo electrónico" required class="w-full bg-slate-900 border border-slate-800 focus:border-limaCyan focus:outline-none p-3 rounded-xl text-xs text-white placeholder-slate-500 transition-colors">
-                        <button type="submit" class="w-full bg-limaGold hover:bg-yellow-600 text-slate-950 font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-colors">
-                            Suscribirme
-                        </button>
-                    </form>
-                    <div id="newsletterSuccess" class="hidden text-xs text-limaCyan mt-2 font-semibold">
-                        <i class="fa-solid fa-circle-check"></i> ¡Registro exitoso! Prepárate para enamorarte de Lima.
+                <div class="space-y-4">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">Direct Contact Details</h5>
+                    <div class="text-xs space-y-2">
+                        <p class="flex items-center"><i class="fa-solid fa-envelope mr-2.5 text-ocean-400"></i> tallereducativo9@gmail.com</p>
+                        <p class="flex items-center"><i class="fa-solid fa-phone mr-2.5 text-ocean-400"></i> +51 936 932 398</p>
+                        <p class="flex items-center"><i class="fa-solid fa-map-pin mr-2.5 text-ocean-400"></i> San Juan de Lurigancho & Chorrillos, Lima</p>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Credits -->
-            <div class="border-t border-slate-900 pt-8 mt-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-                <p>&copy; 2026 Lima Es Única. Promoción Turística e Informativa de Lima, Perú. Todos los derechos reservados.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-slate-300">Términos de Uso</a>
-                    <span>•</span>
-                    <a href="#" class="hover:text-slate-300">Política de Privacidad</a>
-                </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-600">
+                <p>&copy; 2026 Edison Vicente Martinez Ayquipa. All Rights Reserved.</p>
+                <p>Designed to support authentic eco-friendly artisanal tourism & direct educational models.</p>
             </div>
         </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR GALLERY -->
-    <div id="lightboxModal" class="fixed inset-0 bg-slate-950/95 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-limaGold text-3xl focus:outline-none" aria-label="Cerrar modal">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="max-w-4xl w-full flex flex-col items-center">
-            <div class="relative max-h-[70vh] w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-slate-900">
-                <img id="lightboxImg" src="" alt="Vista ampliada" class="w-full h-full object-contain mx-auto">
-            </div>
-            <div class="text-center mt-6 max-w-2xl px-4">
-                <h4 id="lightboxTitle" class="font-serif text-2xl font-bold text-white mb-2">Título de la postal</h4>
-                <p id="lightboxDesc" class="text-sm text-slate-300">Descripción detallada de la foto para enriquecer la experiencia visual del visitante.</p>
-            </div>
-        </div>
-    </div>
+    <!-- STICKY FLOATING WHATSAPP BUTTON (AS REQUESTED) -->
+    <a href="https://wa.me/51936932398" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 group hover:scale-110" aria-label="Chat with Edison on WhatsApp">
+        <!-- Pulse animation -->
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Hover Text -->
+        <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none whitespace-nowrap shadow-xl">
+            Chat with Edison
+        </span>
+    </a>
 
-    <!-- WELCOME / ITINERARY MODAL -->
-    <div id="welcomeModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-md w-full relative transform scale-95 transition-transform duration-300" id="welcomeModalContainer">
-            <button onclick="closeModal('welcomeModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-950 text-xl focus:outline-none" aria-label="Cerrar modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="p-8">
-                <div class="w-14 h-14 bg-limaCyan/10 text-limaCyan rounded-2xl flex items-center justify-center mb-5">
-                    <i class="fa-regular fa-paper-plane text-2xl animate-pulse"></i>
-                </div>
-                <h3 class="font-serif text-2xl font-bold text-slate-950 mb-2">¡Comienza tu aventura limeña!</h3>
-                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                    Déjanos tus datos de contacto y un experto local te enviará de forma gratuita un itinerario detallado en PDF y responderá todas tus preguntas.
-                </p>
-                <form onsubmit="handleContactSubmit(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Tu Nombre:</label>
-                        <input type="text" id="contactName" required placeholder="Ej. Sofía Rodríguez" class="w-full bg-slate-50 border border-slate-200 focus:border-limaCyan focus:outline-none p-3 rounded-xl text-sm transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Correo Electrónico:</label>
-                        <input type="email" id="contactEmail" required placeholder="sofia@ejemplo.com" class="w-full bg-slate-50 border border-slate-200 focus:border-limaCyan focus:outline-none p-3 rounded-xl text-sm transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">¿Cuándo viajas?</label>
-                        <select id="contactTime" class="w-full bg-slate-50 border border-slate-200 focus:border-limaCyan focus:outline-none p-3 rounded-xl text-sm transition-colors">
-                            <option value="este-mes">Este mes</option>
-                            <option value="siguiente-mes">Siguiente mes</option>
-                            <option value="proximos-meses">Próximos 3 a 6 meses</option>
-                            <option value="curioso">Solo estoy explorando e inspirándome</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full bg-limaCyan hover:bg-cyan-700 text-white font-bold py-3.5 px-6 rounded-xl text-sm transition-colors shadow-lg shadow-cyan-500/10 mt-2">
-                        Solicitar Itinerario Gratis
-                    </button>
-                </form>
-                <div id="contactSuccess" class="hidden text-sm text-center text-emerald-600 font-semibold mt-4">
-                    <i class="fa-solid fa-circle-check"></i> ¡Formulario recibido! Te enviaremos el itinerario muy pronto.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- DESTINATION DETAIL VIEW MODAL (DYNAMIC DETAILS) -->
-    <div id="destinationModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-2xl w-full relative transform scale-95 transition-transform duration-300 custom-scrollbar max-h-[90vh] overflow-y-auto" id="destinationModalContainer">
-            <button onclick="closeModal('destinationModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-950 text-xl z-20 bg-white/80 p-1.5 rounded-full" aria-label="Cerrar modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="relative h-64 overflow-hidden">
-                <img id="destDetailImg" src="" alt="Imagen del destino" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
-                <div class="absolute bottom-6 left-6 text-white">
-                    <span id="destDetailCategory" class="text-xs text-limaGold font-bold uppercase tracking-widest block mb-1">Categoría</span>
-                    <h3 id="destDetailName" class="font-serif text-3xl font-bold">Nombre del Destino</h3>
-                </div>
-            </div>
-            <div class="p-8 space-y-6">
-                <div>
-                    <h4 class="font-bold text-slate-900 text-base mb-2">Sobre este lugar:</h4>
-                    <p id="destDetailDesc" class="text-slate-600 text-sm leading-relaxed">Lorem ipsum...</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                        <span class="text-xs text-slate-400 uppercase tracking-wider block font-bold mb-1"><i class="fa-solid fa-location-dot text-limaCyan"></i> ¿Cómo llegar?</span>
-                        <p id="destDetailArrival" class="text-sm text-slate-700 font-medium">Instrucciones</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                        <span class="text-xs text-slate-400 uppercase tracking-wider block font-bold mb-1"><i class="fa-solid fa-clock text-amber-500"></i> Mejor Hora de Visita</span>
-                        <p id="destDetailBestTime" class="text-sm text-slate-700 font-medium">Recomendación</p>
-                    </div>
-                </div>
-                <div class="p-4 rounded-2xl bg-limaGold/5 border border-limaGold/20">
-                    <span class="text-xs text-limaGold uppercase tracking-wider block font-bold mb-1"><i class="fa-solid fa-lightbulb"></i> Tip del Viajero</span>
-                    <p id="destDetailSecret" class="text-sm text-slate-800 italic">Secreto imperdible.</p>
-                </div>
-                <div class="pt-2 text-right">
-                    <button onclick="closeModal('destinationModal')" class="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors">
-                        Cerrar Guía
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NOTIFICATION TOAST -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 border border-slate-800">
-        <span id="toastIcon" class="text-limaGold text-lg"><i class="fa-solid fa-circle-check"></i></span>
-        <span id="toastMsg" class="text-sm font-medium">Mensaje informativo</span>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
-        // Gastronomy Database
-        const foodData = {
-            ceviche: {
-                name: "El Ceviche Limeño",
-                tag: "Sabor Marino",
-                time: "Prep: ~15 mins",
-                desc: "Originado por las culturas pre-incas de la costa central que cocían el pescado fresco con jugos de frutas ácidas locales, hoy se elabora con limón peruano (altamente ácido), ají limo aromático, cebolla morada crujiente, camote dulce cocido y choclo tierno desgranado. Es una explosión instantánea de frescura marina.",
-                pairing: "Chicha Morada helada o una cerveza rubia nacional bien fría.",
-                location: "Cevicherías de Miraflores, Surquillo y el Callao.",
-                image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80"
-            },
-            lomo: {
-                name: "El Lomo Saltado",
-                tag: "Estilo Fusión",
-                time: "Prep: ~20 mins",
-                desc: "Un plato emblemático de la fusión peruano-china (chifa). Se prepara salteando carne de res de primera calidad en un wok a fuego extremadamente alto, añadiendo cebolla morada picada, tomates jugosos, un toque de ají amarillo, cebollita de verdeo, sillao (salsa de soya) y vinagre. Se sirve junto a papas fritas crujientes y arroz blanco caliente.",
-                pairing: "Una copa de vino tinto joven o pisco sour aromático.",
-                location: "Tabernas clásicas de Lima Centro, Pueblo Libre y Barranco.",
-                image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" // Fallback premium grill image
-            },
-            causa: {
-                name: "La Causa Rellena",
-                tag: "Sabor Tradicional",
-                time: "Prep: ~30 mins",
-                desc: "Su historia se remonta a la época de la independencia, donde se preparaba para 'La Causa' de la libertad. Consiste en una masa tersa de papa amarilla prensada, condimentada con pasta de ají amarillo, limón fresco y aceite vegetal. Se estructura en capas y se rellena típicamente con pollo deshilachado o atún en conserva aderezados con mayonesa casera, palta (aguacate) y huevo duro.",
-                pairing: "Una copa de vino blanco Sauvignon Blanc.",
-                location: "Mercados tradicionales y restaurantes de comida criolla.",
-                image: "https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?auto=format&fit=crop&w=800&q=80"
-            },
-            pisco: {
-                name: "Pisco Sour Clásico",
-                tag: "Coctel Nacional",
-                time: "Prep: ~5 mins",
-                desc: "Creado a principios de los años 1920 en el histórico Morris' Bar del centro de Lima, y perfeccionado luego en el célebre Hotel Bolívar. Se obtiene agitando enérgicamente pisco peruano (preferentemente de uva Quebranta), jarabe de goma, jugo fresco de limón ácido y clara de huevo con hielo picado. Se sirve con unas gotas de amargo de angostura encima.",
-                pairing: "Tequeños rellenos de queso andino o anticuchos de la calle.",
-                location: "Bar Inglés del Hotel Country Club o el histórico bar Cordano.",
-                image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"
-            }
-        };
-
-        // Itineraries Database
-        const itineraryData = {
-            days1: {
-                cultural: [
-                    { time: "09:00 AM", title: "Corazón Histórico de Lima", desc: "Empieza el día en la Plaza Mayor de Lima. Visita la Catedral y asiste al imponente Cambio de Guardia en el Palacio de Gobierno a las 11:45 AM." },
-                    { time: "01:00 PM", title: "Almuerzo de los Reyes", desc: "Sigue los aromas de la sazón local y almuerza en una taberna histórica del centro histórico, pidiendo un lomo saltado clásico." },
-                    { time: "03:00 PM", title: "Catacumbas de San Francisco", desc: "Explora la asombrosa biblioteca barroca y el laberinto subterráneo de huesos que alberga el convento colonial de San Francisco." },
-                    { time: "06:00 PM", title: "Circuito Mágico del Agua", desc: "Finaliza el día en el Parque de la Reserva admirando el espectáculo audiovisual de luces láser y fuentes de agua rítmicas del Récord Guinness." }
-                ],
-                bohemio: [
-                    { time: "10:00 AM", title: "Caminata entre Casonas", desc: "Explora el distrito de Barranco. Cruza el icónico Puente de los Suspiros y pide un deseo sin respirar mientras lo atraviesas." },
-                    { time: "12:30 PM", title: "Arte Urbano y Almuerzo", desc: "Disfruta de los innumerables murales de artistas peruanos en la Bajada de Baños y almuerza un ceviche fresco mirando el mar." },
-                    { time: "03:30 PM", title: "Museo MATE o de Arte Contemporáneo", desc: "Sumérgete en la cultura contemporánea y fotografía inspiradora en alguna de las lujosas casonas-museo del distrito." },
-                    { time: "08:00 PM", title: "Noche de Música Criolla", desc: "Deléitate con una velada de jazz, boleros o trova criolla en vivo en una emblemática 'peña' de Barranco con un buen Pisco Sour." }
-                ],
-                gastronomico: [
-                    { time: "09:00 AM", title: "Tour de Mercado Local", desc: "Recorre el bullicioso Mercado de Surquillo. Prueba frutas exóticas del Amazonas y los andes, y deléitate con un ceviche al paso de carretilla." },
-                    { time: "12:30 PM", title: "Taller Culinario Interactivo", desc: "Únete a una clase de cocina interactiva guiada para aprender el arte de balancear el limón y el ají en el ceviche tradicional." },
-                    { time: "04:00 PM", title: "Degustación de Café y Cacao", desc: "Visita una cafetería de especialidad en Miraflores para degustar algunos de los mejores granos orgánicos del Perú y chocolates finos premiados." },
-                    { time: "08:00 PM", title: "Experiencia de Alta Cocina", desc: "Cena de manera espectacular en uno de los restaurantes de la lista de los 'World's 50 Best' ubicados en el distinguido barrio de San Isidro." }
-                ]
-            },
-            days3: {
-                cultural: [
-                    { time: "Día 1 - Todo el Día", title: "Lima Colonial Imponente", desc: "Recorre las iglesias barrocas del centro histórico, el convento de Santo Domingo y la maravillosa Casa de Aliaga, la casa habitada más antigua de América." },
-                    { time: "Día 2 - Mañana y Tarde", title: "El Legado Arqueológico", desc: "Visita la pirámide de adobe Huaca Pucllana y luego viaja en el tiempo en el Museo Larco, hogar de la colección de arte precolombino y erótico más famosa del país." },
-                    { time: "Día 3 - Noche de Cierre", title: "Luces de la Ciudad", desc: "Disfruta de una cena con vista a la milenaria Huaca iluminada de noche, degustando comida fusión andina-costera de primer nivel." }
-                ],
-                bohemio: [
-                    { time: "Día 1 - Todo el Día", title: "El Espíritu Barranquino", desc: "Explora galerías independientes como Dédalo, tiendas vintage y asómate al mar desde el pintoresco acantilado de la Bajada de Baños." },
-                    { time: "Día 2 - Tarde de Letras", title: "Ruta de Escritores", desc: "Camina por las calles que inspiraron a Mario Vargas Llosa y Julio Ramón Ribeyro en los barrios costeros de Miraflores." },
-                    { time: "Día 3 - Noche Creativa", title: "Teatros y Bares Escondidos", desc: "Disfruta de una función de microteatro y luego aventúrate en los bares 'speakeasy' secretos que guardan los sótanos de Barranco." }
-                ],
-                gastronomico: [
-                    { time: "Día 1 - Ruta del Mar", title: "Cevicherías y Tabernas", desc: "Pruébalo todo en cevicherías legendarias y tradicionales tabernas limeñas. No olvides pedir una porción de pulpo al olivo." },
-                    { time: "Día 2 - Sabores del Callejón", title: "La Calle de las Pizzas y Dulces", desc: "Recorre el Parque Kennedy de Miraflores probando picarones calientes (buñuelos de camote y zapallo bañados en miel de higo) y mazamorra morada." },
-                    { time: "Día 3 - Alta Gama Mundial", title: "Restaurantes de Autor", desc: "Dedica este día a la espectacular fusión nikkei peruano-japonesa. Una combinación sublime de texturas marinas y sazón criolla." }
-                ]
-            },
-            days5: {
-                cultural: [
-                    { time: "Día 1 al 3", title: "Inmersión Arqueológica y Virreinal", desc: "Dedica los primeros días a recorrer de punta a punta las maravillas del centro histórico, museos de Pueblo Libre e impresionantes iglesias jesuíticas." },
-                    { time: "Día 4 - Todo el Día", title: "Santuario Histórico de Pachacámac", desc: "Haz una excursión al valle del río Lurín para ver el colosal santuario pre-inca tallado en barro, dedicado al dios de los terremotos." },
-                    { time: "Día 5 - Tarde Libre", title: "Coleccionismo e Historia Viva", desc: "Explora las elegantes tiendas de antigüedades del jirón Ancash y despídete de la ciudad con un paseo en tranvía de época." }
-                ],
-                bohemio: [
-                    { time: "Día 1 al 3", title: "Cafés, Librerías y Casonas", desc: "Sumérgete en la vibrante escena cultural de Barranco y Miraflores, recorriendo librerías independientes y ferias de arte local." },
-                    { time: "Día 4 - Todo el Día", title: "El Puerto y el Arte del Callao Monumental", desc: "Visita la zona histórica de la provincia constitucional de Callao, repleta de galerías urbanas modernas, grafitis espectaculares y gastronomía picante de puerto." },
-                    { time: "Día 5 - Atardecer Costero", title: "Música criolla frente al Océano", desc: "Alquila una bicicleta para pasear por todo el malecón de la Costa Verde y asiste a un taller de danza afroperuana o criolla." }
-                ],
-                gastronomico: [
-                    { time: "Día 1 al 3", title: "Tour Gastronómico Total", desc: "Experimenta los tres pilares culinarios: la cocina criolla clásica, el ceviche de costa, y el chifa fusión oriental." },
-                    { time: "Día 4 - Todo el Día", title: "Chorrillos y Puerto de Pescadores", desc: "Madruga con los pescadores del muelle artesanal de Chorrillos. Compra pescado fresco directamente y disfruta de un desayuno marino incomparable." },
-                    { time: "Día 5 - Ruta del Pisco", title: "Catas y Maridajes", desc: "Participa de una cata guiada por expertos sommeliers para diferenciar los piscos aromáticos y no aromáticos, acompañada de quesos y chocolates peruanos." }
-                ]
-            }
-        };
-
-        // Destinations Detailed Database
-        const destinationDetails = {
-            centro: {
-                name: "Centro Histórico de Lima",
-                category: "Herencia Virreinal",
-                img: "https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=1200&q=80",
-                desc: "Declarado Patrimonio de la Humanidad por la UNESCO, el Centro de Lima es una joya colonial. La plaza de armas alberga edificios gubernamentales imponentes, iglesias cubiertas con pan de oro e impresionantes catacumbas misteriosas. Es el testimonio vivo del esplendor del virreinato más poderoso de Sudamérica.",
-                arrival: "Toma el autobús express del Metropolitano hasta la Estación Jirón de la Unión y camina solo tres calles cortas.",
-                bestTime: "De 10:00 AM a 4:00 PM para ingresar a templos, y luego de noche (7:00 PM) para admirar la iluminación dorada de las fachadas.",
-                secret: "Visita el interior del Palacio de Torre Tagle para admirar los balcones de cedro de Nicaragua tallados a mano más exquisitos del continente."
-            },
-            miraflores: {
-                name: "Miraflores Moderno",
-                category: "Modernidad y Costa",
-                img: "https://images.unsplash.com/photo-1531968455001-5c5277a9b132?auto=format&fit=crop&w=1200&q=80",
-                desc: "Miraflores es el rostro moderno y enérgico de Lima. Se extiende al borde de un espectacular acantilado de cien metros sobre el mar Pacífico. Ofrece parques perfectos como el Parque del Amor, centros comerciales integrados en la roca y excelentes restaurantes que atraen a turistas de todo el mundo.",
-                arrival: "Fácilmente accesible mediante caminata por avenidas principales, ciclovías costeras o la Estación Benavides del Metropolitano.",
-                bestTime: "Al final de la tarde (05:00 PM) para presenciar el impresionante atardecer tiñendo de rojo el horizonte marítimo.",
-                secret: "Alquila un vuelo en parapente biplaza en el 'Parapuerto' del Malecón Cisneros para sobrevolar la bahía como las aves."
-            },
-            barranco: {
-                name: "Barranco Bohemia",
-                category: "Arte y Bohemia",
-                img: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80",
-                desc: "Este distrito con alma de pueblo es el rincón bohemio por excelencia. Casonas de colores pastel del siglo XIX albergan a pintores, poetas y músicos. El ambiente aquí invita a conversar de literatura en cafés antiguos, perderse en boutiques de diseño independiente y vibrar con ritmos locales.",
-                arrival: "Usa el Metropolitano bajándote en la Estación Bulevar o camina 25 minutos desde el malecón de Miraflores.",
-                bestTime: "Tardes-noches de fin de semana, cuando la Bajada de Baños y el Puente de los Suspiros resplandecen con faroles románticos y música acústica.",
-                secret: "Pide el tradicional postre peruano 'Picarones' recién fritos con miel calientita bajo el puente de madera."
-            },
-            pucllana: {
-                name: "Huaca Pucllana",
-                category: "Legado Milenario",
-                img: "https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?auto=format&fit=crop&w=1200&q=80",
-                desc: "Un centro ceremonial y administrativo precolombino construido por la civilización Lima (aprox. 500 d.C.). Esta colosal pirámide de adobe escalonada se edificó usando la 'técnica del libro', apilando adobes verticalmente para soportar los fuertes sismos peruanos. Brilla como una joya arqueológica en medio de la modernidad limeña.",
-                arrival: "Ubicada en la calle General Borgoño en Miraflores. Puedes llegar de forma económica en un taxi privado de app.",
-                bestTime: "Ofrecen tours guiados espectaculares de noche, donde la pirámide de adobe se enciende de forma monumental.",
-                secret: "Reserva una mesa en el restaurante de la Huaca que colinda directamente con las ruinas para cenar mirando la pirámide iluminada."
-            }
-        };
-
-        // Current Active Planner state
-        let currentPlannerDays = 1;
-        let currentPlannerProfile = 'cultural';
-
-        // Sticky Navbar Effect & Scroll Tracking
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 80) {
-                navbar.classList.add('bg-slate-950/95', 'shadow-xl', 'py-1');
-                navbar.classList.remove('bg-slate-900/80', 'py-0');
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
             } else {
-                navbar.classList.remove('bg-slate-950/95', 'shadow-xl', 'py-1');
-                navbar.classList.add('bg-slate-900/80', 'py-0');
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // WhatsApp Form Sender
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const service = document.getElementById('selectedService').value;
+            const date = document.getElementById('preferredDate').value;
+            const message = document.getElementById('userMessage').value;
+            
+            // Build text format for WhatsApp query
+            const baseText = `Hi Edison Vicente! I would like to book an experience with you:\n\n` + 
+                             `👤 *Name:* ${name}\n` +
+                             `📧 *Email:* ${email}\n` +
+                             `🎯 *Service:* ${service}\n` +
+                             `📅 *Preferred Date:* ${date}\n` +
+                             `💬 *Details:* ${message}`;
+                             
+            const encodedText = encodeURIComponent(baseText);
+            const whatsappUrl = `https://wa.me/51936932398?text=${encodedText}`;
+            
+            // Redirect inside window
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Handle transparent header transition on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg', 'border-slate-100');
+            } else {
+                header.classList.remove('shadow-lg');
             }
         });
+    </script>
 
-        // Toggle mobile menu
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', toggleMenu);
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('hidden');
-        }
-
-        // Initialize things on window load
-        window.onload = function() {
-            // Setup default itinerary in the UI
-            renderItinerary();
-        }
-
-        // Interactive Gastronomy Switcher
-        function selectFood(foodId) {
-            // Remove active style from all selectors
-            document.querySelectorAll('.food-selector-btn').forEach(btn => {
-                btn.classList.remove('border-limaCyan', 'bg-slate-800/80');
-                btn.classList.add('border-transparent', 'bg-slate-800/40');
-                // restore text opacity
-                btn.querySelector('h4').classList.remove('text-white');
-                btn.querySelector('h4').classList.add('text-white/90');
-            });
-
-            // Add active style to selected button
-            const activeBtn = document.getElementById(`foodBtn-${foodId}`);
-            activeBtn.classList.add('border-limaCyan', 'bg-slate-800/80');
-            activeBtn.classList.remove('border-transparent', 'bg-slate-800/40');
-            activeBtn.querySelector('h4').classList.add('text-white');
-            activeBtn.querySelector('h4').classList.remove('text-white/90');
-
-            // Apply smooth fade-out effect to card details
-            const cardContent = document.getElementById('foodDynamicContent');
-            cardContent.classList.add('opacity-0', 'transition-opacity', 'duration-200');
-
-            setTimeout(() => {
-                const data = foodData[foodId];
-                
-                // Update elements
-                document.getElementById('foodName').innerText = data.name;
-                document.getElementById('foodDescription').innerText = data.desc;
-                document.getElementById('foodPairing').innerText = data.pairing;
-                document.getElementById('foodLocation').innerText = data.location;
-                document.getElementById('foodImage').src = data.image;
-                document.getElementById('foodImage').alt = data.name;
-
-                // Fade back in
-                cardContent.classList.remove('opacity-0');
-            }, 200);
-        }
-
-        // Interactive Itinerary Planner Controls
-        function setPlannerDays(days) {
-            currentPlannerDays = days;
-            
-            // Highlight active day button
-            document.querySelectorAll('.planner-day-btn').forEach(btn => {
-                btn.classList.remove('bg-limaCyan', 'text-white', 'border-limaCyan', 'shadow-md');
-                btn.classList.add('border-slate-200', 'text-slate-700');
-            });
-            const activeBtn = document.getElementById(`dayBtn-${days}`);
-            activeBtn.classList.add('bg-limaCyan', 'text-white', 'border-limaCyan', 'shadow-md');
-            activeBtn.classList.remove('border-slate-200', 'text-slate-700');
-
-            renderItinerary();
-        }
-
-        function setPlannerProfile(profile) {
-            currentPlannerProfile = profile;
-
-            // Highlight active profile button
-            document.querySelectorAll('.planner-prof-btn').forEach(btn => {
-                btn.classList.remove('bg-limaCyan', 'text-white', 'border-limaCyan', 'shadow-md');
-                btn.classList.add('border-slate-200', 'text-slate-700');
-            });
-            const activeBtn = document.getElementById(`profBtn-${profile}`);
-            activeBtn.classList.add('bg-limaCyan', 'text-white', 'border-limaCyan', 'shadow-md');
-            activeBtn.classList.remove('border-slate-200', 'text-slate-700');
-
-            renderItinerary();
-        }
-
-        function renderItinerary() {
-            const container = document.getElementById('plannerTimeline');
-            container.classList.add('opacity-0', 'transition-opacity', 'duration-200');
-
-            setTimeout(() => {
-                const activeKey = `days${currentPlannerDays}`;
-                const list = itineraryData[activeKey][currentPlannerProfile];
-                
-                let html = '';
-                list.forEach((item, index) => {
-                    html += `
-                    <div class="relative group">
-                        <!-- Bullet point -->
-                        <div class="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-limaCyan flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                            <div class="w-1.5 h-1.5 bg-limaCyan rounded-full"></div>
-                        </div>
-                        <div class="bg-slate-50 border border-slate-100 p-5 rounded-2xl group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
-                            <span class="inline-block px-3 py-1 rounded-full bg-limaGold/10 text-limaGold text-xs font-bold uppercase tracking-wider mb-2">
-                                <i class="fa-regular fa-clock"></i> ${item.time}
-                            </span>
-                            <h4 class="font-serif text-lg font-bold text-slate-900 group-hover:text-limaCyan transition-colors">${item.title}</h4>
-                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">${item.desc}</p>
-                        </div>
-                    </div>
-                    `;
-                });
-
-                container.innerHTML = html;
-                container.classList.remove('opacity-0');
-            }, 200);
-        }
-
-        // Filterable Photo Gallery Logic
-        function filterGallery(category) {
-            // Handle buttons highlighting
-            document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
-                btn.classList.remove('bg-limaCyan', 'text-white', 'border-limaCyan', 'shadow-sm');
-                btn.classList.add('border-slate-200', 'text-slate-600');
-            });
-            const activeBtn = document.getElementById(`galleryFilterBtn-${category}`);
-            activeBtn.classList.add('bg-limaCyan', 'text-white', 'border-limaCyan', 'shadow-sm');
-            activeBtn.classList.remove('border-slate-200', 'text-slate-600');
-
-            // Filter items with scale transitions
-            const items = document.querySelectorAll('.gallery-item');
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        }
-
-        // Lightbox Modal for Gallery View
-        function openLightbox(imgSrc, title, desc) {
-            const modal = document.getElementById('lightboxModal');
-            document.getElementById('lightboxImg').src = imgSrc;
-            document.getElementById('lightboxTitle').innerText = title;
-            document.getElementById('lightboxDesc').innerText = desc;
-            
-            modal.classList.remove('pointer-events-none', 'opacity-0');
-            modal.classList.add('opacity-100');
-        }
-
-        function closeLightbox() {
-            const modal = document.getElementById('lightboxModal');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        // Destination Detail Modal Opening
-        function openDestinationDetail(key) {
-            const modal = document.getElementById('destinationModal');
-            const container = document.getElementById('destinationModalContainer');
-            const data = destinationDetails[key];
-
-            document.getElementById('destDetailImg').src = data.img;
-            document.getElementById('destDetailCategory').innerText = data.category;
-            document.getElementById('destDetailName').innerText = data.name;
-            document.getElementById('destDetailDesc').innerText = data.desc;
-            document.getElementById('destDetailArrival').innerText = data.arrival;
-            document.getElementById('destDetailBestTime').innerText = data.bestTime;
-            document.getElementById('destDetailSecret').innerText = data.secret;
-
-            modal.classList.remove('pointer-events-none', 'opacity-0');
-            container.classList.remove('scale-95');
-            container.classList.add('scale-100');
-        }
-
-        // General Modal Helpers
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            const container = modal.querySelector('.transform');
-            modal.classList.remove('pointer-events-none', 'opacity-0');
-            if(container) {
-                container.classList.remove('scale-95');
-                container.classList.add('scale-100');
-            }
-        }
-
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            const container = modal.querySelector('.transform');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            if(container) {
-                container.classList.remove('scale-100');
-                container.classList.add('scale-95');
-            }
-        }
-
-        // Accordion (FAQ) toggler
-        function toggleAccordion(id) {
-            const content = document.getElementById(`accContent-${id}`);
-            const icon = document.getElementById(`accIcon-${id}`);
-            const isHidden = content.classList.contains('hidden');
-
-            // Close all accordions first
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById(`accContent-${i}`).classList.add('hidden');
-                document.getElementById(`accIcon-${i}`).style.transform = 'rotate(0deg)';
-                document.getElementById(`accIcon-${i}`).innerHTML = '<i class="fa-solid fa-plus text-xs"></i>';
-            }
-
-            if (isHidden) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(45deg)';
-                icon.innerHTML = '<i class="fa-solid fa-plus text-xs"></i>';
-            }
-        }
-
-        // Handle Newsletter Form Submit
-        function handleNewsletterSubmit(event) {
-            event.preventDefault();
-            const emailInput = document.getElementById('newsEmail');
-            
-            // Visual success indicator
-            emailInput.value = '';
-            const successDiv = document.getElementById('newsletterSuccess');
-            successDiv.classList.remove('hidden');
-            
-            showToast("<i class='fa-solid fa-bell-concierge text-limaGold'></i> ¡Suscrito al boletín oficial!", "Te enviaremos los secretos mejor guardados de Lima.");
-
-            setTimeout(() => {
-                successDiv.classList.add('hidden');
-            }, 5000);
-        }
-
-        // Handle Itinerary/Contact Form Submit
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('contactName').value;
-            
-            // Show Success feedback in form
-            document.getElementById('contactSuccess').classList.remove('hidden');
-            
-            showToast("<i class='fa-regular fa-face-smile-wink text-limaCyan'></i> ¡Solicitud enviada!", `Hola ${name}, procesaremos tu itinerario personalizado.`);
-
-            setTimeout(() => {
-                closeModal('welcomeModal');
-                document.getElementById('contactSuccess').classList.add('hidden');
-                document.getElementById('contactName').value = '';
-                document.getElementById('contactEmail').value = '';
-            }, 2500);
-        }
-
-        // Toast feedback system
-        function showToast(titleHtml, message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastIcon').innerHTML = titleHtml;
-            document.getElementById('toastMsg').innerText = message;
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 4500);
-        }
+</body>
+</html>
     </script>
 </body>
 </html>
