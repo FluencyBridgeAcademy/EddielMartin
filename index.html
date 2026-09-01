@@ -136,14 +136,16 @@
     <!-- HERO SECTION -->
     <section class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
         <!-- Background Image with Overlay -->
-       <div class="absolute inset-0 z-0">
-    <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="aguadulce.mp4" type="video/mp4">
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/45 to-slate-900/20"></div>
-        </div>
+       <div class="absolute inset-0 z-0 bg-slate-900">
+            <!-- NOTA: Añadí un id, preload, poster, disablePictureInPicture y pointer-events-none -->
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" disablePictureInPicture poster="aguadulce-poster.jpg" class="w-full h-full object-cover pointer-events-none opacity-90">
+                <source src="aguadulce.mp4" type="video/mp4">
+            </video>
+            <!-- Este gradiente es el que bloqueaba el toque. También le ponemos pointer-events-none para asegurar -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/45 to-slate-900/20 pointer-events-none"></div>
+       </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-auto">
             <div class="max-w-3xl">
                 <!-- Tag -->
                 <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-sand-500/90 text-slate-950 uppercase tracking-widest mb-6">
@@ -722,32 +724,38 @@
         });
 
         /* 
-           INTERSECTION OBSERVER SCRIPT:
-           Este bloque se encarga de monitorear todos los elementos que tengan la clase '.reveal-left'.
-           Cuando el elemento alcanza el 15% (threshold: 0.15) de visibilidad en el viewport,
-           le agrega la clase '.active', gatillando la animación suave de izquierda a derecha.
+           INTERSECTION OBSERVER SCRIPT
         */
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
-                root: null, // usa el viewport del navegador
+                root: null, 
                 rootMargin: "0px",
-                threshold: 0.15 // se activa cuando el 15% del elemento es visible
+                threshold: 0.15 
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        // Se remueve el observer para este nodo para mejor rendimiento tras animarse una vez
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            // Seleccionamos todos los elementos con la clase "reveal-left"
             const revealElements = document.querySelectorAll('.reveal-left');
             revealElements.forEach(el => observer.observe(el));
         });
+
+        // NUEVO SCRIPT: Forzar reproducción en dispositivos móviles si fue bloqueado
+        document.addEventListener('touchstart', function() {
+            const video = document.getElementById('heroVideo');
+            if (video && video.paused) {
+                video.play().catch(err => {
+                    console.log("No se pudo iniciar el video en móvil automáticamente:", err);
+                });
+            }
+        }, { once: true });
+
     </script>
 
 </body>
