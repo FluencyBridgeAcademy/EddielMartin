@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones de Uso | Hi5Profe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              900: '#4c1d95',
+            },
+            darkBg: '#050713',
+            darkCard: '#0c1024',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .toc-link.active {
+      color: #7c3aed;
+      border-left-color: #7c3aed;
+      font-weight: 600;
+      background-color: #f5f3ff;
+    }
+    @media print {
+      header, footer, #toc-sidebar, #quick-actions, #whatsapp-btn {
+        display: none !important;
+      }
+      main {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo matching UI -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="bg-gradient-to-tr from-brand-700 via-brand-600 to-purple-500 text-white font-bold text-sm px-2.5 py-1.5 rounded-xl shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          Hi5
+        </div>
+        <span class="text-2xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">
+          Hi5<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-pink-500">Profe</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#inicio" class="hover:text-brand-600 transition-colors">Home</a>
+        <a href="#features" class="hover:text-brand-600 transition-colors">Features</a>
+        <a href="#modalities" class="hover:text-brand-600 transition-colors">Modalities</a>
+        <a href="#pricing" class="hover:text-brand-600 transition-colors">Pricing</a>
+      </nav>
+
+      <!-- Action Button matching UI -->
+      <div class="flex items-center gap-3">
+        <a href="#start" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-gradient-to-r from-brand-600 to-purple-600 text-white text-sm font-semibold shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all">
+          Start Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative bg-gradient-to-b from-purple-50/70 via-white to-slate-50 pt-12 pb-14 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <!-- Breadcrumb & badges -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-4 text-xs font-semibold text-slate-500">
+          <span class="text-slate-400">Inicio</span>
+          <span>/</span>
+          <span class="text-slate-400">Legal</span>
+          <span>/</span>
+          <span class="text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full border border-brand-200">Documento Oficial</span>
+          <span class="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-200 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Vigente 2026
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Términos y Condiciones <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-pink-500">de Uso</span>
+        </h1>
+        <p class="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
+          Bienvenido a Hi5Profe. Por favor, lee cuidadosamente este acuerdo legal que rige el uso de nuestra plataforma educativa, clases en vivo, lecciones interactivas y servicios de tutoría.
+        </p>
+
+        <!-- Quick actions tools -->
+        <div class="mt-6 flex flex-wrap items-center gap-3" id="quick-actions">
+          <button onclick="window.print()" class="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-slate-300 rounded-xl text-xs font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-colors">
+            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Imprimir o Guardar PDF
+          </button>
+          <div class="text-xs text-slate-500 bg-white/80 border border-slate-200 px-3.5 py-2 rounded-xl">
+            Última actualización: <strong class="text-slate-700 font-semibold">Septiembre 2026</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+      <aside class="hidden lg:block lg:col-span-4 xl:col-span-3" id="toc-sidebar">
+        <div class="sticky top-28 bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Contenido</h3>
+            <span class="text-[10px] font-semibold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-full">8 Secciones</span>
+          </div>
+
+          <!-- Live quick search within document -->
+          <div class="relative mb-4">
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Buscar en el documento..." 
+              class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 pl-8 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+            />
+            <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+
+          <nav class="space-y-1 text-xs">
+            <a href="#sec-1" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">1. Descripción de los Servicios</a>
+            <a href="#sec-2" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">2. Registro y Cuentas de Usuario</a>
+            <a href="#sec-3" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">3. Planes de Pago, Pruebas y Facturación</a>
+            <a href="#sec-4" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">4. Propiedad Intelectual</a>
+            <a href="#sec-5" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">5. Normas de Conducta y Uso Aceptable</a>
+            <a href="#sec-6" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">6. Limitación de Responsabilidad</a>
+            <a href="#sec-7" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">7. Modificaciones a los Términos</a>
+            <a href="#sec-8" class="toc-link block px-3 py-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-brand-50/50 border-l-2 border-transparent transition-all">8. Contacto Legal</a>
+          </nav>
+
+          <!-- Need help callout -->
+          <div class="mt-6 pt-4 border-t border-slate-100 bg-brand-50/50 p-3.5 rounded-xl text-center">
+            <p class="text-xs text-slate-700 font-medium">¿Preguntas sobre estos términos?</p>
+            <a href="mailto:contact@hi5profe.com" class="mt-2 inline-block text-xs font-semibold text-brand-600 hover:underline">
+              contact@hi5profe.com
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <article class="lg:col-span-8 xl:col-span-9 space-y-8" id="document-body">
+
+        <!-- Introduction Summary Card -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm leading-relaxed">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-100 text-brand-700 font-bold">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            <h2 class="text-xl font-bold text-slate-900">Declaración de Conformidad</h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Bienvenido a <strong>Hi5Profe</strong> (en adelante, "la Plataforma" o "Hi5Profe"). Al acceder, registrarse o utilizar cualquiera de nuestros servicios a través del sitio web, aplicaciones asociadas o canales directos, usted declara haber leído, comprendido y aceptado en su totalidad estos Términos y Condiciones de Uso.
+          </p>
+          <div class="mt-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm flex items-start gap-3">
+            <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span>
+              <strong>Aviso importante:</strong> Si usted no está de acuerdo con alguna parte de estas condiciones, le solicitamos abstenerse de utilizar el servicio, crear cuentas o contratar planes en Hi5Profe.
+            </span>
+          </div>
+        </div>
+
+        <!-- Section 1 -->
+        <section id="sec-1" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">01</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">1. Descripción de los Servicios</h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base mb-4">
+            Hi5Profe es una plataforma educativa integral especializada en la enseñanza del idioma español para estudiantes internacionales y profesionales. Nuestros servicios comprenden:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-2">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-600 mt-2 shrink-0"></div>
+              <p class="text-xs sm:text-sm text-slate-700"><strong class="text-slate-900">Lecciones Interactivas:</strong> Contenidos multimedia, ejercicios prácticos y herramientas inteligentes adaptadas a los distintos niveles del MCER.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-600 mt-2 shrink-0"></div>
+              <p class="text-xs sm:text-sm text-slate-700"><strong class="text-slate-900">Práctica en Vivo:</strong> Sesiones grupales de conversación guiadas para mejorar la fluidez e interacción natural.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-600 mt-2 shrink-0"></div>
+              <p class="text-xs sm:text-sm text-slate-700"><strong class="text-slate-900">Soporte Experto 1 a 1:</strong> Tutorías privadas y asesoramiento personalizado con profesores calificados.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-600 mt-2 shrink-0"></div>
+              <p class="text-xs sm:text-sm text-slate-700"><strong class="text-slate-900">Recursos y Comunidad:</strong> Seminarios web, guías descargables y foros de interacción comunitaria.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="sec-2" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">02</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">2. Registro y Cuentas de Usuario</h2>
+          </div>
+          <div class="space-y-4 text-sm sm:text-base text-slate-600">
+            <p>
+              Para acceder a la mayoría de las funcionalidades de Hi5Profe, es requisito indispensable crear una cuenta de estudiante proporcionando un correo electrónico válido, nombre y demás datos solicitados.
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm text-slate-700">
+              <li><strong>Veracidad de los datos:</strong> Usted garantiza que toda la información provista en el formulario de registro es fidedigna, exacta y se compromete a mantenerla actualizada.</li>
+              <li><strong>Confidencialidad de credenciales:</strong> El usuario es el único custodio y responsable de la confidencialidad de su contraseña. Toda actividad realizada a través de su cuenta se reputará realizada por el titular registrado.</li>
+              <li><strong>Uso exclusivo y personal:</strong> Las membresías, lecciones y accesos a sesiones son de carácter personal e intransferible. Queda prohibida la compartición de cuentas entre varios usuarios simultáneos o la reventa de cupos.</li>
+              <li><strong>Edad mínima:</strong> El servicio está diseñado para mayores de 16 años o menores de edad con la debida supervisión y consentimiento expreso de sus padres o tutores legales.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="sec-3" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">03</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">3. Planes de Pago, Pruebas Gratuitas y Facturación</h2>
+          </div>
+          <div class="space-y-4 text-sm sm:text-base text-slate-600">
+            <p>
+              Hi5Profe ofrece distintas modalidades de suscripción y paquetes de clases descritos en la sección oficial de <strong class="text-slate-800">Pricing</strong>.
+            </p>
+            
+            <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-2xl space-y-3">
+              <h4 class="font-semibold text-slate-900 text-xs uppercase tracking-wide">Términos específicos de cobro:</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-600 font-bold">•</span>
+                  <span><strong>Prueba Gratuita ("Start Free Now"):</strong> Al acceder a una prueba gratis, el usuario puede experimentar las funcionalidades por el período promocional establecido. Salvo cancelación previa a la fecha límite, la suscripción se convertirá automáticamente en el plan de pago seleccionado.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-600 font-bold">•</span>
+                  <span><strong>Renovaciones Automáticas:</strong> Las suscripciones recurrentes (mensuales, semestrales o anuales) se renuevan periódicamente de forma automática a menos que sean canceladas desde el panel de usuario antes del corte del ciclo.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-600 font-bold">•</span>
+                  <span><strong>Política de Cancelación de Tutorías 1 a 1:</strong> Las cancelaciones o reprogramaciones de clases privadas deben realizarse con un mínimo de <span class="text-slate-900 font-semibold underline decoration-brand-400">24 horas de anticipación</span>. Las sesiones canceladas fuera de dicho plazo serán computadas como impartidas.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-600 font-bold">•</span>
+                  <span><strong>Reembolsos:</strong> Salvo por garantías explícitas de satisfacción anunciadas o derechos irrenunciables previstos por la legislación del consumidor aplicable, las cuotas de suscripción ya devengadas no son reembolsables.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="sec-4" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">04</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">4. Propiedad Intelectual</h2>
+          </div>
+          <div class="space-y-3 text-sm sm:text-base text-slate-600">
+            <p>
+              Todos los activos pedagógicos y tecnológicos presentes en Hi5Profe —incluyendo interfaces, código informático, ejercicios interactivos, manuales, guías gramaticales, audios, logotipos e identidad visual— son propiedad exclusiva de <strong>Hi5Profe</strong> o de sus respectivos licenciantes, protegidos por tratados internacionales de derechos de autor y propiedad industrial.
+            </p>
+            <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-100 text-purple-950 text-xs sm:text-sm">
+              <strong class="text-brand-700">Licencia de uso otorgada:</strong> Hi5Profe concede al usuario activo una licencia limitada, revocable, no transferible y no sublicenciable para visualizar y realizar los ejercicios únicamente con fines de estudio individual y no comercial. Queda expresamente prohibida la grabación, piratería, copia masiva o redistribución de nuestras clases y guías.
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="sec-5" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">05</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">5. Normas de Conducta y Uso Aceptable</h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base mb-4">
+            Nos enorgullecemos de ofrecer un ambiente seguro, enriquecedor e inclusivo para personas de todo el mundo. Todo estudiante y usuario se compromete a:
+          </p>
+          <div class="space-y-2.5">
+            <div class="flex items-start gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <p class="text-xs sm:text-sm text-slate-700">Tratar con dignidad, respeto y cordialidad a profesores, moderadores y compañeros de clase durante las prácticas en vivo y chats comunitarios.</p>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <p class="text-xs sm:text-sm text-slate-700">Abstenerse de emitir comentarios discriminatorios, difamatorios, racistas, de acoso sexual o que infrinjan la intimidad de terceros.</p>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <p class="text-xs sm:text-sm text-slate-700">No grabar imagen ni audio de las sesiones en vivo ni divulgarlas en plataformas públicas o redes sociales sin autorización expresa.</p>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <p class="text-xs sm:text-sm text-slate-700">No intentar acceder indebidamente a bases de datos, APIs privadas o vulnerar la seguridad informática de la plataforma.</p>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-rose-600 font-medium">
+            * El incumplimiento de estas pautas facultará a Hi5Profe a suspender o cancelar la cuenta inmediatamente, sin derecho a indemnización ni reembolso.
+          </p>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="sec-6" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">06</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">6. Limitación de Responsabilidad</h2>
+          </div>
+          <div class="space-y-3 text-sm sm:text-base text-slate-600">
+            <p>
+              Hi5Profe implementa metodologías modernas y docentes cualificados para optimizar el aprendizaje de sus alumnos; no obstante, el progreso y la fluidez dependen enteramente del esfuerzo, práctica y dedicación de cada estudiante.
+            </p>
+            <p class="text-xs sm:text-sm text-slate-500">
+              No nos hacemos responsables por cortes de servicio derivados de averías en los proveedores de telecomunicaciones del usuario, caídas globales de infraestructura en la nube o situaciones de fuerza mayor ajenas a nuestro control razonable.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="sec-7" class="legal-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center">07</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">7. Modificaciones a los Términos</h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Hi5Profe se reserva el derecho de modificar o complementar estos Términos en cualquier momento para reflejar nuevas normativas, funciones pedagógicas o ajustes operativos. Notificaremos cambios sustanciales a través del sitio web o vía correo electrónico. La continuidad en el uso del servicio tras la publicación de los términos enmendados constituye su aceptación vinculante.
+          </p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="sec-8" class="legal-card bg-gradient-to-br from-white to-brand-50/40 p-6 sm:p-8 rounded-3xl border border-brand-200/70 shadow-sm scroll-mt-28">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-xs font-bold flex items-center justify-center">08</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900">8. Contacto Legal y Soporte</h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base mb-6">
+            Si tiene alguna pregunta, inquietud o reclamación relacionada con estos Términos y Condiciones o el tratamiento de sus servicios, nuestro equipo legal y de atención al alumno está a su completa disposición:
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="mailto:contact@hi5profe.com" class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-md transition-all flex items-center gap-3.5 group">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Correo Oficial</p>
+                <p class="text-sm font-bold text-slate-800 group-hover:text-brand-600 transition-colors">contact@hi5profe.com</p>
+              </div>
+            </a>
+
+            <a href="https://wa.me/51936932398" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all flex items-center gap-3.5 group">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.78 14.15c-.24.68-1.4 1.3-1.94 1.38-.51.08-1.18.11-3.83-.98-3.39-1.39-5.57-4.82-5.74-5.05-.17-.23-1.38-1.84-1.38-3.51 0-1.67.87-2.49 1.18-2.83.31-.34.68-.43.91-.43.23 0 .46 0 .66.01.21.01.49-.08.76.58.28.68.96 2.34 1.04 2.51.08.17.13.37.03.58-.1.21-.15.34-.3.51-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.15.28.11 1.79.84 2.1 1 .31.15.52.23.6.36.08.13.08.76-.16 1.44z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Atención WhatsApp</p>
+                <p class="text-sm font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">+51 936932398</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="bg-darkBg text-slate-300 border-t border-slate-800/80 pt-16 pb-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800/80">
+        
+        <!-- Col 1: Brand & Bio -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="bg-gradient-to-tr from-brand-700 via-brand-600 to-purple-500 text-white font-bold text-sm px-2.5 py-1.5 rounded-xl shadow-md">
+              Hi5
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight text-white">
+              Hi5<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-pink-400">Profe</span>
+            </span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            The premier online destination to learn Spanish effectively, naturally, and enjoyably.
+          </p>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold text-white tracking-wider">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Resources -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold text-white tracking-wider">Resources</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Community</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Webinars</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Social Icons -->
+        <div class="space-y-4">
+          <h4 class="text-sm font-semibold text-white tracking-wider">Contact</h4>
+          <div class="space-y-1.5 text-sm text-slate-400">
+            <p><a href="mailto:contact@hi5profe.com" class="hover:text-white transition-colors">contact@hi5profe.com</a></p>
+            <p><a href="tel:+51936932398" class="hover:text-white transition-colors">+51 936932398</a></p>
+          </div>
+
+          <!-- Social buttons matching screenshot 2 -->
+          <div class="flex items-center gap-2.5 pt-2">
+            <!-- Facebook -->
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.667 5H18V0h-3.808C10.592 0 9 1.592 9 4.615V8z"/></svg>
+            </a>
+            <!-- Twitter / X -->
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Hi5Profe. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="#sec-1" class="text-brand-400 font-medium hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a 
+    href="https://wa.me/51936932398?text=Hola%20Hi5Profe,%20tengo%20una%20consulta%20sobre%20los%20términos%20de%20servicio" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    id="whatsapp-btn"
+    class="fixed bottom-6 right-6 z-50 group flex items-center gap-2 p-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-2xl shadow-[#25D366]/40 hover:scale-110 active:scale-95 transition-all duration-300"
+    title="Contáctanos vía WhatsApp"
+  >
+    <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.78 14.15c-.24.68-1.4 1.3-1.94 1.38-.51.08-1.18.11-3.83-.98-3.39-1.39-5.57-4.82-5.74-5.05-.17-.23-1.38-1.84-1.38-3.51 0-1.67.87-2.49 1.18-2.83.31-.34.68-.43.91-.43.23 0 .46 0 .66.01.21.01.49-.08.76.58.28.68.96 2.34 1.04 2.51.08.17.13.37.03.58-.1.21-.15.34-.3.51-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.15.28.11 1.79.84 2.1 1 .31.15.52.23.6.36.08.13.08.76-.16 1.44z"/>
+    </svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold pr-1">
+      ¿Dudas? Escríbenos
+    </span>
+  </a>
+
+  <script>
+    // Search highlight inside sections
+    const searchInput = document.getElementById('search-input');
+    const legalCards = document.querySelectorAll('.legal-card');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        legalCards.forEach((card) => {
+          const text = card.textContent.toLowerCase();
+          if (query === '' || text.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // Dynamic scroll spy for Table of Contents
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id^="sec-"]');
+      const navLinks = document.querySelectorAll('.toc-link');
+      let currentSectionId = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 160;
+        if (window.pageYOffset >= sectionTop) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
