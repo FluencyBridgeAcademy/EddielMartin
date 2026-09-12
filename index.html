@@ -58,12 +58,7 @@
         .lang-toggle .lang-inactive { color: #64748b; }
         .section-gap { margin-top: 0 !important; padding-top: 4rem !important; }
         @media (max-width: 640px) {
-            .hero-video { display: none; }
-            .hero-fallback { display: block; }
             .section-gap { padding-top: 3rem !important; }
-        }
-        @media (min-width: 641px) {
-            .hero-fallback { display: none; }
         }
     </style>
 </head>
@@ -126,10 +121,9 @@
 
     <section class="relative bg-slate-900 text-white py-20 sm:py-24 md:py-32 overflow-hidden">
        <div class="absolute inset-0 z-0 bg-slate-900">
-            <video id="heroVideo" class="w-full h-full object-cover pointer-events-none opacity-100 hero-video" autoplay muted loop playsinline preload="metadata" disablePictureInPicture poster="aguadulce.mp4">
+            <video id="heroVideo" class="w-full h-full object-cover pointer-events-none opacity-100 hero-video" autoplay muted loop playsinline preload="metadata" disablePictureInPicture>
                 <source src="aguadulce.mp4" type="video/mp4">
             </video>
-            <img class="hero-fallback absolute inset-0 w-full h-full object-cover opacity-90" src="aguadulce.mp4" alt="Fishing and sea experience in Chorrillos">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-slate-900/25 to-slate-900/10 pointer-events-none"></div>
        </div>
 
