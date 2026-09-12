@@ -11,77 +11,47 @@
     <meta property="og:image" content="https://FluencyBridgeAcademy.github.io/EddielMartin/pezgrande.svg">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Favicon para navegadores modernos -->
     <link rel="icon" type="image/svg+xml" href="pezgrande.svg" sizes="any">
-
-    <!-- Alternativa para navegadores antiguos -->
     <link rel="icon" type="image/png" href="pezgrande.png" sizes="48x48">
-
-    <!-- Para Apple devices -->
     <link rel="apple-touch-icon" href="favicon.png">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        ocean: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        sand: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
+                        ocean: { 50: '#f0f9ff', 100: '#e0f2fe', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
+                        sand: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706' }
                     }
                 }
             }
         }
     </script>
-    
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .font-serif-display {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-80px);
-            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform, opacity;
-        }
-        .reveal-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+        .reveal-left { opacity: 0; transform: translateX(-80px); transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform, opacity; }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
+        @media (max-width: 640px) {
+            .hero-video { display: none; }
+            .hero-fallback { display: block; }
+        }
+        @media (min-width: 641px) {
+            .hero-fallback { display: none; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 selection:bg-ocean-600 selection:text-white overflow-x-hidden">
 
     <div class="bg-ocean-900 text-ocean-100 text-xs py-2 px-4 text-center font-medium tracking-wide">
-        Experience Lima like a local - Book your artisanal fishing tour & conversational Spanish classes today!
+        Experience Lima like a local — book your artisanal fishing tour and conversational Spanish classes today!
     </div>
 
     <header class="sticky top-0 z-40 w-full transition-all duration-300 backdrop-blur-md bg-white/90 border-b border-slate-100">
@@ -92,10 +62,10 @@
                 </div>
                 <div>
                     <span class="block font-extrabold text-lg tracking-tight text-ocean-900 leading-none">Eddiel Martin</span>
-                    <span class="text-xs font-semibold tracking-wider text-sand-600 uppercase">Lima Local Friend & Tutor</span>
+                    <span class="text-xs font-semibold tracking-wider text-sand-600 uppercase">Lima local friend & tutor</span>
                 </div>
             </a>
-            
+
             <nav class="hidden md:flex items-center space-x-8" aria-label="Primary navigation">
                 <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-ocean-700 transition">About Eddiel</a>
                 <a href="#tours" class="text-sm font-semibold text-slate-600 hover:text-ocean-700 transition">Fishing Tours</a>
@@ -105,7 +75,7 @@
 
             <div class="hidden md:flex items-center space-x-4">
                 <a href="https://wa.me/51936932398" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white font-bold text-sm px-5 py-2.5 rounded-full hover:bg-emerald-700 transition flex items-center shadow-lg shadow-emerald-600/10">
-                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Book Instantly
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Book instantly
                 </a>
             </div>
 
@@ -127,11 +97,12 @@
         </div>
     </header>
 
-    <section class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+    <section class="relative bg-slate-900 text-white py-20 sm:py-24 md:py-32 overflow-hidden">
        <div class="absolute inset-0 z-0 bg-slate-900">
-            <video id="heroVideo" autoplay muted loop playsinline preload="metadata" disablePictureInPicture poster="aguadulce-poster.jpg" class="w-full h-full object-cover pointer-events-none opacity-90" aria-hidden="true">
+            <video id="heroVideo" class="hero-video w-full h-full object-cover pointer-events-none opacity-90" autoplay muted loop playsinline preload="metadata" disablePictureInPicture poster="aguadulce-poster.jpg" aria-hidden="true">
                 <source src="aguadulce.mp4" type="video/mp4">
             </video>
+            <img class="hero-fallback absolute inset-0 w-full h-full object-cover opacity-90" src="aguadulce-poster.jpg" alt="Fishing and sea experience in Chorrillos">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/45 to-slate-900/20 pointer-events-none"></div>
        </div>
 
@@ -140,13 +111,13 @@
                 <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-sand-500/90 text-slate-950 uppercase tracking-widest mb-6">
                     <i class="fa-solid fa-map-pin mr-1.5"></i> Chorrillos, Lima, Perú
                 </span>
-                
+
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    Experience Lima’s Sea & <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-300">Master Spanish</span> with a Certified Local Guide
+                    Experience Lima’s Sea & <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-300">Master Spanish</span> with a certified local guide
                 </h1>
-                
+
                 <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed font-normal max-w-2xl">
-                    Hi! I'm Eddiel. Join me for an authentic artisanal fishing tour in historic Chorrillos, or take dynamic, customized Spanish lessons backed by international educational pedagogy. Let's make your journey unforgettable.
+                    Hi! I’m Eddiel. Join me for an authentic artisanal fishing tour in historic Chorrillos, or take personalized Spanish lessons backed by international pedagogical training.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -159,22 +130,10 @@
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-slate-700/50">
-                    <div>
-                        <span class="block text-2xl font-bold text-white">Native</span>
-                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Spanish Speaker</span>
-                    </div>
-                    <div>
-                        <span class="block text-2xl font-bold text-white">C1 Advanced</span>
-                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">English Certified</span>
-                    </div>
-                    <div>
-                        <span class="block text-2xl font-bold text-white">Chorrillos Pier</span>
-                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Base Location</span>
-                    </div>
-                    <div>
-                        <span class="block text-2xl font-bold text-white">Pedagogical</span>
-                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Teaching Standards</span>
-                    </div>
+                    <div><span class="block text-2xl font-bold text-white">Native</span><span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Spanish Speaker</span></div>
+                    <div><span class="block text-2xl font-bold text-white">C1 Advanced</span><span class="text-xs text-slate-400 font-medium uppercase tracking-wider">English Certified</span></div>
+                    <div><span class="block text-2xl font-bold text-white">Chorrillos Pier</span><span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Base Location</span></div>
+                    <div><span class="block text-2xl font-bold text-white">Pedagogical</span><span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Teaching Standards</span></div>
                 </div>
             </div>
         </div>
@@ -187,11 +146,11 @@
                     <div class="absolute -inset-4 bg-gradient-to-tr from-ocean-50 to-sand-50 rounded-3xl -z-10 rotate-2"></div>
                     <div class="overflow-hidden rounded-2xl shadow-xl border border-slate-100 bg-white p-4 reveal-left">
                         <div class="aspect-[4/5] bg-slate-100 rounded-xl relative overflow-hidden group">
-                            <img src="e.jpeg" alt="Eddiel Martin - Teacher & Fishing Guide" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="e.jpeg" alt="Eddiel Martin smiling by the sea" class="w-full h-full object-cover" loading="lazy" decoding="async">
                             <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md text-white p-4 rounded-lg">
                                 <p class="text-xs font-bold text-sand-500 uppercase tracking-widest mb-0.5">Meet Your Host</p>
                                 <p class="font-bold text-base">Eddiel Martin</p>
-                                <p class="text-xs text-slate-300">Languages: ES, EN, PT, IT</p>
+                                <p class="text-xs text-slate-300">Languages: Spanish, English, Portuguese, Italian</p>
                             </div>
                         </div>
                     </div>
@@ -203,10 +162,10 @@
                         Certified language instructor with a true passion for Peruvian culture and the ocean
                     </h2>
                     <p class="text-slate-600 leading-relaxed text-base">
-                        My name is Eddiel Martin (31 years old). I am a proud limeño, professional educator, and local host living in Lima. I hold certifications from prestigious academies such as "Asociación Cultural Peruano Británica" and "EF SET (C1 Advanced English)".
+                        My name is Eddiel Martin (31 years old). I am a proud Limeño, professional educator, and local host living in Lima. I hold certifications from prestigious academies such as "Asociación Cultural Peruano Británica" and "EF SET (C1 Advanced English)".
                     </p>
                     <p class="text-slate-600 leading-relaxed text-base">
-                        Over the past decade, I have taught hundreds of students online and in-person (Federico Villarreal School, World Tutoring Mexico). Beyond languages, my life revolves around the coastal heritage of Lima. As an expert local host, I offer specialized artisanal fishing experiences right out of the historical bay of Chorrillos, blending sea heritage with relaxed conversational practice.
+                        Over the past decade, I have taught hundreds of students online and in person (Federico Villarreal School, World Tutoring Mexico). Beyond languages, my life revolves around the coastal heritage of Lima. As an expert local host, I offer specialized artisanal fishing experiences in the historic bay of Chorrillos, blending sea heritage with relaxed conversational practice.
                     </p>
                 </div>
             </div>
@@ -225,7 +184,7 @@
                 <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col justify-between group hover:shadow-2xl transition duration-300 reveal-left">
                     <div>
                         <div class="h-72 w-full overflow-hidden relative">
-                            <img src="fish.jpeg" alt="Artisanal Fishing Chorrillos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <img src="fish.jpeg" alt="Artisanal fishing tour in Chorrillos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
                             <span class="absolute top-4 left-4 bg-ocean-800/95 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
                                 <i class="fa-solid fa-water mr-1.5"></i> Sea Experience
                             </span>
@@ -233,36 +192,12 @@
                         <div class="p-8">
                             <h3 class="text-2xl font-extrabold text-slate-950 mb-3 group-hover:text-ocean-700 transition">Traditional Fishing Tour in Chorrillos</h3>
                             <p class="text-slate-600 leading-relaxed mb-6">
-                                Embark on an authentic coastal journey starting from the historic "Muelle de Pescadores" (Fishermen’s Pier) in Chorrillos. We will head out on a classic colorful Peruvian wooden boat, learn hand-line fishing techniques, catch local species like "Chita" or "pejerrey", and admire the panoramic cliffs of Lima.
+                                Start at the historic Muelle de Pescadores in Chorrillos and head out on a colorful Peruvian wooden boat. Learn hand-line fishing techniques, discover local species like Chita or pejerrey, and enjoy panoramic views of Lima’s coastline.
                             </p>
                             <div class="space-y-3.5 mb-8">
-                                <div class="flex items-start">
-                                    <div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3">
-                                        <i class="fa-solid fa-check text-xs"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-sm text-slate-900">Locally Crafted Wooden Boat Ride</p>
-                                        <p class="text-xs text-slate-500">Departing directly from Chorrillos Pier alongside traditional fishermen.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3">
-                                        <i class="fa-solid fa-check text-xs"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-sm text-slate-900">Handline Fishing Instruction</p>
-                                        <p class="text-xs text-slate-500">Learn the traditional, minimalist fishing method used in Peru for centuries.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3">
-                                        <i class="fa-solid fa-check text-xs"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-sm text-slate-900">Cultural & Historical Commentary</p>
-                                        <p class="text-xs text-slate-500">Discover the history of Chorrillos, its birds, marine life, and gastronomy tips.</p>
-                                    </div>
-                                </div>
+                                <div class="flex items-start"><div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3"><i class="fa-solid fa-check text-xs"></i></div><div><p class="font-bold text-sm text-slate-900">Locally Crafted Wooden Boat Ride</p><p class="text-xs text-slate-500">Departing directly from Chorrillos Pier alongside traditional fishermen.</p></div></div>
+                                <div class="flex items-start"><div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3"><i class="fa-solid fa-check text-xs"></i></div><div><p class="font-bold text-sm text-slate-900">Handline Fishing Instruction</p><p class="text-xs text-slate-500">Learn the traditional, minimalist fishing method used in Peru for centuries.</p></div></div>
+                                <div class="flex items-start"><div class="mt-1 bg-ocean-100 text-ocean-700 p-1.5 rounded-lg mr-3"><i class="fa-solid fa-check text-xs"></i></div><div><p class="font-bold text-sm text-slate-900">Cultural & Historical Commentary</p><p class="text-xs text-slate-500">Discover the history of Chorrillos, its birds, marine life, and gastronomy tips.</p></div></div>
                             </div>
                         </div>
                     </div>
@@ -280,7 +215,7 @@
                 <div id="spanish" class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col justify-between group hover:shadow-2xl transition duration-300 reveal-left delay-200">
                     <div>
                         <div class="h-72 w-full overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" alt="Spanish Tutoring Class" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" alt="Spanish tutoring session" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
                             <span class="absolute top-4 left-4 bg-sand-500 text-slate-950 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
                                 <i class="fa-solid fa-graduation-cap mr-1.5"></i> Academic Excellence
                             </span>
@@ -288,36 +223,12 @@
                         <div class="p-8">
                             <h3 class="text-2xl font-extrabold text-slate-950 mb-3 group-hover:text-ocean-700 transition">Personalized Spanish Tutoring</h3>
                             <p class="text-slate-600 leading-relaxed mb-6">
-                                Accelerate your language skills with a certified native teacher. Leveraging advanced pedagogical training and experience with international programs, I offer structured conversation, grammar practice, and travel-oriented vocabulary sessions.
+                                Accelerate your language skills with a certified native teacher. Drawing on advanced pedagogical training and experience with international programs, I offer structured conversation, grammar practice, and travel-oriented vocabulary sessions.
                             </p>
                             <div class="space-y-3.5 mb-8">
-                                <div class="flex items-start">
-                                    <div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3">
-                                        <i class="fa-solid fa-check text-xs"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-sm text-slate-900">Pedagogical Framework Built-in</p>
-                                        <p class="text-xs text-slate-500">Using structures from my "Didactics & Pedagogy" qualification (AulaFacil).</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3">
-                                        <i class="fa-solid fa-check text-xs"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-sm text-slate-900">Virtual or Beachside Outdoor Classes</p>
-                                        <p class="text-xs text-slate-500">Learn comfortably online or meet at a seaside cafe in Barranco/Chorrillos.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3">
-                                        <i class="fa-solid fa-check text-xs"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-sm text-slate-900">Customized Coursework</p>
-                                        <p class="text-xs text-slate-500">Adapted for beginners, expats, medical professionals, or enthusiastic travelers.</p>
-                                    </div>
-                                </div>
+                                <div class="flex items-start"><div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3"><i class="fa-solid fa-check text-xs"></i></div><div><p class="font-bold text-sm text-slate-900">Pedagogical Framework Built In</p><p class="text-xs text-slate-500">Using structures from my "Didactics & Pedagogy" qualification (AulaFacil).</p></div></div>
+                                <div class="flex items-start"><div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3"><i class="fa-solid fa-check text-xs"></i></div><div><p class="font-bold text-sm text-slate-900">Virtual or Beachside Outdoor Classes</p><p class="text-xs text-slate-500">Learn online or meet at a seaside café in Barranco or Chorrillos.</p></div></div>
+                                <div class="flex items-start"><div class="mt-1 bg-sand-100 text-sand-600 p-1.5 rounded-lg mr-3"><i class="fa-solid fa-check text-xs"></i></div><div><p class="font-bold text-sm text-slate-900">Customized Coursework</p><p class="text-xs text-slate-500">Adapted for beginners, expats, medical professionals, or enthusiastic travelers.</p></div></div>
                             </div>
                         </div>
                     </div>
@@ -342,96 +253,13 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Verified Certifications & Experience</h2>
                 <p class="text-slate-600 mt-4">Every lesson and tour is backed by a solid foundation of pedagogy, official language certification, and verified background audits.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">C1 ADVANCED</span>
-                            <i class="fa-solid fa-graduation-cap text-slate-300 text-xl"></i>
-                        </div>
-                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">EFSET C1 English Certification</h4>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Achieved a score of "69/100" globally, marking C1 Proficient in Writing, Speaking, and Reading. Officially recognized internationally.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
-                        <span>Issued: August 2024</span>
-                        <span>ID: cert.efset.org/wxn6jC</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-blue-50 text-blue-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">ELT METHODOLOGY</span>
-                            <i class="fa-solid fa-certificate text-slate-300 text-xl"></i>
-                        </div>
-                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Asociación Cultural Peruano Británica</h4>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Successfully completed "English Language Teaching Course (135 Hours)". Focused on pedagogical methodologies and practical classroom application.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
-                        <span>Issued: November 2017</span>
-                        <span>Performance: Grade B</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-amber-50 text-amber-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">PEDAGOGY SPECIALIST</span>
-                            <i class="fa-solid fa-chalkboard-user text-slate-300 text-xl"></i>
-                        </div>
-                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Didáctica & Pedagogía Certifications</h4>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Accomplished verified certifications in "Didactics (Teaching Methods)" and "Pedagogy" from AulaFacil S.L (40 hours total teaching structure study).</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
-                        <span>Issued: July 2021</span>
-                        <span>Verification: QR Audited</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-red-50 text-red-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">MOBILE APPS</span>
-                            <i class="fa-solid fa-mobile-screen text-slate-300 text-xl"></i>
-                        </div>
-                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Google Actívate Certification</h4>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Finished the intensive "Mobile Application Development" certification course (40 Hours) in partnership with Universidad Complutense de Madrid.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
-                        <span>Issued: July 2021</span>
-                        <span>Partner: UCM Madrid</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-teal-50 text-teal-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">VIRTUAL LEARNING</span>
-                            <i class="fa-solid fa-laptop-code text-slate-300 text-xl"></i>
-                        </div>
-                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Ministry of Labor & Employment</h4>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Passed with an outstanding "18/20" grade in the specialized training program: "Motivación para el Aprendizaje Virtual" (Virtual Learning Motivation).</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between">
-                        <span>Issued: September 2021</span>
-                        <span>State Audited: MTPE Peru</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-slate-50 text-slate-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">SAFETY GUARANTEED</span>
-                            <i class="fa-solid fa-shield-halved text-slate-400 text-xl"></i>
-                        </div>
-                        <h4 class="font-extrabold text-lg text-slate-950 mb-2">Verified Clean Background Checks</h4>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Officially holds the "Certificado Único Laboral (CERTIADULTO)" certified by the Peruvian Ministry of Labor. Evaluated with 100% clean criminal, judicial, and police records.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-emerald-600 flex items-center justify-end">
-                        <i class="fa-solid fa-circle-check mr-1.5 text-xs"></i> Fully Verified
-                    </div>
-                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><span class="bg-emerald-50 text-emerald-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">C1 ADVANCED</span><i class="fa-solid fa-graduation-cap text-slate-300 text-xl"></i></div><h4 class="font-extrabold text-lg text-slate-950 mb-2">EFSET C1 English Certification</h4><p class="text-slate-500 text-xs leading-relaxed mb-4">Achieved a score of "69/100" globally, marking C1 proficiency in writing, speaking, and reading. Officially recognized internationally.</p></div><div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between"><span>Issued: August 2024</span><span>ID: cert.efset.org/wxn6jC</span></div></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><span class="bg-blue-50 text-blue-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">ELT METHODOLOGY</span><i class="fa-solid fa-certificate text-slate-300 text-xl"></i></div><h4 class="font-extrabold text-lg text-slate-950 mb-2">Asociación Cultural Peruano Británica</h4><p class="text-slate-500 text-xs leading-relaxed mb-4">Successfully completed the English Language Teaching Course (135 hours), focused on pedagogical methods and practical classroom application.</p></div><div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between"><span>Issued: November 2017</span><span>Performance: Grade B</span></div></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><span class="bg-amber-50 text-amber-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">PEDAGOGY SPECIALIST</span><i class="fa-solid fa-chalkboard-user text-slate-300 text-xl"></i></div><h4 class="font-extrabold text-lg text-slate-950 mb-2">Didáctica & Pedagogy Certifications</h4><p class="text-slate-500 text-xs leading-relaxed mb-4">Verified certifications in Didactics and Pedagogy from AulaFacil S.L. (40 hours of teaching-structure study).</p></div><div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between"><span>Issued: July 2021</span><span>Verification: QR Audited</span></div></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><span class="bg-red-50 text-red-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">MOBILE APPS</span><i class="fa-solid fa-mobile-screen text-slate-300 text-xl"></i></div><h4 class="font-extrabold text-lg text-slate-950 mb-2">Google Actívate Certification</h4><p class="text-slate-500 text-xs leading-relaxed mb-4">Completed the Mobile Application Development certification course (40 hours) in partnership with Universidad Complutense de Madrid.</p></div><div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between"><span>Issued: July 2021</span><span>Partner: UCM Madrid</span></div></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><span class="bg-teal-50 text-teal-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">VIRTUAL LEARNING</span><i class="fa-solid fa-laptop-code text-slate-300 text-xl"></i></div><h4 class="font-extrabold text-lg text-slate-950 mb-2">Ministry of Labor & Employment</h4><p class="text-slate-500 text-xs leading-relaxed mb-4">Passed with an outstanding "18/20" grade in the specialized training program “Motivación para el Aprendizaje Virtual” (Virtual Learning Motivation).</p></div><div class="pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400 flex justify-between"><span>Issued: September 2021</span><span>State Audited: MTPE Peru</span></div></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><span class="bg-slate-50 text-slate-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">SAFETY GUARANTEED</span><i class="fa-solid fa-shield-halved text-slate-400 text-xl"></i></div><h4 class="font-extrabold text-lg text-slate-950 mb-2">Verified Clean Background Checks</h4><p class="text-slate-500 text-xs leading-relaxed mb-4">Officially holds the Certificado Único Laboral (CERTIADULTO) certified by the Peruvian Ministry of Labor, showing clean criminal, judicial, and police records.</p></div><div class="pt-4 border-t border-slate-100 text-xs font-semibold text-emerald-600 flex items-center justify-end"><i class="fa-solid fa-circle-check mr-1.5 text-xs"></i> Fully Verified</div></div>
             </div>
         </div>
     </section>
@@ -441,45 +269,34 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-4 space-y-6">
                     <span class="text-sm font-bold text-ocean-700 uppercase tracking-widest block">The Magic of Chorrillos</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Lima's Historic Seaside Neighborhood</h2>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        Chorrillos is a historic district known for its colorful cliffs, incredible seafood traditions, and traditional fishermen. Walking down its streets and casting a line into its waters provides a visceral connection to the genuine, non-commercial soul of Lima.
-                    </p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Lima’s Historic Seaside Neighborhood</h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Chorrillos is a historic district known for its colorful cliffs, seafood traditions, and traditional fishermen. Walking its streets and casting a line into its waters provides a visceral connection to the genuine, non-commercial soul of Lima.</p>
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-3.5">
-                            <span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">1</span>
-                            <span class="font-bold text-slate-800 text-sm">Muelle de Pescadores de Chorrillos</span>
-                        </div>
-                        <div class="flex items-center space-x-3.5">
-                            <span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">2</span>
-                            <span class="font-bold text-slate-800 text-sm">Scenic Cliffs & Pacific Sunset view</span>
-                        </div>
-                        <div class="flex items-center space-x-3.5">
-                            <span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">3</span>
-                            <span class="font-bold text-slate-800 text-sm">Artisanal Seafood and Local Cevicherías</span>
-                        </div>
+                        <div class="flex items-center space-x-3.5"><span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">1</span><span class="font-bold text-slate-800 text-sm">Muelle de Pescadores de Chorrillos</span></div>
+                        <div class="flex items-center space-x-3.5"><span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">2</span><span class="font-bold text-slate-800 text-sm">Scenic Cliffs & Pacific Sunset View</span></div>
+                        <div class="flex items-center space-x-3.5"><span class="bg-ocean-100 text-ocean-700 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm">3</span><span class="font-bold text-slate-800 text-sm">Artisanal Seafood and Local Cevicherías</span></div>
                     </div>
                 </div>
-                
+
                 <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="space-y-4">
                         <div class="h-60 overflow-hidden rounded-2xl shadow-md relative group reveal-left">
-                            <img src="pelicano.jpeg" alt="Beautiful Peru Beach Coastline" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <img src="pelicano.jpeg" alt="Pelican over the Chorrillos coastline" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
                             <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Chorrillos Coastal Wave</span>
                         </div>
                         <div class="h-80 overflow-hidden rounded-2xl shadow-md relative group reveal-left delay-100">
-                            <img src="bote.jpeg" alt="Lima View Clifftops Coast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <img src="bote.jpeg" alt="Traditional wooden boat in Lima" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
                             <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Artisanal Wooden Boat</span>
                         </div>
                     </div>
                     <div class="space-y-4 sm:translate-y-6">
                         <div class="h-80 overflow-hidden rounded-2xl shadow-md relative group reveal-left delay-200">
-                            <img src="ceviche.jpeg" alt="Taste the best fresh Ceviche" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <img src="ceviche.jpeg" alt="Fresh ceviche in Lima" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
                             <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Taste delicious fresh Ceviche</span>
                         </div>
                         <div class="h-60 overflow-hidden rounded-2xl shadow-md relative group reveal-left delay-300">
-                            <img src="herradura.jpeg" alt="Acoustic Guitar Player" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
-                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Herradura beach</span>
+                            <img src="herradura.jpeg" alt="Herradura beach coastline" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded text-xs font-semibold">Herradura Beach</span>
                         </div>
                     </div>
                 </div>
@@ -492,45 +309,45 @@
             <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
                 <div class="bg-gradient-to-r from-ocean-900 to-ocean-800 p-8 text-white text-center">
                     <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Plan Your Custom Experience</h3>
-                    <p class="text-ocean-100 text-sm sm:text-base">Ready to book or have questions? Fill out the form below, and it will generate a direct WhatsApp draft message so we can chat immediately!</p>
+                    <p class="text-ocean-100 text-sm sm:text-base">Ready to book or have questions? Fill out the form below, and it will generate a direct WhatsApp draft message so we can chat immediately.</p>
                 </div>
-                
+
                 <form id="bookingForm" onsubmit="sendWhatsApp(event)" class="p-8 space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userName">Your Full Name</label>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userName">Your full name</label>
                             <input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" type="text" id="userName" placeholder="John Doe" required autocomplete="name">
                         </div>
                         <div>
-                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userEmail">Your Email Address</label>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userEmail">Your email address</label>
                             <input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" type="email" id="userEmail" placeholder="john@example.com" required autocomplete="email">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="selectedService">Select Experience</label>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="selectedService">Select experience</label>
                             <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" id="selectedService" required>
-                                <option value="Chorrillos Fishing Tour">Chorrillos Artisanal Fishing Tour</option>
-                                <option value="Spanish Tutoring (1-on-1)">Spanish Tutoring (1-on-1 Lessons)</option>
-                                <option value="Acoustic Guitar & English">Guitar Player + English Lessons</option>
-                                <option value="Custom Combo Experience">Custom Guide & Language Combo</option>
+                                <option value="Chorrillos Fishing Tour">Chorrillos artisanal fishing tour</option>
+                                <option value="Spanish Tutoring (1-on-1)">Spanish tutoring (1-on-1 lessons)</option>
+                                <option value="Acoustic Guitar & English">Guitar player + English lessons</option>
+                                <option value="Custom Combo Experience">Custom guide & language combo</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="preferredDate">Preferred Date</label>
+                            <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="preferredDate">Preferred date</label>
                             <input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" type="date" id="preferredDate" required>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userMessage">Additional Details / Questions</label>
+                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2" for="userMessage">Additional details / questions</label>
                         <textarea class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:bg-white transition" id="userMessage" rows="4" placeholder="Tell me about your group size, language level, or custom itinerary requests..."></textarea>
                     </div>
 
                     <div class="pt-4">
                         <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-all duration-300 flex items-center justify-center text-base shadow-lg shadow-emerald-600/20">
-                            <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send Instant WhatsApp
+                            <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send instant WhatsApp
                         </button>
                     </div>
                 </form>
@@ -549,20 +366,20 @@
                         <span class="font-extrabold text-base tracking-tight text-white uppercase">Eddiel Martin</span>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
-                        Artisanal Fishing Tour Host, Guitar Player & Certified Multilingual Spanish/English Instructor based in Chorrillos, Lima, Perú.
+                        Artisanal fishing tour host, guitarist, and certified multilingual Spanish/English instructor based in Chorrillos, Lima, Perú.
                     </p>
                 </div>
                 <div>
                     <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Core Services</h5>
                     <ul class="text-xs space-y-2.5">
-                        <li><a href="#tours" class="hover:text-ocean-400 transition">Traditional Artisanal Fishing</a></li>
-                        <li><a href="#spanish" class="hover:text-ocean-400 transition">Spanish Language Coaching</a></li>
-                        <li><a href="#galleries" class="hover:text-ocean-400 transition">Chorrillos Scenic Guide</a></li>
-                        <li><a href="#credentials" class="hover:text-ocean-400 transition">Academic Tutoring</a></li>
+                        <li><a href="#tours" class="hover:text-ocean-400 transition">Traditional artisanal fishing</a></li>
+                        <li><a href="#spanish" class="hover:text-ocean-400 transition">Spanish language coaching</a></li>
+                        <li><a href="#galleries" class="hover:text-ocean-400 transition">Chorrillos scenic guide</a></li>
+                        <li><a href="#credentials" class="hover:text-ocean-400 transition">Academic tutoring</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">Direct Contact Details</h5>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">Direct contact details</h5>
                     <div class="text-xs space-y-2">
                         <p class="flex items-center"><i class="fa-solid fa-envelope mr-2.5 text-ocean-400"></i> tallereducativo9@gmail.com</p>
                         <p class="flex items-center"><i class="fa-solid fa-phone mr-2.5 text-ocean-400"></i> +51 936 932 398</p>
@@ -573,7 +390,7 @@
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-600">
                 <p>&copy; 2026 Eddiel Martin. All Rights Reserved.</p>
-                <p>Designed to support authentic eco-friendly artisanal tourism & direct educational models.</p>
+                <p>Designed to support authentic eco-friendly artisanal tourism and direct educational models.</p>
             </div>
         </div>
     </footer>
@@ -581,9 +398,7 @@
     <a href="https://wa.me/51936932398" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 group hover:scale-110" aria-label="Chat with Eddiel on WhatsApp">
         <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
         <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none whitespace-nowrap shadow-xl">
-            Chat with Eddiel
-        </span>
+        <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none whitespace-nowrap shadow-xl">Chat with Eddiel</span>
     </a>
 
     <script>
@@ -606,7 +421,7 @@
             const service = document.getElementById('selectedService')?.value || '';
             const date = document.getElementById('preferredDate')?.value || '';
             const message = document.getElementById('userMessage')?.value || '';
-            const baseText = `Hi Eddiel Martin! I would like to book an experience with you:\n\n` + 
+            const baseText = `Hi Eddiel Martin! I would like to book an experience with you:\n\n` +
                              `👤 *Name:* ${name}\n` +
                              `📧 *Email:* ${email}\n` +
                              `🎯 *Service:* ${service}\n` +
@@ -619,15 +434,12 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (!header) return;
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg', 'border-slate-100');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
+            if (window.scrollY > 50) header.classList.add('shadow-lg', 'border-slate-100');
+            else header.classList.remove('shadow-lg');
         });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             if (!('IntersectionObserver' in window)) {
                 document.querySelectorAll('.reveal-left').forEach(el => el.classList.add('active'));
                 return;
@@ -646,9 +458,7 @@
         document.addEventListener('touchstart', function() {
             const video = document.getElementById('heroVideo');
             if (video && video.paused) {
-                video.play().catch(err => {
-                    console.log("No se pudo iniciar el video en móvil automáticamente:", err);
-                });
+                video.play().catch(err => console.log('No se pudo iniciar el video en móvil automáticamente:', err));
             }
         }, { once: true });
     </script>
