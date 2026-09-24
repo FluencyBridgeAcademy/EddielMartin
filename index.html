@@ -319,17 +319,14 @@
 <!-- Video Highlights Section -->
 <section class="py-16 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-10">
-            <span class="text-xs font-bold text-ocean-700 uppercase tracking-widest block mb-1">VIDEO HIGHLIGHTS</span>
-            <h2 class="text-3xl font-extrabold text-slate-900">Watch the Experience</h2>
-            <p class="text-slate-600 text-sm mt-2">Check out some short clips from our fishing tours and coastal adventures in Chorrillos.</p>
-        </div>
+        ... (resto del encabezado) ...
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- Video 1 (Horizontal) -->
+            <!-- Video 1 -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
                 <div class="aspect-video w-full bg-black">
-                    <video class="w-full h-full object-contain" controls preload="metadata" playsinline webkit-playsinline x5-playsinline>
+                    <!-- Cambio: object-cover y atributos playsinline -->
+                    <video class="w-full h-full object-cover" controls preload="metadata" playsinline webkit-playsinline x5-playsinline>
                         <source src="monk.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
                     </video>
@@ -339,10 +336,11 @@
                 </div>
             </div>
 
-            <!-- Video 2 (Horizontal) -->
+            <!-- Video 2 -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
                 <div class="aspect-video w-full bg-black">
-                    <video class="w-full h-full object-contain" controls preload="metadata" playsinline webkit-playsinline x5-playsinline>
+                    <!-- Cambio: object-cover y atributos playsinline -->
+                    <video class="w-full h-full object-cover" controls preload="metadata" playsinline webkit-playsinline x5-playsinline>
                         <source src="pucusana.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
                     </video>
